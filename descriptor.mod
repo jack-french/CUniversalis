@@ -1,0 +1,9 @@
+version="0.1"
+tags={
+	"Balance"
+	"Fixes"
+	"Utilities"
+}
+name="CUniversalisMPBalanceMod"
+supported_version="1.33.3"
+remote_file_id="2810197311"
