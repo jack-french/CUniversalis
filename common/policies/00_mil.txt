@@ -117,7 +117,7 @@ public_road_act = {
 		full_idea_group = trade_ideas
 	}
 	
-	special_unit_forcelimit= 0.15
+	reinforce_cost_modifier = -0.20
 
 	ai_will_do = {
 		factor = 1
@@ -201,7 +201,7 @@ modern_firearm_techniques = {
 		full_idea_group = quality_ideas
 	}
 	
-	infantry_power = 0.1
+	land_maintenance_modifier = -0.10
 
 	ai_will_do = {
 		factor = 1.2		
@@ -788,7 +788,7 @@ trade_kontor_network = {
 }
 
 war_horses_policy = { 
-	monarch_power = MIL
+	monarch_power = DIP
 
 	potential = {
 		has_idea_group = horde_gov_ideas
