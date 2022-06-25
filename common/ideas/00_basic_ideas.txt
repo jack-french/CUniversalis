@@ -570,54 +570,6 @@ influence_ideas = {
 	}
 }
 
-#UPDATED
-#Piracy
-diplomatic_ideas = {
-	category = DIP
-	bonus = {
-		may_perform_slave_raid_on_same_religion = yes
-	}
-
-	foreign_embassies = {
-		placed_merchant_power = 10
-		caravan_power = 0.25
-	}
-	cabinet = {
-		embargo_efficiency = 0.5
-	}
-	grand_banquets = {
-		light_ship_power = 0.25
-	}
-	benign_diplomats = {
-		blockade_efficiency = 0.5
-	}
-	experienced_diplomats  = {
-		siege_blockade_progress = 1
-		global_naval_barrage_cost = -0.5
-	}
-	flexible_negotiation = {
-		backrow_artillery_damage = 0.10
-	}
-	diplomatic_corps = {
-		allowed_marine_fraction = 0.25
-	}
-
-	ai_will_do = {
-		factor = 0.67
-
-		modifier = {
-			factor = 2
-			is_emperor = yes
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 2
-		}
-	}
-}
-
-
-
 #Mil Ideas
 #UPDATED
 offensive_ideas = {
@@ -935,13 +887,150 @@ horde_gov_ideas = {
 	}
 }
 
-#DUMMY
+#dummy
+indigenous_ideas = {
+	category = MIL
+
+	bonus = {
+		global_institution_spread = 0.25
+	}
+
+	trigger = {
+		has_government_attribute = enables_natives_idea_group
+		was_player = no
+	}
+
+	indigenous_bountiful_land = {
+		tribal_development_growth = 0.015
+		development_cost = -0.05
+	}
+	indigenous_irregular_warfare = {
+		hostile_attrition = 1
+	}
+	indigenous_constitution = {
+		monthly_reform_progress_modifier = 0.25
+	}
+	indigenous_braves = {
+		land_morale = 0.10
+	}
+	indigenous_controlled_burns = {
+		global_manpower_modifier = 0.2
+	}
+	indigenous_trade_with_foreigners = {
+		idea_cost = -0.1
+	}
+	indigenous_treaties = {
+		province_warscore_cost = -0.2
+	}
+
+	ai_will_do = {
+		factor = 1.0
+	}
+}
+
+spy_ideas = {
+	category = DIP
+
+	bonus = {
+		rebel_support_efficiency = 0.50
+	}
+
+	trigger = {
+		was_player = no
+	}
+	
+	claim_fabrication = {
+		fabricate_claims_cost = -0.25
+		can_fabricate_for_vassals = yes
+	}
+
+	state_propaganda = {
+		ae_impact = -0.2
+	}
+
+	efficient_spies = {
+		spy_offence = 0.5
+		siege_ability = 0.1
+	}	
+	
+	agent_training = {
+		diplomats = 1
+		advisor_cost = -0.10
+	}
+
+	vetting = {
+		global_spy_defence = 0.33
+	}
+	
+	privateers = {
+		embargo_efficiency = 0.25
+		privateer_efficiency = 0.33
+	}
+
+	audit_checks = {
+		yearly_corruption = -0.1
+	}
+
+	ai_will_do = {
+		factor = 0.75
+	}
+}
+diplomatic_ideas = {
+	category = DIP
+	bonus = {
+		reduced_stab_impacts = yes
+	}
+
+	trigger = {
+		was_player = no
+	}
+
+	foreign_embassies = {
+		diplomats = 1
+	}
+	cabinet = {
+		diplomatic_upkeep = 1
+	}
+	grand_banquets = {
+		diplomats = 1
+	}
+	benign_diplomats = {
+		improve_relation_modifier = 0.25
+	}
+	experienced_diplomats  = {
+		diplomatic_reputation = 2
+	}
+	flexible_negotiation = {
+		province_warscore_cost = -0.2
+	}
+	diplomatic_corps = {
+		dip_tech_cost_modifier = -0.1
+	}
+
+	ai_will_do = {
+		factor = 0.67
+
+		modifier = {
+			factor = 2
+			is_emperor = yes
+		}
+		modifier = {
+			factor = 1.5
+			vassal = 2
+		}
+	}
+}
+
 exploration_ideas = {
 	category = DIP
 	important = yes
 
 	bonus = {
 		cb_on_primitives = yes
+	}
+
+	trigger = {
+		was_player = no
 	}
 
 	faster_colonists = {
@@ -1110,88 +1199,5 @@ exploration_ideas = {
 				tag = KUR
 			}
 		}
-	}
-}
-
-spy_ideas = {
-	category = DIP
-
-	bonus = {
-		rebel_support_efficiency = 0.50
-	}
-	
-	claim_fabrication = {
-		fabricate_claims_cost = -0.25
-		can_fabricate_for_vassals = yes
-	}
-
-	state_propaganda = {
-		ae_impact = -0.2
-	}
-
-	efficient_spies = {
-		spy_offence = 0.5
-		siege_ability = 0.1
-	}	
-	
-	agent_training = {
-		diplomats = 1
-		advisor_cost = -0.10
-	}
-
-	vetting = {
-		global_spy_defence = 0.33
-	}
-	
-	privateers = {
-		embargo_efficiency = 0.25
-		privateer_efficiency = 0.33
-	}
-
-	audit_checks = {
-		yearly_corruption = -0.1
-	}
-
-	ai_will_do = {
-		factor = 0.75
-	}
-}
-
-indigenous_ideas = {
-	category = MIL
-
-	bonus = {
-		global_institution_spread = 0.25
-	}
-
-	trigger = {
-		has_government_attribute = enables_natives_idea_group
-	}
-
-	indigenous_bountiful_land = {
-		tribal_development_growth = 0.015
-		development_cost = -0.05
-	}
-	indigenous_irregular_warfare = {
-		hostile_attrition = 1
-	}
-	indigenous_constitution = {
-		monthly_reform_progress_modifier = 0.25
-	}
-	indigenous_braves = {
-		land_morale = 0.10
-	}
-	indigenous_controlled_burns = {
-		global_manpower_modifier = 0.2
-	}
-	indigenous_trade_with_foreigners = {
-		idea_cost = -0.1
-	}
-	indigenous_treaties = {
-		province_warscore_cost = -0.2
-	}
-
-	ai_will_do = {
-		factor = 1.0
 	}
 }
