@@ -1,0 +1,385 @@
+############################################
+########### Sealand new actions ############
+# Muslim, Jihad:
+sea_sunni_crusade_jihad_diplo_action = {
+	category = influence
+
+	#alert_index = 
+	#alert_tooltip = 
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		religion = sunni
+	}
+	is_allowed = {
+		hidden_trigger = {
+			religion = sunni
+		}
+		if = {
+			limit = {
+				is_defender_of_faith = no
+			}
+			custom_trigger_tooltip = {
+				is_defender_of_faith = yes
+				tooltip = sea_sunni_crusade_jihad_diplo_action_defender_of_faith
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					has_country_modifier = sea_sunni_crusade_jihad_diplo_action_modifier
+				}
+			}
+			custom_trigger_tooltip = {
+				NOT = { 
+					any_country = {
+						has_country_modifier = sea_sunni_crusade_jihad_diplo_action_modifier
+					}
+				}
+				tooltip = sea_sunni_crusade_jihad_diplo_action_already_started
+			}
+		}
+		if = {
+			limit = {
+				FROM = { religion_group = muslim }
+			}
+			custom_trigger_tooltip = {
+				FROM = { NOT = { religion_group = muslim } }
+				tooltip = sea_sunni_crusade_jihad_diplo_action_same_religion
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_country_modifier = sea_sunni_crusade_jihad_diplo_action_modifier
+				}
+			}
+			custom_trigger_tooltip = {
+				FROM = { 
+					NOT = {
+						has_country_modifier = sea_sunni_crusade_jihad_diplo_action_modifier
+					}
+				}
+				tooltip = sea_sunni_crusade_jihad_diplo_action_is_jihad_target
+			}
+		}
+	}
+
+	on_accept = {
+		clear_global_event_target = jihad_crusade_target
+		FROM = {
+			add_country_modifier = {
+				name = sea_sunni_crusade_jihad_diplo_action_modifier
+				duration = 10950
+				hidden = yes
+			}
+			save_global_event_target_as = jihad_crusade_target
+		}
+	}
+	on_decline = {
+	}
+	ai_acceptance = {
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+############################################
+########### Espionage Spy Ideas ############
+# Killing heir at 100 spy network:
+sea_spy_kill_heir_diplo_action = {
+	category = covert
+
+	#alert_index = 
+	#alert_tooltip = 
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		is_colonial_nation = no
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				NOT = {
+					is_rival = FROM
+				}
+			}
+			custom_trigger_tooltip = {
+				is_rival = FROM
+				tooltip = sea_spy_kill_heir_covert_action_not_rival
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				has_spy_network_in = {
+					who = FROM
+					value = 100
+				}
+				tooltip = sea_spy_kill_heir_covert_action_not_enough_spy_network
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_heir = no
+				}
+			}
+			custom_trigger_tooltip = {
+				FROM = { has_heir = yes }
+				tooltip = sea_spy_kill_heir_covert_action_target_no_heir
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_country_flag = sea_spy_kill_heir_covert_action_cooldown_flag
+					NOT = {
+						had_country_flag = {
+							flag = sea_spy_kill_heir_covert_action_cooldown_flag
+							days = 10950
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				FROM = {
+					OR = {
+						NOT = { has_country_flag = sea_spy_kill_heir_covert_action_cooldown_flag }
+						had_country_flag = {
+							flag = sea_spy_kill_heir_covert_action_cooldown_flag
+							days = 10950
+						}
+					}
+				}
+				tooltip = sea_spy_kill_heir_covert_action_cooldown
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				has_idea = audit_checks
+			}
+			FROM = {
+				set_country_flag = hunting_accident_heir_assassination_flag
+				country_event = { id = 9459 }
+				set_country_flag = sea_spy_kill_heir_covert_action_cooldown_flag
+			}
+		}
+		else = {
+			FROM = {
+				capital_scope = {
+					add_province_triggered_modifier = sea_spy_kill_heir_diplo_action_modifier
+					set_province_flag = sea_spy_kill_heir_diplo_action_modifier_flag
+				}
+			}
+		}
+		ROOT = {
+			add_spy_network_in = {
+				who = FROM
+				value = -100
+			}
+		}
+	}
+	on_decline = {
+	}
+	ai_acceptance = {
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+# Killing random general at 60 spy network:
+sea_spy_kill_random_general_diplo_action = {
+	category = covert
+
+	#alert_index = 
+	#alert_tooltip = 
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		is_colonial_nation = no
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				NOT = { dip_tech = 8 }
+			}
+			custom_trigger_tooltip = {
+				dip_tech = 8
+				tooltip = sea_spy_kill_random_general_covert_action_low_tech
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 60
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				has_spy_network_in = {
+					who = FROM
+					value = 60
+				}
+				tooltip = sea_spy_kill_random_general_covert_action_not_enough_spy_network
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					war_with = FROM
+				}
+			}
+			custom_trigger_tooltip = {
+				war_with = FROM
+				tooltip = sea_spy_kill_random_general_covert_action_not_war_enemy
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					NOT = {
+						has_leaders = {
+							value = 1
+							type = general
+							include_monarch = no
+							include_heir = no
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				FROM = {
+					has_leaders = {
+						value = 1
+						type = general
+						include_monarch = no
+						include_heir = no
+					}
+				}
+				tooltip = sea_spy_kill_random_general_covert_action_target_no_general
+			}
+		}
+	}
+
+	on_accept = {
+		FROM = {
+			kill_leader = {
+				type = general
+			}
+		}
+		ROOT = {
+			add_spy_network_in = {
+				who = FROM
+				value = -60
+			}
+		}
+	}
+	on_decline = {
+	}
+	ai_acceptance = {
+	}
+	ai_will_do = {
+		always = no
+	}
+}
+# Enemy fort defence +33%:
+sea_spy_sabotage_defences_diplo_action = {
+	category = covert
+
+	#alert_index = 
+	#alert_tooltip = 
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		is_colonial_nation = no
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				NOT = { dip_tech = 6 }
+			}
+			custom_trigger_tooltip = {
+				dip_tech = 6
+				tooltip = sea_spy_sabotage_defences_covert_action_low_tech
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 80
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				has_spy_network_in = {
+					who = FROM
+					value = 80
+				}
+				tooltip = sea_spy_sabotage_defences_covert_action_not_enough_spy_network
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					war_with = FROM
+				}
+			}
+			custom_trigger_tooltip = {
+				war_with = FROM
+				tooltip = sea_spy_sabotage_defences_covert_action_not_war_enemy
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_country_modifier = sea_spy_sabotage_defences_covert_action_modifier
+				}
+			}
+			custom_trigger_tooltip = {
+				FROM = { NOT = { has_country_modifier = sea_spy_sabotage_defences_covert_action_modifier } }
+				tooltip = sea_spy_sabotage_defences_covert_action_already_has_modifier
+			}
+		}
+	}
+
+	on_accept = {
+		FROM = {
+			add_country_modifier = {
+				name = sea_spy_sabotage_defences_covert_action_modifier
+				duration = 365
+			}
+		}
+		ROOT = {
+			add_spy_network_in = {
+				who = FROM
+				value = -80
+			}
+		}
+	}
+	on_decline = {
+	}
+	ai_acceptance = {
+	}
+	ai_will_do = {
+		always = no
+	}
+}
