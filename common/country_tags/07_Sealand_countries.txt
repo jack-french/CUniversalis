@@ -22,6 +22,6 @@ IJP = "countries/SeaImperialJapan.txt"
 ANG = "countries/SeaAngevinEmpire.txt"
 RHI = "countries/SeaRhineConfederation.txt"
 LAT = "countries/SeaLatinEmpire.txt"
-
+AGL = "countries/Angoulême.txt"
 SEX = "countries/SeaPayPalStates.txt"
 DRV = "countries/Dravidessa.txt"
