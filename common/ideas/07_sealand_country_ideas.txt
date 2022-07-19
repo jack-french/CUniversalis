@@ -82,6 +82,46 @@ sea_SJK_ideas = { # Seljuk Empire
 	}
 }
 
+SAS_ideas = {
+   	start = {
+		no_religion_penalty = yes
+		discipline = 0.05
+	}
+	bonus = {
+		land_morale = 0.1
+	}
+	
+	trigger = {
+		tag = SAS
+	}
+	free = yes
+   	dream_of_an_empire = {
+		manpower_recovery_speed = 0.1
+		core_creation = -0.1
+	}
+	expand_urban_setlements = {
+	    	development_cost = -0.05
+		build_cost = -0.075
+	}
+	aswaran_knights = {
+		cavalry_power = 0.25
+		fire_damage_received = -0.1
+	}
+	revive_sasanid_learning = {
+		technology_cost = -0.075
+	}
+	neo_iranian_administration = {
+      		free_adm_policy = 1
+	  	possible_adm_policy = 1
+	}	
+	servants_of_zoroaster = {
+	  	manpower_in_true_faith_provinces = 0.10
+	  	missionaries = 1
+	}
+	new_age_army = {
+	 	land_forcelimit_modifier = 0.2
+	}
+}
 sea_KLU_ideas = { # Kalmar Union
 	start = {
 		infantry_power = 0.2
