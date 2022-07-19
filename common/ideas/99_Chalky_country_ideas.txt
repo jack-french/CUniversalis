@@ -1,0 +1,41 @@
+DRV_ideas = {
+	start = {
+		sailor_maintenance_modifer = -0.25
+		leader_naval_manuever = 1
+	}
+	bonus = {
+		development_cost = -0.1
+	}
+	trigger = {
+		tag = DRV
+	}
+	free = yes
+	
+	drv_hindu_state = {
+		missionaries = 1
+		tolerance_heretic = 3
+	}
+	drv_indian_industriousness = {
+		trade_efficiency = 0.15
+		global_ship_recruit_speed = -0.1
+	}
+	drv_ahoms_legacy = {
+		navy_tradition = 0.75
+		free_leader_pool = 1
+	}
+	drv_green_water_gallivats = {
+		own_coast_naval_combat_bonus = 1
+	}
+	drv_labana = {
+		trade_steering = 0.15
+		global_foreign_trade_power = 0.15
+	}
+	drv_settle_in_indonesia = {
+		colonists = 1
+	}
+	drv_learn_from_the_sikh = {
+		land_morale = 0.1
+		naval_morale = 0.1
+	}
+
+}
