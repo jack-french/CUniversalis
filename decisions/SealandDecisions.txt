@@ -896,128 +896,12 @@ country_decisions = {
 		ai_importance = 1000
 	}
 }
-
-# Decision to get Theocracy:
-country_decisions = {
-	#eschatological_theocracy_georgia_decision = { # For Georgia
-	#	major = yes
-	#	potential = {
-	#		NOT = { has_country_flag = eschatological_theocracy_georgia }
-	#		tag = GEO
-	#	}
-	#	provinces_to_highlight = {
-	#		OR = {
-	#			area = imereti_area
-	#			area = samtskhe_area
-	#			area = kartli_kakheti_area
-	#		}
-	#		NOT = {
-	#			owned_by = ROOT
-	#		}
-	#	}
-	#	allow = {
-	#		tag = GEO
-	#		is_at_war = no
-	#		imereti_area = {
-	#			type = all
-	#			owned_by = ROOT
-	#		}
-	#		samtskhe_area = {
-	#			type = all
-	#			owned_by = ROOT
-	#		}
-	#		kartli_kakheti_area = {
-	#			type = all
-	#			owned_by = ROOT
-	#		}
-	#	}
-	#	effect = {
-	#		set_country_flag = eschatological_theocracy_georgia
-	#		set_country_flag = eschatological_theocracy_georgia_reform_flag
-	#		change_government = theocracy
-	#		add_government_reform = eschatological_theocracy_georgia_reform
-	#	}
-	#	ai_will_do = {
-	#		factor = 0
-	#	}
-	#}
-	eschatological_theocracy_caliphate_decision = { # For Caliphate missions.
-		major = yes
-		potential = {
-			NOT = { has_country_flag = eschatological_theocracy_caliphate }
-			has_mission = restore_rashidun_caliphate
-		}
-		allow = {
-			mission_completed = restore_rashidun_caliphate
-			is_at_war = no
-		}
-		effect = {
-			set_country_flag = eschatological_theocracy_caliphate
-			set_country_flag = eschatological_theocracy_caliphate_reform_flag
-			change_government = theocracy
-			add_government_reform = eschatological_theocracy_caliphate_reform
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-}
 # Sasanid Empire
-country_decisions = { # converting to Zoroastrian:
-	converted_to_zoroastrian = { # converting to Zoroastrian.
-		major = yes
-		potential = {
-			OR = {
-				tag = TRS
-				tag = AFG
-				tag = KHO
-				tag = ORM
-				tag = QOM
-				capital_scope = {
-					OR = {
-						region = persia_region
-						region = khorasan_region
-					}
-				}
-			}
-		}
-		provinces_to_highlight = {
-			province_id = 433
-			NOT = { owned_by = ROOT }
-		}
-		allow = {
-			capital_scope = {
-				OR = {
-					region = persia_region
-					region = khorasan_region
-				}
-			}
-			NOT = { tag = PER }
-			OR = {
-				owns_core_province = 433
-				religion = zoroastrian
-			}
-		}
-		effect = {
-			set_country_flag = steps_becoming_sasanid_zoroastrian_flag
-			if = {
-				limit = {
-					NOT = { religion = zoroastrian }
-				}
-				change_religion = zoroastrian
-			}
-			add_country_modifier = {
-				name = "converted_to_zoroastrian_modifier"
-				duration = 18250
-			}
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
+country_decisions = {
 	revive_sasanian_empire = {
 		major = yes
 		potential = {
+			tag = QOM
 			OR = {
 				AND = {
 					religion = zoroastrian
@@ -1073,7 +957,6 @@ country_decisions = { # converting to Zoroastrian:
 				}
 				change_government = monarchy
 			}
-			add_government_reform = sasanian_government
 			if = {
 				limit = {
 					NOT = { government_rank = 3 }
@@ -1093,7 +976,6 @@ country_decisions = { # converting to Zoroastrian:
 				name = centralization_modifier
 				duration = 3650
 			}
-			swap_non_generic_missions = yes
 			if = {
 				limit = { 
 					has_custom_ideas = no
