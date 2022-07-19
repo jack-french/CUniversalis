@@ -1,8 +1,0 @@
-government = tribal
-add_government_reform = tribal_despotism
-government_rank = 1
-technology_group = chinese
-religion = confucianism
-primary_culture = sichuanese #ganyu
-capital = 5521 #Leshan
-fixed_capital = 5521

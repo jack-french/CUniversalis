@@ -1,6 +1,0 @@
-government = monarchy
-add_government_reform = germany_monarchy
-technology_group = western
-primary_culture = prussian
-religion = protestant
-capital = 50	# Berlin

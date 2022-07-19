@@ -1,8 +1,0 @@
-# Sealand. It's copy of vanilla Moravia.
-government = monarchy
-add_government_reform = great_moravian_principality
-primary_culture = czech
-religion = catholic
-government_rank = 1
-capital = 4237 # Olomouc
-technology_group = western

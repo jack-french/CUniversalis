@@ -1,9 +1,0 @@
-# Sealand
-government = monarchy
-add_government_reform = fatimid_government
-technology_group = muslim
-religion = sunni
-primary_culture = tunisian
-add_accepted_culture = al_misr_arabic
-religious_school = maliki_school
-capital = 361 # Cairo

@@ -1,8 +1,0 @@
-government = monarchy
-add_government_reform = h_reform_citystate
-government_rank = 1
-technology_group = chinese
-religion = confucianism
-primary_culture = chimin #ganyu
-capital = 5515 #Chaozhou
-fixed_capital = 5515

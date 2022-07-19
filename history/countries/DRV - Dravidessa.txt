@@ -1,7 +1,0 @@
-# Chalky country
-government = monarchy
-add_government_reform = nayankara_reform
-primary_culture = kannada
-religion = hinduism
-technology_group = indian
-capital = 4421 # Made up
