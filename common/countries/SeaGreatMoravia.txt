@@ -48,20 +48,20 @@ monarch_names = {
 	"Frantisek Josef #0" = 0
 	"Bocek #0" = 0
 	"Jan #1" = 10
-	"LudvÃ­k #0" = 0
-	"VladimÃ­r #0" = 0
+	"Ludvík #0" = 0
+	"Vladimír #0" = 0
 	"Petr #0" = 0
-	"ViktorÃ­n #0" = 0
+	"Viktorín #0" = 0
 	"Anton #0" = 0
-	"Josef VÃ¡clav #0" = 0
+	"Josef Václav #0" = 0
 	"Karel Josef #0" = 0
-	"MatyÃ¡Å¡ #0" = 0
+	"Matyáš #0" = 0
 	"Ferdinand #0" = 5
 	"Vratislav #0" = 5
 	"Boleslav #0" = 5
-	"VilÃ©m #0" = 5
+	"Vilém #0" = 5
 	"Viktor #0" = 0
-	"JaromÃ­r #0" = 5
+	"Jaromír #0" = 5
 	"Jaroslav #0" = 1
 	"Anezka #0" = -1
 	"Eliska #0" = -1
@@ -72,76 +72,76 @@ monarch_names = {
 }
 
 leader_names = {
-	"z DitrichÅ¡tejna"
-	"HaugvicovÃ© z Biskupic"
-	"z LichtenÅ¡tejna"
+	"z Ditrichštejna"
+	"Haugvicové z Biskupic"
+	"z Lichtenštejna"
 	"z Nostic"
 	Petrasch
-	Å½erotÃ­novÃ©
+	erotínové
 	
-	ZajÃ­c
+	Zajíc
 	Jiskra
-	ZeleznÃ½
+	Zeleznı
 	Capek
 	Thurn
 	Kolowrat
 	Schwarzenberg
 	"z Rozmberka"
-	KomenskÃ½
+	Komenskı
 	"z Boskovic"
 	Velen
 	Sokol
-	"ze ZerotÃ­na"
+	"ze Zerotína"
 	"z Husi"
 	"z Polzic"
 	Harant
-	"z BrandÃ½sa"
+	"z Brandısa"
 	Purkyne
-	"z VeleslavÃ­na"
-	"z RozmitÃ¡lu"
+	"z Veleslavína"
+	"z Rozmitálu"
 	Berka
 	"z Pardubic"
 	"ze Lvovic"
-	"z KunÅ¡tÃ¡tu a Podebrad"
+	"z Kunštátu a Podebrad"
 	Kaspar
 	Reiner
-	"z PernÅ¡tejna"
+	"z Pernštejna"
 	"ze Svamberka"
 	"z Vartemberka"
-	PÃ­ka
+	Píka
 	Mansfeld
-	VelikÃ½
-	SyrovÃ½
+	Velikı
+	Syrovı
 	"z Otradovic"
 	"z Falkensteina"
 	Pilchramb
 }
 
 ship_names = {
-	"SvatÃ½ Vaclav"
-	"SvatÃ¡ Ludmila"
-	"SvatÃ½ Jan NepomuckÃ½"
-	"SvatÃ½ MikulÃ¡s"
-	"SvatÃ½ JirÃ­"
-	"SvatÃ¡ AnezkÃ¡"
-	"NejsvetejsÃ­ Trojice"
-	"KrÃ¡l Karel"
-	"KrÃ¡l Boleslav"
-	"KrÃ¡l Premysl"
-	"Panna Maria ViteznÃ¡"
+	"Svatı Vaclav"
+	"Svatá Ludmila"
+	"Svatı Jan Nepomuckı"
+	"Svatı Mikulás"
+	"Svatı Jirí"
+	"Svatá Anezká"
+	"Nejsvetejsí Trojice"
+	"Král Karel"
+	"Král Boleslav"
+	"Král Premysl"
+	"Panna Maria Vitezná"
 	"Jan Hus"
 	"Jan Zizka"
-	"Prokop HolÃ½"
-	"KnÃ­ze Bretislav"
+	"Prokop Holı"
+	"Kníze Bretislav"
 	"Premysl Orac"
 	Ctirad
 	Cechy
 	Morava
 	Libuse
-	OdvÃ¡znÃ½
-	NeporazitelnÃ½
-	RychlÃ½
-	BystrÃ½
+	Odváznı
+	Neporazitelnı
+	Rychlı
+	Bystrı
 	Orel
 	Sokol
 	Slezsko
