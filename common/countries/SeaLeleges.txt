@@ -1,0 +1,448 @@
+# New World, Sealand
+
+graphical_culture = easterngfx
+
+color = { 200 33 0 }
+revolutionary_colors = { 4 8 4 } # Copy of Rome and Byz and Athens
+
+historical_idea_groups = {
+	maritime_ideas
+	religious_ideas
+	defensive_ideas
+	administrative_ideas
+	trade_ideas
+	quality_ideas
+	innovativeness_ideas
+	diplomatic_ideas
+}
+
+historical_units = {
+	eastern_medieval_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	ottoman_spahi
+	ottoman_sekban
+	ottoman_reformed_spahi
+	ottoman_reformed_janissary
+	ottoman_toprakli_hit_and_run
+	ottoman_nizami_cedid
+	ottoman_toprakli_dragoon
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	ottoman_new_model
+	ottoman_lancer
+}
+
+monarch_names = {
+	"Basileios #1" = 22
+	"Leon #5" = 22
+	"Bardas #0" = 22
+	"Marinos #0" = 22
+	"Anastasia #0" = -23
+	"Konstantinos #4" = 22
+	"Augustus #1" = 0
+	"Tiberius #1" = 0
+	"Caligula #1" = 0
+	"Claudius #2" = 0
+	"Nero #1" = 0
+	"Galba #1" = 0
+	"Otho #1" = 0
+	"Vitellius #1" = 0
+	"Vespasian #1" = 0
+	"Titus #1" = 0
+	"Domitian #1" = 0
+	"Nerva #1" = 0
+	"Trajan #1" = 0
+	"Hadrian #1" = 0
+	"Antoninus #1" = 0
+	"Lucius #1" = 0
+	"Marcus #1" = 0
+	"Commodus #1" = 0
+	"Pertinax #1" = 0
+	"Julian #2" = 0
+	"Septimius #1" = 0
+	"Geta #1" = 0
+	"Caracalla #1" = 0
+	"Macrinus #1" = 0
+	"Heliogabalus #1" = 0
+	"Alexander #1" = 0
+	"Maximinus #2" = 0
+	"Gordian #3" = 0
+	"Pupienus #1" = 0
+	"Balbinus #1" = 0
+	"Philip #1" = 0
+	"Decius #1" = 0
+	"Trebonianus #1" = 0
+	"Aemilian #1" = 0
+	"Valerian #1" = 0
+	"Gallienus #1" = 0
+	"Quintillus #1" = 0
+	"Aurelian #1" = 0
+	"Severina #1" = -1
+	"Tacitus #1" = 0
+	"Florian #1" = 0
+	"Probus #1" = 0
+	"Carus #1" = 0
+	"Numerian #1" = 0
+	"Carinus #1" = 0
+	"Diocletian #1" = 0
+	"Constantius #3" = 0
+	"Galerius #1" = 0
+	"Licinius #1" = 0
+	"Constantine #2" = 0
+	"Constans #1" = 0
+	"Jovian #1" = 0
+	"Valentinian #1" = 0
+	"Valens #1" = 0
+	"Gratian #1" = 0
+	"Theodosius #2" = 0
+	"Arcadius #1" = 0
+	"Honorius #1" = 0
+	"Pulcheria #1" = -1
+	"Marcian #1" = 0
+	"Zenon #1" = 0
+	"Basiliskos #1" = 0
+	"Anastasios #2" = 0
+	"Ioustinos #2" = 0
+	"Ioustinianos #2" = 0
+	"Tiberios #2" = 0
+	"Maurikios #1" = 0
+	"Phokas #1" = 0
+	"Herakleios #1" = 0
+	"Herakleonas #1" = 0
+	"Konstas #1" = 0
+	"Leontios #1" = 0
+	"Philippikos #1" = 0
+	"Theodosios #1" = 0
+	"Artavasdos #1" = 0
+	"Eirene #1" = -1
+	"Nikephoros #1" = 0
+	"Stavrakios #1" = 0
+	"Michael #3" = 0
+	"Theophilos #1" = 0
+	"Adrianos #0" = 0
+	"Akakios #0" = 0
+	"Alexandros #0" = 0
+	"Alexios #0" = 0
+	"Anatolios #0" = 0
+	"Andreas #0" = 0
+	"Andronikos #0" = 0
+	"Anthemios #0" = 0
+	"Anthimos #0" = 0
+	"Antiochos #0" = 0
+	"Antonios #0" = 0
+	"Apollonios #0" = 0
+	"Arsenios #0" = 0
+	"Artemios #0" = 0
+	"Athanasios #0" = 0
+	"Bartholomaios #0" = 0
+	"Belisarios #0" = 0
+	"Boethios #0" = 0
+	"Bosporios #0" = 0
+	"Christophoros #0" = 0
+	"Chrysanthos #0" = 0
+	"Chrysogonos #0" = 0
+	"Damianos #0" = 0
+	"Daniel #0" = 0
+	"David #0" = 0
+	"Demetrios #0" = 0
+	"Diogenes #0" = 0
+	"Dionysios #0" = 0
+	"Dorotheos #0" = 0
+	"Eirenaios #0" = 0
+	"Eudoxios #0" = 0
+	"Eustratios #0" = 0
+	"Eugenios #0" = 0
+	"Euphemios #0" = 0
+	"Eusebios #0" = 0
+	"Eustathios #0" = 0
+	"Evangelos #0" = 0
+	"Gabriel #0" = 0
+	"Gennadios #0" = 0
+	"Georgios #0" = 0
+	"Gerasimos #0" = 0
+	"Germanos #0" = 0
+	"Gregoras #0" = 0
+	"Gregorios #0" = 0
+	"Hektorios #0" = 0
+	"Helias #0" = 0
+	"Hierotheos #0" = 0
+	"Himerios #0" = 0
+	"Hippolytos #0" = 0
+	"Hypatios #0" = 0
+	"Iakobos #0" = 0
+	"Ignatios #0" = 0
+	"Innokentios #0" = 0
+	"Ioannes #0" = 0
+	"Ioannikios #0" = 0
+	"Iordanes #0" = 0
+	"Ioseph #0" = 0
+	"Isaakios #0" = 0
+	"Isaias #0" = 0
+	"Isidoros #0" = 0
+	"Ioulianos #0" = 0
+	"Kaisarios #0" = 0
+	"Kallinikos #0" = 0
+	"Kallistos #0" = 0
+	"Komitas #0" = 0
+	"Konstantios #0" = 0
+	"Kosmas #0" = 0
+	"Kyriakos #0" = 0
+	"Kyrillos #0" = 0
+	"Kyros #0" = 0
+	"Laurentios #0" = 0
+	"Lazaros #0" = 0
+	"Loukas #0" = 0
+	"Makarios #0" = 0
+	"Manuel #0" = 0
+	"Markos #0" = 0
+	"Matthaios #0" = 0
+	"Maximos #0" = 0
+	"Megistos #0" = 0
+	"Meletios #0" = 0
+	"Methodios #0" = 0
+	"Narses #0" = 0
+	"Neophytos #0" = 0
+	"Niketas #0" = 0
+	"Nikodemos #0" = 0
+	"Nikolaos #0" = 0
+	"Niphon #0" = 0
+	"Orestes #0" = 0
+	"Pamphilios #0" = 0
+	"Pankratios #0" = 0
+	"Pantoleon #0" = 0
+	"Paschalis #0" = 0
+	"Pavlos #0" = 0
+	"Pelagios #0" = 0
+	"Petros #0" = 0
+	"Philaretos #0" = 0
+	"Philippos #0" = 0
+	"Philotheos #0" = 0
+	"Photios #0" = 0
+	"Polykarpos #0" = 0
+	"Porphyrios #0" = 0
+	"Prokopios #0" = 0
+	"Pyrros #0" = 0
+	"Raphail #0" = 0
+	"Romanos #0" = 0
+	"Sabas #0" = 0
+	"Samuel #0" = 0
+	"Serapion #0" = 0
+	"Sebastianos #0" = 0
+	"Sergios #0" = 0
+	"Stephanos #0" = 0
+	"Staurakios #0" = 0
+	"Symeon #0" = 0
+	"Symmachos #0" = 0
+	"Theocharistos #0" = 0
+	"Theodoros #0" = 0
+	"Theodotos #0" = 0
+	"Theodoulos #0" = 0
+	"Theoktistos #0" = 0
+	"Theophanes #0" = 0
+	"Theophylaktos #0" = 0
+	"Thomas #0" = 0
+	"Traianos #0" = 0
+	"Timotheos #0" = 0
+	"Tryphon #0" = 0
+	"Valerios #0" = 0
+	"Zacharias #0" = 0
+	"Zenobios #0" = 0
+	"Antonio #0" = 40
+	"Francesco #0" = 40
+	"Nero #1" = 20
+	"Bartolomeo #0" = 10
+	"Agapios #0" = 0
+	"Akakios #0" = 0
+	"Alexandros #0" = 0
+	"Anargyros #0" = 0
+	"Anastasios #0" = 0
+	"Andreas #0" = 0
+	"Angelos #0" = 0
+	"Aniketos #0" = 0
+	"Apostolos #0" = 0
+	"Argyros #0" = 0
+	"Athanasios #0" = 0
+	"Charalampos #0" = 0
+	"Chrysanthos #0" = 0
+	"Demetrios #0" = 0
+	"Dimosthenes #0" = 0
+	"Dionysios #0" = 0
+	"Dorotheos #0" = 0
+	"Efsthathios #0" = 0
+	"Eleftherios #0" = 0
+	"Elias #0" = 0
+	"Emmanouil #0" = 0
+	"Evangelos #0" = 0
+	"Georgios #0" = 0
+	"Gregorios #0" = 0
+	"Ioannes #0" = 0
+	"Konstantinos #0" = 0
+	"Nikodemos #0" = 0
+	"Pavlos #0" = 0
+	"Petros #0" = 0
+	"Philippos #0" = 0
+	"Photios #0" = 0
+	"Stephanos #0" = 0
+	"Theophylaktos #0" = 0
+	"Vasilis #0" = 0
+	"Vlasis #0" = 0
+	"Francesca #1" = -10
+	"Maria #0" = -1
+	"Alexandra #0" = -1
+	"Gabrielia #0" = -1
+	"Ioustina #0" = -1
+	"Anastasia #0" = -1
+}
+
+leader_names = { 
+	"Basileios" "Leon" "Bardas" "Marinos" "Anastasia" "Konstantinos" "Augustus" "Tiberius" "Caligula" "Claudius" 
+	"Nero" "Galba" "Otho" "Vitellius" "Vespasian" "Titus" "Domitian" "Nerva" "Trajan" "Hadrian" 
+	"Antoninus" "Lucius" "Marcus" "Commodus" "Pertinax" "Julian" "Septimius" "Geta" "Caracalla" "Macrinus" 
+	"Heliogabalus" "Alexander" "Maximinus" "Gordian" "Pupienus" "Balbinus" "Philip" "Decius" "Trebonianus" "Aemilian" 
+	"Valerian" "Gallienus" "Quintillus" "Aurelian" "Severina" "Tacitus" "Florian" "Probus" "Carus" "Numerian" 
+	"Carinus" "Diocletian" "Constantius" "Galerius" "Licinius" "Constantine" "Constans" "Jovian" "Valentinian" "Valens" 
+	"Gratian" "Theodosius" "Arcadius" "Honorius" "Pulcheria" "Marcian" "Zenon" "Basiliskos" "Anastasios" "Ioustinos" 
+	"Ioustinianos" "Tiberios" "Maurikios" "Phokas" "Herakleios" "Herakleonas" "Konstas" "Leontios" "Philippikos" "Theodosios" 
+	"Artavasdos" "Eirene" "Nikephoros" "Stavrakios" "Michael" "Theophilos" "Adrianos" "Akakios" "Alexandros" "Alexios" 
+	"Anatolios" "Andreas" "Andronikos" "Anthemios" "Anthimos" "Antiochos" "Antonios" "Apollonios" "Arsenios" "Artemios" 
+	"Athanasios" "Bartholomaios" "Belisarios" "Boethios" "Bosporios" "Christophoros" "Chrysanthos" "Chrysogonos" "Damianos" "Daniel" 
+	"David" "Demetrios" "Diogenes" "Dionysios" "Dorotheos" "Eirenaios" "Eudoxios" "Eustratios" "Eugenios" "Euphemios" 
+	"Eusebios" "Eustathios" "Evangelos" "Gabriel" "Gennadios" "Georgios" "Gerasimos" "Germanos" "Gregoras" "Gregorios" 
+	"Hektorios" "Helias" "Hierotheos" "Himerios" "Hippolytos" "Hypatios" "Iakobos" "Ignatios" "Innokentios" "Ioannes" 
+	"Ioannikios" "Iordanes" "Ioseph" "Isaakios" "Isaias" "Isidoros" "Ioulianos" "Kaisarios" "Kallinikos" "Kallistos" 
+	"Komitas" "Konstantios" "Kosmas" "Kyriakos" "Kyrillos" "Kyros" "Laurentios" "Lazaros" "Loukas" "Makarios" 
+	"Manuel" "Markos" "Matthaios" "Maximos" "Megistos" "Meletios" "Methodios" "Narses" "Neophytos" "Niketas" 
+	"Nikodemos" "Nikolaos" "Niphon" "Orestes" "Pamphilios" "Pankratios" "Pantoleon" "Paschalis" "Pavlos" "Pelagios" 
+	"Petros" "Philaretos" "Philippos" "Philotheos" "Photios" "Polykarpos" "Porphyrios" "Prokopios" "Pyrros" "Raphail" 
+	"Romanos" "Sabas" "Samuel" "Serapion" "Sebastianos" "Sergios" "Stephanos" "Staurakios" "Symeon" "Symmachos" 
+	"Theocharistos" "Theodoros" "Theodotos" "Theodoulos" "Theoktistos" "Theophanes" "Theophylaktos" "Thomas" "Traianos" "Timotheos" 
+	"Tryphon" "Valerios" "Zacharias" "Zenobios"
+	Akropolites Angelos Aoinos Apokaukos Argyros
+	Basileous Batatzes Botaneiates Boumbalis
+	Choniates Choumnos
+	Diasorenos Diogenes Doukas
+	Gabras
+	Iagaris
+	Kantakuzenos Kaukadenos Komnenos
+	Laskaris
+	Melissinos Melisurgos Mikrulakes Monomakos Mouzalon
+	Nestongos
+	Palaiologos Paraspondylos Phocas Phouskarnaki Phrangopoulos Psellos
+	Rhadinos Rhangabe Rhodocanakis Romanos
+	Syropoulos
+	Tornikes
+	Zarides Zimisces
+	Acciajuoli 
+	Contarini Crispo
+	Doria	
+	Fadrigue
+	Melissinos 
+	Palaeologus Plethon
+	Rendis
+	Saraceno 
+	Tocco
+	Zorzi 
+}
+
+ship_names = {
+	Abundantia "Acca Larentia" Acis Aerecura Aequitas Aesculapius Aeternitas Aeon "Aius Locutius"
+	Alernus Angerona Angitia "Anna Perenna" Annona Antevorta Apollo Arimanius Aura Aurora Averruncus
+	Bacchus Bellona "Bona Dea" "Bonus Eventus" Bubona Caca Cacus Camenae Cardea Carmenta Carmentes
+	Carna Ceres Clementia Cloacina Concordia Consus Cupid Cura Cybele "Dea Dia" "Dea Tacita"
+	Decima Devera Diana "Diana Nemorensis" "Dius Fidius" Disciplina "Dis Pater" Egeria Empanda
+	Epona Falacer Fama Fascinus Fauna Faunus Faustitas Februus Febris Fecunditas Felicitas Ferentina
+	Feronia Fides Flora Fornax Fontus Fortuna Fulgora Furrina Genius Gratiae Hercules Hermaphroditus
+	Hilaritas Honos Hora Indiges Intercidona Inuus Invidia Isis Iris Janus Juno Jupiter Justitia
+	Juturna Juventas Lares Laverna Levana Letum Liber Libera Liberalitas Libertas Libitina Lua
+	Lucina Luna Lupercus Lympha "Mana Genita" Manes Mania Mantus Mars "Mater Matuta" Meditrina 
+	Mephitis Mellonia Mercury Minerva Mithras Molae Moneta Mors Morta Murcia "Mutunus Tutunus"
+	Naenia Nascio Necessitas Nemesis Neptune Nerio Neverita Nixi Nona Nox Opis Orcus Palatua
+	Pales Parcae Pax Penates Picumnus Picus Pietas Pilumnus Pluto Poena Pomona Porrima Portunes
+	Postverta Priapus Proserpina Providentia Pudicitia Querquetulanae Quirinus Quiritis Robigus
+	Roma Rumina Salacia Salus Sancus Saturn Securitas Silvanus "Sol Invictus" Somnus Soranus
+	Sors Spes Stata Mater Sterquilinus Suadela Summanus "Sulis Minerva" Tellurus Tempestas
+	"Terra Mater" Terminus Tiberinus Tibertus Tranquillitas Trivia Ubertas Unxia Uranus Vacuna
+	Vediovus Venilia Venti Venus Veritas Verminus Vertumnus Vesta "Vica Pota" Victoria Virbius
+	Virtus Volturnus Voluptas Vulcan
+	Ydra Lesvos Limnos Mikonos Salamis Samos Themistoklis Evripidis Aischylos Aristofanis Archimedes Demokritos Anaxagoras Diomedes Herakles Atreas Perseas Aigyptos
+	Aiolos Poseidon Athena Zeus Dias Kronos Rea Ouranos Hera Adonis Afroditi Charavgi Orion Iasonas Theseus Achilleas Mermidon Makedon Lakedemon Athineos Xenofon
+	Miltiades Alexandros Megalexandros Gorgona Midia Efterpi Andriantas Demetra Estia Apollon Ermis Gorgopodaros Gorgoplefstos Artemis Aris Theofanis Theochara
+	Filippos Edessa Ionia Korinthos Sparti Athenai Messina Anthosparti Kampos Argolida Argo Hephestos Hephestion Nearchos Parmenion Leonidas Averof Christos
+	Christoforos "Agios Christoforos" "Vasileus Christoforos" Theodora "Agia Theodora" "Agios Theodoros" "Vasileus Theodoros" Aftokrator "Vasillisa Theodora"
+	Nikephoros "Agios Nikephoros" "Vasileus Nikephoros" Pavlos "Apostolos Pavlos" "Osios Pavlos" Alexios "Agios Alexios" "Agia Alexia" Alexia "Vasileus Alexios"
+	"Vasilissa Alexia" Konstantinos "Agios Konstantinos" "Konstantinos o Megas" "Vasileus Konstantinos" "Autokrator Konstantinos" Herakleios "Agios Herakleios"
+	"Vasileus Herakleios" "Agios Herakleidios" "Agios Sergios" "Agios Maximos" "Agios Athanasios" "Agia Athanasia" "Agia Eleni" Eleni "Oraia Eleni" "Vasilissa Eleni"
+	"Aftokrateira Eleni" "Konstantinos kai Eleni" Stephanos "Agios Stephanos" "Agia Stephania" "Vasileus Stephanos" "Autokrator Stephanos" "Archangellos Michael"
+	"Archangellos Gavriel" "Archangellos Uriel" Archangellos Angelos Exangelos Exapterygon Cheruvim Seraphim Osios Osia Ostia Ioustiniani "Agios Ioustinianos"
+	"Agia Ioustiniani" "Aftokrator Ioustinianos" "Vasileus Ioustinianos" "Ioustinianos o Megas" "Vasileus Michael" Andronikos Androniki "Agios Andronikos"
+	"Agia Androniki" "Vasileus Andronikos" Vasileios Vasileia "Agios Vasileios" "Agia Vasileia" "Vasileus Vasileios" "Vasileios o Vulgaroktonos" Zoe "Agia Zoe"
+	"Iera Zoe" "Vasilissa Zoe" Velissarios Piri Reis Aetos "Dikephalos Aetos" "Dikephalos tou Vorra" Tryfilli Olympios Delphini Delphina Apochis Nemesis Yvris
+	Drakon Lykourgos Solon Kroisos Lysippos Phedias Ades Plutonas "Mpaniera tou Poseidona" Ikaros Daidalos Ikaria Imvros Fournoi Kia Naxos Chios "Christos Soter"
+	Soter Soterios Sozomenos Despotis "Despotis tou Moria" Peloponissos Nafplio Athos "Agion Oros" Panagia "Panagia Parthena" "Panagia Chrysorogiatissa"
+	"Panagia Pleomeni" "Panagia Dakryzousa" "Panagia Romaion" "Panagia Mitera" "Panagia Chrysospilliotisa" "Panagia Ampelokamoti" "Panagia Pigazousa"
+	"Panagia Anthousa" Hektor Menelaos Aias "Aias o Telamonios" Odysseas Ithaki Tilemachos Penelopi Minoas Minotavros Tryfon Agamemnon Ifigeneia Tavrida Tavros
+	Ichthys Galaxias Astir Asteras "Erythros Asteras" "Asteri tis Vithleem" "Agioi Topoi" Ierosolima Alexandreia "Doxa tou Theou" "Chara Theou" Tama Ieromartyras
+	Kyprianos Archiepiskopos Episkopos Doukas Ionion Aigaion Kritikon Kriti Zoniana Herakleia Herakleion Chania Lesvos Kypros Rodos Gigantas Polyphimos Laistrygona
+	Lamia Skylla Charyvdi Echidna Ofis Eva Hellespontos "Efxeinos Pontos" Prokopios Prokopia "Agios Prokopios" Prokomenos Frixos Elli Kerkyra Kyriarchos Kentavros
+	Kaisar Keravnos Keratios Keraton Konstantinoupolis "Leon Skleros" Lykia Thalassolykos Megaleion "Megaleion tis Makedonias" "Mikra Asia" Morfeas Orfeas Evridiki
+	Keryneia Ammochostos Ledra Pafos Akamas Amathous Evagoras Chalkanoras Grigorios Kyrillos Methodios Nike Okeanos Tyranos Orestis "Orgi Theou" Orthodoxia Loukia
+	Loukiani "Agios Loukas" "Osios Loukas" "Profitis Helias" "Ai Lias" Profitis Sampson David Goliath Patrida "Ellas Patrida" Patris Mitera Pateras Pater Papas Papadia
+	Diakonos Atlas Egkelados Titanas Yperion Helios "Helios Pantokrator" Diomedes Avgeas Achellos Acheros Stymfalida Lernea "Lernea Ydra" Nemea "Leon tis Nemeas" Kapros
+	Erymanthea Monastiri Ouranos Nefeli Gea Thalassa Mesogeios Politis Vasilevousa Thalassokrator Pantheras Leon Pelargos Mermigkas Onos Thesallia Thesalloniki
+	Theophylaktos Taxiarchos Stratilatis Oplarchigos Navarchos Sikelia Ellas Samos Samothraki Thraki Rodopi Alexandroupoli Andrianoupolis Thrylos Triton Achinos
+	Asterias Xiphias Xiphomachos Xiphos Spatha Zakynthos Zoodotis Ypertatos Andrianos Anthimos Dragumanos Akritas Digenis "Digenis Akritas" Mavroskyllos Charon
+	Kalymnos "Oraia Kalymnos" Psara Psaras Varrangios Gothos Pontios Mavromata Prasinomata Kastanomata Gata Gatos Magkas Foneas Karcharias Skyllopsaro Pyrofis
+	Stavraetos Zenon Machairas Kykkos Anthos Korax "Mavros Korax" Phovos Dimos "Theodoros Kolokotronis" "Odysseas Andrutsos" "Georgios Karaiskakis" "Rigas Ferraios"
+	"Dionysios Solomos" Dionysios Dionysos Talos Efterpi Mpoumpoulina "Manto Mavrogenous" "Konstantinos Kanaris" Nikitaras Tourkofagos Nikitas Vulgaroktonos Messologi
+	Palaiologos Komnenos "Isaakios Komnenos" Thalpori Lazaros "Apostolos Andreas" "Apostolos Varnavas" "Apostolos Loukas" "Apostolos Thomas" "Apostolos Petros"
+	"Apostolos Iakovos" "Apostolos Stephanos" "Apostolos Ioannis" "Apostolos Simonas" "Apostolos Vartholomaios" "Apostolos Thaddeos" "12 Apostoloi" "Agioi Saranta"
+	"Agioi Pantes" "Agios Nikolaos" Naftikos "O Leventis ton Psaron" Leventis Tromos Rigaina Rigas Doukaina Dioskouroi Romos Romylos "Romos kai Romylos" Papandreas
+	Papamichalis Papakonstantinos "Agios Demetrios" "Agios Theodoros" "Agia Marina" "Agia Evlampia" "Agia Charalambia" "Agios Charalambos" "Agios Charilaos"
+	"Agios Antonios" "Agia Antonia" "Agios Amvrosios" "Panagia Aggelovastachti" "Panagia Filoptochi" "Panagia Thalassofiliti" Thalassomachos Amfitriti "Thalassios Ippos"
+	"Thalassios Leontas" Persoktonos "Autokrator Isavros" "Autokrato Makedon" Thekla "Agia Thekla" Papaflessas "Alexandros Ypsilantis" "Nea Ionia" Alikarnassos
+	Voukefalas "Afros tou Kymmatos" "Afros tis Thalassas" Trieiris Iris Daphni Salamis Thermopyles Marathon Platees Theva "Epta Epi Thevas" Platees Dervenakia
+	"Elefthero Pouli" Peristera "Oraia Peristera" Perifanos Perifani Perifania Akritikon "Eleftheros Poliorkimenos" Eleftheros Eleftheria "Eleftheria H Thanatos"
+	"Vasileios Digenis Akritas" Prosfygopoulla Giofyri "Giofyrin tis Artas" Gefyra Serres Trikoupis Athanatos Athanati Styga "Agios Athanasios" "Agia Athanasia"
+	Athanasia Agerochos Agerochi Atrotos Atroti Pachyammos Maa "Agia Paraskevi" "Agios Paraskevas" Larnaka Amathounta Lemesos Kolossi Kolossos Akamas Lara Onisilos
+	Makarios "Agios Grigorios" Petra Kypseli Melissa Sfikas Kifinas Meliteni Kentri "Mavra Ori" Karagkiozis Nionios Nafpaktos Rodon Emporopoulla Emporas Chontros
+	Chontri "Iera Odos" "Egnatia Odos" Egnatia Ignatios Thalis Efkleidis Milos Omiros Iliada Odysseia Faiakas Fylakas Chalkida Psalida Zodia Morfou Aeriko Stefana
+	Oneiro Onar Ilarion "Agios Ilarion" Eftychia "Agios Eftychios" Chara Mystras "3 Charites" Nymfi Nymfes Ariadni Stratiotis Palikaras "Markos Mpotsaris"
+	"Lampros Katsonis" Karavida Kavouri "Mana Kavourina" Mana "Mana Kouragio" Kouragio Voreios Notios "To Vlemma tis Theodoras" Rizokarpaso Lysis Enosis
+	"Philippos o Makedon" Evropi Ypatia Aristarchos Aristos Ellada Ellinopoulla Romiopoulla Omorfi Omorfoulla Gynaika "Pyr Gyni kai Thalassa" Athlos Mpessa
+	Apostolos "Pani tou Osiou" "Osio Pani" Kapetanios Kapetaneos Sfyra Chelona Porfyrogennitos Porfyrogenis Porfyros Mavrogenis Savatogennimenos Kyriaki
+	"Re Alexis" Prigkipessa Prigkips Voskos Poimenas Thanatos Ethnikos Olympia Olympiakos Athlitis Axios Antaxios Antartis Kallinikos Prespa Sofia "Agia Sofia"
+	Vlacheia Vlachopoulla Vlacherna Kaffa Moldavia Vulgaria Servia Mavrovunion Ragusa Dyrrachion Kastoria Kastoras "Xylino Toichos" Xoanon Zoni Zallogos
+	"O Choros tou Zallogou" Achaea Aigina Avydos Akanthos Agrinion Alexandretta Patra Antipatra Amisos Amarinthos Antigona Antigoni Amphipolis Antiocheia Anir
+	Andros Apollonia Argos Elia Elaion Argyroupoli Tigris Tyros Foiniki Asklepios Pontos Pontios Varis Verga Vyvlos Vyzantion Vosporos Chersonesos Chalkis Kroton
+	Kyrinea Dekeleia Delos Delphoi Mantis Tiresias "Mantis Tiresias" Dodona Doryaion Doryn Sarissa Dorystolon Stolos Elefsis Ephesos Epidavros Eretria Efvoia Gaza
+	Gonios Goneas "Agios Onoufrios" "Agia Triada" Alikarnassos Helioupolis Ellinikon Ierapolis Ierapetra Chimera Iasos Ialysos Ithaki Kallipolis Kamares Kameiros
+	Kipos Kipoi Kimmerikon Knidos Kios Kionas Knossos Kos Kourion Laodikeia Lapithos Lation Lefkada Lissos Lindos Magnesia Marathonas Massalia Megara Methoni Militos
+	Mylasa Nafkratis Neapolis Nikea Nikopolis Nymfeon Nysa Odessos Olvia Orchomenos Erchomenos Palaikastro Pandosia Festos Pirreas Pella Phanagoria Pamflagonia Farnakia
+	Faros Fillipoi Fillipopolis Platanos Fokida Fokea Elis Kampania Kampana Poseidonia Psychros Pseira Pylos Pylion Amforeas Krassoamfora Region Sinopi Sozopolis
+	Pisidia Thassos Thespia Tragurion Trapeza "Agia Trapeza" Tripolis Troia Tylissos Tyra Vasilliki Zakros Vathypetra Megalopetra
+	"Agios Thomas" 	Athena
+	Felves 
+	Laouses 
+	Makronisi
+	Patroklou Petalioi
+	Salamina Styra
+	Ypsili
+}
+
+army_names = {
+	"Legio I Herculia" "Legio II Rapax" "Legio III Liberatrix" "Legio IV Apollonaris" "Legio V Alaudae"
+	"Legio VI Victrix" "Legio VII Ferrata" "Legio VIII Augusta" "Legio IX Triumphalis" "Legio X Italica" 
+	"Legio XI Macedonica" "Legio XII Minervia" "Legio XIII Fulminata" "Legio XIV Fretensis" "Legio XV Primigenia"
+	"Legio XVI Claudia" "Legio XX Scythica"
+	"Thema Thrakes" "Thema Makedonikon" "Thema Thessalonikes" "Thema Helladikon" "Thema Opsikion" "Thema Optimaton" 
+	"Thema Paphlagonia" "Thema $PROVINCE$"
+}
+
+fleet_names = {
+	"Classis Alexandrina" "Classis Seleucena" "Classis Carpathia" "Classis Venetum" "Classis Constantinopolis"
+	"Classis Roma" "Classis Adrianopolis" "Classis Atlanticum" "Classis Mediterraneus" "Classis Euxeinos Pontos"
+	"Thema Cibyrraeoton" "Thema Cypriakon" "Thema Aigaeou Pelagous" "Thema Sicelias"
+}
