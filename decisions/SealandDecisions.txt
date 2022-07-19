@@ -724,44 +724,6 @@ country_decisions = {
 	}
 }
 
-# Sealand
-country_decisions = {
-	sea_remove_state_edicts = {
-		major = yes
-		potential = {
-			NOT = { has_country_flag = sea_state_edicts_flag }
-			ai = no
-		}
-		allow = {
-			always = yes
-		}
-		effect = {
-			set_country_flag = sea_state_edicts_flag
-			custom_tooltip = sea_remove_state_edicts_tt
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	sea_enable_state_edicts = {
-		major = yes
-		potential = {
-			has_country_flag = sea_state_edicts_flag
-			ai = no
-		}
-		allow = {
-			always = yes
-		}
-		effect = {
-			clr_country_flag = sea_state_edicts_flag
-			custom_tooltip = sea_enable_state_edicts_tt
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-}
-
 # Milan Ambrosian to Ambrosian Merchant:
 country_decisions = {
 	ambrosian_to_ambrosian_merchants_decision = {
