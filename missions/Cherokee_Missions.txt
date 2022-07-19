@@ -1,0 +1,559 @@
+# Sealand. Reworked a bit.
+
+che_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = PCH
+			tag = CHE
+			tag = CRE
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	che_principal_people = {
+		icon = mission_che_principal_peole
+		position = 1
+		required_missions = {	}
+		provinces_to_highlight = {	}
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			prestige = 30
+			NOT = { corruption = 1 }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = che_the_seven_clans
+				duration = 7300
+			}
+		}
+	}
+	
+	che_the_council_house = {
+		icon = mission_che_the_council_house
+		position = 2
+		required_missions = { che_principal_people }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_capital = yes
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			num_of_allies = 1
+			capital_scope = {
+				fort_level = 3
+			}
+		}
+		
+		effect = {
+			add_adm_power = 100
+			capital_scope = {
+				add_province_modifier = {
+					name = ne_palisaded_village
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	che_white_government = {
+		icon = mission_iroquois_the_five_nations
+		position = 3
+		required_missions = { che_the_council_house }
+		provinces_to_highlight = {	}
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			stability = 1
+			treasury = 200
+			has_dip_advisor = yes
+		}
+		
+		effect = {
+			add_dip_power = 100
+			define_advisor = {
+				type = treasurer
+				skill = 3
+				religion = totemism
+				culture = ROOT
+				discount = yes
+			}
+		}
+	}
+	
+	che_red_government = {
+		icon = mission_che_red_government
+		position = 4
+		required_missions = { che_white_government }
+		provinces_to_highlight = {	}
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			num_of_generals = 1
+			manpower_percentage = 0.6
+			army_size_percentage = 1
+		}
+		
+		effect = {
+			add_mil_power = 100
+			create_general = {
+				tradition = 75
+			}
+		}
+	}
+}
+
+che_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = PCH
+			tag = CHE
+			tag = CRE
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	lel_discover_cahokia = {
+		icon = discover_cahokia_pic
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				region = mississippi_region
+				province_id = 917
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = PCH
+			owns_core_province = 917
+			917 = { is_state = yes }
+			num_of_owned_provinces_with = {
+				value = 33
+				region = mississippi_region
+			}
+			has_institution = new_world_i
+		}
+		effect = {
+			set_capital = 981
+			917 = {
+				center_of_trade = 2
+				change_trade_goods = cloth
+			}
+			set_country_flag = establish_leleges_flag
+			custom_tooltip = establish_leleges_tooltip
+			change_tag = LEL
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			hidden_effect = { add_republican_tradition = 100 }
+			add_government_reform = leleges_military_government
+			add_army_professionalism = 0.1
+			change_technology_group = western
+			change_unit_type = eastern
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						primary_culture = ROOT
+					}
+					change_culture = spartan
+				}
+			}
+			change_primary_culture = spartan
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = lel_discover_cahokia
+			}
+		}
+	}
+	che_the_cave_country = {
+		icon = mission_che_the_cave_country
+		required_missions = { che_principal_people  }
+		provinces_to_highlight = {
+			province_id = 4879
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = PCH
+			owns_core_province = 4879
+			917 = { is_state = yes }
+			mil_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+		}
+		
+		effect = {
+			set_capital = 981
+			917 = {
+				center_of_trade = 2
+				change_trade_goods = gold
+			}
+			change_tag = CHE
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = che_the_cave_country
+			}
+		}
+	}
+	che_botanical_exports = {
+		icon = mission_che_botanical_exports
+		required_missions = { che_the_cave_country se_agriculture }
+		provinces_to_highlight = {
+			province_id = 1507
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			1507 = { is_strongest_trade_power = ROOT }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = che_black_drink
+				duration = 5475
+			}
+			add_ruler_modifier = {
+				name = "che_effective_remedies"
+				duration = -1
+			}
+		}
+	}
+	
+	che_form_cree = {
+		icon = mission_se_platform_mounds
+		required_missions = { se_along_the_river }
+		provinces_to_highlight = {
+			OR = {
+				region = mississippi_region
+				region = southeast_america_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = PCH
+			mil_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					region = mississippi_region
+					region = southeast_america_region
+				}
+				is_city = yes
+			}
+		}
+		effect = {
+			change_tag = CRE
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = che_form_cree
+			}
+		}
+	}
+	che_thunder_and_lightning = {
+		icon = mission_iroquois_the_great_peacemaker
+		required_missions = { che_red_government che_form_cree }
+		provinces_to_highlight = { }
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			prestige = 75
+			stability = 2
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					NOT = { stability = 3 }
+				}
+				add_stability = 1
+				add_adm_power = 50
+			}
+			else = {
+				add_adm_power = 100
+			}
+			add_country_modifier = {
+				name = che_perfect_stability
+				duration = -1
+			}
+		}
+	}
+}
+che_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = PCH
+			tag = CHE
+			tag = CRE
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	che_the_beloved_woman = {
+		icon = mission_che_the_beloved_woman
+		required_missions = {  }
+		trigger = {
+			OR = {
+				employed_advisor = {
+					is_female = yes
+				}
+				is_female = yes
+				has_female_heir = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = che_mother_clan
+				duration = -1
+			}
+		}
+	}
+	se_agriculture = {
+		icon = mission_ne_agriculture
+		required_missions = {	}
+		provinces_to_highlight = {
+			owned_by = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				all_owned_province = {
+					has_production_building_trigger = yes
+				}
+				amount = 6
+			}
+			total_development = 50
+		}
+		effect = {
+			add_years_of_income = 1
+			add_country_modifier = {
+				name = ne_agricultural_complex #same as NE
+				duration = 7300
+			}
+		}
+	}
+	se_along_the_river = {
+		icon = mission_se_along_the_river
+		required_missions = { se_agriculture }
+		provinces_to_highlight = {
+			OR = {
+				area = mississippi_area
+				area = west_florida_area
+				area = alabama_area
+				area = kentucky_area
+				area = upper_louisiana_area
+				province_id = 924
+			}
+			NOT = { owned_by = ROOT }
+			NOT = { is_core = ROOT }
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			num_of_owned_provinces_with = {
+				value = 15
+				OR = {
+					area = mississippi_area
+					area = west_florida_area
+					area = alabama_area
+					area = kentucky_area
+					area = upper_louisiana_area
+				}
+			}
+			owns_core_province = 924
+		}
+		
+		effect = {
+			924 = { center_of_trade = 1 }
+			if = {
+				limit = {
+					OR = { 
+						has_reform = native_martial_tradition_reform
+						has_reform = native_war_band_reform
+					}
+				}
+				add_country_modifier = {
+					name = "se_our_river"
+					duration = 9125
+				}
+			}
+			else = {
+				add_mil_power = 100
+			}
+		}
+	}
+	che_center_of_trade_1 = {
+		icon = mission_native_dev_capital
+		required_missions = { se_along_the_river }
+		provinces_to_highlight = {
+			province_id = 902
+			NOT = { development = 10 }
+		}
+		trigger = {
+			owns_core_province = 902
+			902 = { development = 10 }
+		}
+		effect = {
+			902 = { center_of_trade = 1 }
+			add_mercantilism = 10
+			add_treasury = 500
+		}
+	}
+	che_center_of_trade_2 = {
+		icon = mission_sio_camp_circles
+		required_missions = { che_center_of_trade_1 }
+		provinces_to_highlight = {
+			province_id = 4916
+			NOT = { development = 10 }
+		}
+		trigger = {
+			owns_core_province = 4916
+			4916 = { development = 10 }
+		}
+		effect = {
+			4916 = { center_of_trade = 1 }
+			add_mercantilism = 10
+			add_treasury = 500
+		}
+	}
+}

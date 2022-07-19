@@ -1,0 +1,273 @@
+# Starts with A, so it would be aboove the generic missions
+sealand_atl_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = CAB
+			tag = ATL
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	atl_fortify_capital = {
+		icon = mission_ne_palisades
+		required_missions = { }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_capital = yes
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			capital_scope = {
+				fort_level = 3
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			capital_scope = {
+				add_province_modifier = {
+					name = ne_palisaded_village
+					duration = -1
+				}
+			}
+		}
+	}
+	atl_colonize_islands = {
+		icon = mission_polynesian_navy_build
+		required_missions = { atl_fortify_capital }
+		provinces_to_highlight = {
+			region = carribeans_region
+			island = yes
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			num_of_owned_provinces_with = {
+				region = carribeans_region
+				island = yes
+				value = 5
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = trader
+				skill = 2
+				discount = yes
+			}
+			add_country_modifier = {
+				name = atl_focus_on_trading_modifier
+				duration = -1
+			}
+		}
+	}
+	atl_own_key_provinces = {
+		icon = mission_secure_the_malabar_coast
+		required_missions = { atl_colonize_islands atl_along_the_coast }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 828
+				province_id = 835
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			owns_core_province = 828
+			owns_core_province = 835
+			828 = {
+				has_great_project = {
+					type = cartagena_de_indias
+					tier = 1
+				}
+			}
+			835 = {
+				has_great_project = {
+					type = panama_canal
+					tier = 1
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+			add_country_modifier = {
+				name = monument_boost
+				duration = 9125
+			}
+		}
+	}
+	atl_build_a_massive_fleet = {
+		icon = crusader_fleet
+		required_missions = { atl_own_key_provinces atl_become_atlantis }
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			navy_size = 35
+			navy_size_percentage = 1
+		}
+		effect = {
+			create_admiral = { tradition = 90 }
+			add_country_modifier = {
+				name = atl_massive_fleet_modifier
+				duration = 7300
+			}
+		}
+	}
+}
+
+sealand_atl_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = CAB
+			tag = ATL
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	atl_center_of_trade_1 = {
+		icon = mission_ne_birch_bark_canoes
+		required_missions = { }
+		provinces_to_highlight = {
+			province_id = 2803
+			NOT = { development = 10 }
+		}
+		trigger = {
+			owns_core_province = 2803
+			2803 = { development = 10 }
+		}
+		effect = {
+			2803 = { center_of_trade = 1 }
+			add_mercantilism = 10
+			add_treasury = 500
+		}
+	}
+	atl_along_the_coast = {
+		icon = mission_pow_powhatan_fleet
+		required_missions = { atl_fortify_capital atl_center_of_trade_1 }
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			num_of_ports = 10
+		}
+		effect = {
+			add_sailors = 1000
+			add_country_modifier = {
+				name = atl_ship_building_modifier
+				duration = 7300
+			}
+		}
+	}
+	atl_become_atlantis = {
+		icon = the_fountain_of_youth
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				region = carribeans_region
+				region = colombia_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = CAB
+			num_of_owned_provinces_with = {
+				value = 27
+				OR = {
+					region = carribeans_region
+					region = colombia_region
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = animism
+						religion = inti
+						religion = nahuatl
+						religion = mesoamerican_religion
+					}
+				}
+				is_religion_reformed = yes
+			}
+			else = { has_institution = new_world_i }
+		}
+		effect = {
+			change_tag = ATL
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			add_government_reform = atlantis_government
+			change_technology_group = western
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						primary_culture = ROOT
+					}
+					change_culture = atlantean
+				}
+			}
+			change_primary_culture = atlantean
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = atl_become_atlantis
+			}
+		}
+	}
+}

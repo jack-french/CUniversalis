@@ -1,0 +1,279 @@
+# Starts with A, so it would be aboove the generic missions
+sealand_kem_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TUA
+			tag = KEM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	kem_gold_focus = {
+		icon = mission_zambezi_gold
+		required_missions = { }
+		provinces_to_highlight = {
+			province_id = 2904
+			NOT = { base_production = 10 }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			owns_core_province = 2904
+			2904 = { base_production = 10 }
+		}
+		effect = {
+			add_stability = 1
+			2904 = {
+				center_of_trade = 1
+			}
+			set_country_flag = por_bandeirantes_flag
+			custom_tooltip = por_bandeirantes_tooltip
+		}
+	}
+	kem_center_of_trade_1 = {
+		icon = mission_ne_birch_bark_canoes
+		required_missions = { kem_gold_focus kem_expand_outwards }
+		provinces_to_highlight = {
+			province_id = 2910
+			NOT = { development = 10 }
+		}
+		trigger = {
+			owns_core_province = 2910
+			2910 = { development = 10 }
+		}
+		effect = {
+			2910 = { center_of_trade = 1 }
+			add_mercantilism = 10
+			add_treasury = 500
+		}
+	}
+	kem_discover_kemet = {
+		icon = mission_oceania_royal_marriage
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				region = brazil_region
+				province_id = 2935 
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = TUA
+			owns_core_province = 2935
+			num_of_owned_provinces_with = {
+				value = 33
+				region = brazil_region
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = animism
+						religion = inti
+						religion = nahuatl
+						religion = mesoamerican_religion
+					}
+				}
+				is_religion_reformed = yes
+			}
+			else = { has_institution = new_world_i }
+		}
+		effect = {
+			change_tag = KEM
+			if = {
+				limit = {
+					NOT = { government = theocracy }
+				}
+				change_government = theocracy
+			}
+			add_government_reform = kemet_government
+			change_technology_group = east_african
+			change_unit_type = sub_saharan
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						primary_culture = ROOT
+					}
+					change_culture = old_egyptian
+				}
+			}
+			change_primary_culture = old_egyptian
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = kem_discover_kemet
+			}
+		}
+	}
+	kem_build_up_army = {
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { kem_discover_kemet }
+		provinces_to_highlight = {
+			owned_by = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				all_owned_province = {
+					has_forcelimit_building_trigger = yes
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			define_advisor = {
+				type = grand_captain
+				skill = 3
+				culture = old_egyptian
+				discount = yes
+			}
+		}
+	}
+}
+sealand_kem_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = TUA
+			tag = KEM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	kem_expand_outwards = {
+		icon = mission_mnd_maj_gaja_madas_oath
+		required_missions = { }
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			num_of_cities = 10
+		}
+		effect = {
+			add_dip_power = 100
+			add_country_modifier = {
+				name = kem_construction_modifier
+				duration = 7300
+			}
+		}
+	}
+	kem_cultivate_land = {
+		icon = mission_pue_irrigation_cannals
+		required_missions = { kem_expand_outwards }
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				all_owned_province = {
+					has_production_building_trigger = yes
+				}
+				amount = 6
+			}
+			total_development = 50
+		}
+		effect = {
+			add_years_of_income = 1
+			add_country_modifier = {
+				name = ne_agricultural_complex
+				duration = 7300
+			}
+		}
+	}
+	kem_center_of_trade_2 = {
+		icon = mission_sio_camp_circles
+		required_missions = { kem_center_of_trade_1 kem_cultivate_land }
+		provinces_to_highlight = {
+			province_id = 2907
+			NOT = { development = 10 }
+		}
+		trigger = {
+			owns_core_province = 2907
+			2907 = { development = 10 }
+		}
+		effect = {
+			2907 = { center_of_trade = 1 }
+			add_mercantilism = 10
+			add_treasury = 500
+		}
+	}
+	kem_found_new_memphis = {
+		icon = mission_rb_seize_alexandria
+		required_missions = { kem_discover_kemet kem_center_of_trade_2 }
+		provinces_to_highlight = {
+			province_id = 2935
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			owns_core_province = 2935
+			2935 = { is_state = yes }
+			total_development = 200
+		}
+		effect = {
+			set_capital = 2935
+			2935 = {
+				change_province_name = "New Memphis"
+				rename_capital = "New Memphis"
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+				center_of_trade = 2
+				change_trade_goods = paper
+			}
+		}
+	}
+}

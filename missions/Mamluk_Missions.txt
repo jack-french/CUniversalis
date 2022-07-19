@@ -808,6 +808,10 @@ sea_mam_missions_3 = {
 				name = "unified_islam"
 				duration = -1
 			}
+			add_country_modifier = {
+				name = "abbasid_governors_modifier"
+				duration = -1
+			}
 			country_event = { id = ideagroups.1 } #Swap Ideas
 			set_country_flag = unified_islam
 			set_global_flag = unified_islam_global
@@ -1120,70 +1124,17 @@ sea_mam_missions_5 = {
 				}
 				ai = no
 			}
-			years_of_income = 1.0
-			manpower = 10
+			any_country = {
+				offensive_war_with = ROOT
+			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = "mesopotamian_mamluks_modifier"
-				duration = -1
-			}
-			add_years_of_income = -1.0
-			add_manpower = -10
-			create_general = { tradition = 60 }
+			#add_country_modifier = {
+			#	name = "mesopotamian_mamluks_modifier"
+			#	duration = -1
+			#}
+			set_country_flag = mesopotamian_mamluks_flag
 			custom_tooltip = mesopotamian_mamluks_tooltip
-			hidden_effect = {
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-				capital_scope = {
-					ROOT = {
-						cavalry = PREV
-					}
-				}
-			}
 		}
 	}
 	mam_subjugate_beyliks = {

@@ -1,0 +1,162 @@
+h_china_all_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {	
+			tag = CSH
+			tag = CXI
+			tag = CYI
+			tag = QIC
+			tag = WUU
+			tag = YUE
+		}
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	
+	china_hengyang_mine = { #Hengyang Mine
+		icon = mission_establish_mint_towns
+		position = 1
+		provinces_to_highlight = {
+			province_id = 5551
+		}
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_core_province = 5551
+		}
+		effect = {
+			if = {
+				limit = {
+					5551 = {
+						NOT = {
+							trade_goods = gold
+						}
+					}
+				}
+				country_event = { id = foffychina.32 } #Hengyang Mine
+			}
+			else = {
+				add_years_of_income = 1
+			}
+		}
+	}	
+}
+
+h_china_all_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {	
+			tag = CSH
+			tag = CXI
+			tag = CYI
+			tag = QIC
+			tag = WUU
+			tag = YUE
+		}
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	
+	h_china_wonders = { #Wonders of China
+		icon = mission_japanese_fort
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1816
+				province_id = 5503
+				province_id = 5504
+				province_id = 680
+				province_id = 726
+				province_id = 667
+				province_id = 684
+				province_id = 662
+				province_id = 5571
+				province_id = 1821
+				province_id = 682
+				province_id = 700
+				province_id = 1829
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			calc_true_if = {
+				all_owned_province = {
+					is_core = ROOT
+					has_province_modifier = h_commandery_province
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "h_china_wonders"
+				duration = 5475
+			}
+		}
+	}	
+
+
+	#foffy_china_faith_question = {
+	#	icon = mission_buddhist_monk_praying
+	#	position = 4
+	#	required_missions = { }
+	#	
+	#	trigger = {
+	#		if = {
+	#			limit = {
+	#				was_player = yes
+	#			}
+	#			ai = no
+	#		}
+	#		OR = {
+	#			calc_true_if = {
+	#				all_owned_province = {
+	#					OR = {
+	#						has_building = cathedral
+	#						has_building = temple
+	#					}
+	#				}
+	#				amount = 20
+	#			}
+	#			calc_true_if = {
+	#				all_owned_province = {
+	#					NOT = { religion = ROOT }
+	#				}
+	#				amount = 15
+	#			}
+	#		}
+	#	}
+	#	effect = {
+	#		country_event = { id = foffy_china.1 }
+	#	}
+	#}
+	
+}

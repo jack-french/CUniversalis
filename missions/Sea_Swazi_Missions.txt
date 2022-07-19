@@ -1,0 +1,4907 @@
+sealand_swz_missions_2_1_empty = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_start_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_1_empty = {
+		icon = mission_have_two_subjects
+		position = 2
+
+		trigger = {
+			mission_completed = swz_start
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_left_1_mission_tt
+				NOT = { mission_completed = swz_middle_1 }
+				NOT = { mission_completed = swz_right_1 }
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 1
+			}
+		}
+		effect = {
+			custom_tooltip = swz_autotax_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_start_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_1 = {
+		icon = mission_have_two_subjects
+		required_missions = { swz_start }
+		position = 2
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_left_1_mission_tt
+				NOT = { mission_completed = swz_middle_1 }
+				NOT = { mission_completed = swz_right_1 }
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 1
+			}
+		}
+		effect = {
+			set_country_flag = swz_left_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_autotax_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_2_2_middle_empty = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_1_flag }
+		NOT = { has_country_flag = swz_middle_1_flag }
+		NOT = { has_country_flag = swz_right_1_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_2_middle_empty = {
+		icon = mission_dominate_trade_in_bengal
+		required_missions = { }
+		position = 3
+
+		trigger = {
+			OR = {
+				mission_completed = swz_middle_1
+				mission_completed = swz_right_1
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			custom_tooltip = swz_tradprod_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_2_middle = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_1_flag }
+		has_country_flag = swz_middle_1_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_2_middle = {
+		icon = mission_dominate_trade_in_bengal
+		required_missions = { swz_middle_1 }
+		position = 3
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_2_middle }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			set_country_flag = swz_left_2_middle_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_tradprod_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_2_right = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_1_flag }
+		has_country_flag = swz_right_1_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_2_right = {
+		icon = mission_dominate_trade_in_bengal
+		required_missions = { swz_right_1 }
+		position = 3
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_2_right }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			set_country_flag = swz_left_2_right_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_tradprod_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_2_3_middle_1_empty = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_2_middle_flag }
+		NOT = { has_country_flag = swz_left_2_right_flag }
+		NOT = { has_country_flag = swz_middle_2_left_flag }
+		NOT = { has_country_flag = swz_middle_2_right_flag }
+		NOT = { has_country_flag = swz_right_2_left_flag }
+		NOT = { has_country_flag = swz_right_2_middle_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_3_middle_1_empty = {
+		icon = mission_arabian_fort
+		required_missions = { }
+		position = 4
+
+		trigger = {
+			OR = {
+				mission_completed = swz_middle_2_left_empty
+				mission_completed = swz_right_2_left_empty
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			custom_tooltip = swz_deve_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_3_middle_1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_2_middle_flag }
+		NOT = { has_country_flag = swz_left_2_right_flag }
+		has_country_flag = swz_middle_2_left_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_3_middle_1 = {
+		icon = mission_arabian_fort
+		required_missions = { swz_middle_2_left }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_3_middle_1 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_left_3_middle_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_deve_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_3_middle_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_2_middle_flag }
+		NOT = { has_country_flag = swz_left_2_right_flag }
+		has_country_flag = swz_middle_2_right_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_3_middle_2 = {
+		icon = mission_arabian_fort
+		required_missions = { swz_middle_2_right }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_3_middle_2 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_left_3_middle_2_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_deve_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_2_3_right_1 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_2_middle_flag }
+		NOT = { has_country_flag = swz_left_2_right_flag }
+		has_country_flag = swz_right_2_left_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_3_right_1 = {
+		icon = mission_arabian_fort
+		required_missions = { swz_right_2_left }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_3_right_1 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_left_3_right_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_deve_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_3_right_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_2_middle_flag }
+		NOT = { has_country_flag = swz_left_2_right_flag }
+		has_country_flag = swz_right_2_middle_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_3_right_2 = {
+		icon = mission_arabian_fort
+		required_missions = { swz_right_2_middle }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_3_right_2 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_left_3_right_2_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_deve_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_2_4_middle_11_empty = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_middle_11_empty = {
+		icon = found_the_vatican_library
+		required_missions = { }
+		position = 5
+
+		trigger = {
+			OR = {
+				mission_completed = swz_middle_3_left_1_empty
+				mission_completed = swz_right_3_left_1_empty
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_4_middle_11 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_middle_3_left_1_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_middle_11 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_middle_3_left_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_middle_11 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_4_middle_12 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_middle_3_left_2_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_middle_12 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_middle_3_left_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_middle_12 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_2_4_middle_21 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_middle_3_right_1_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_middle_21 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_middle_3_right_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_middle_21 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_4_middle_22 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_middle_3_right_2_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_middle_22 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_middle_3_right_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_middle_22 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+
+
+sealand_swz_missions_2_4_right_11 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_right_3_left_1_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_right_11 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_right_3_left_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_right_11 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_4_right_12 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_right_3_left_2_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_right_12 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_right_3_left_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_right_12 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_2_4_right_21 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_right_3_middle_1_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_right_21 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_right_3_middle_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_right_21 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_2_4_right_22 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		has_country_flag = swz_right_3_middle_2_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_left_4_right_22 = {
+		icon = found_the_vatican_library
+		required_missions = { swz_right_3_middle_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_right_22 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_admeff_modifier_tt
+		}
+	}
+}
+###
+sealand_swz_missions_3_0 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_start = {
+		icon = mission_african_soldier
+		required_missions = { }
+		position = 1
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			OR = {
+				NOT = { government = tribal }
+				has_reform = steppe_horde
+			}
+		}
+		effect = {
+			set_country_flag = swz_start_flag
+			add_stability = 1
+			change_innovativeness = 10
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+		}
+	}
+}
+###
+sealand_swz_missions_3_1_empty = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_start_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_1_empty = {
+		icon = mission_polynesian_navy_build
+		required_missions = { }
+		position = 2
+
+		trigger = {
+			mission_completed = swz_start
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_middle_1_mission_tt
+				NOT = { mission_completed = swz_left_1 }
+				NOT = { mission_completed = swz_right_1 }
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 1
+			}
+		}
+		effect = {
+			custom_tooltip = swz_explocolo_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_1 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_start_flag
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_1 = {
+		icon = mission_polynesian_navy_build
+		required_missions = { swz_start }
+		position = 2
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_middle_1_mission_tt
+				NOT = { mission_completed = swz_left_1 }
+				NOT = { mission_completed = swz_right_1 }
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 1
+			}
+		}
+		effect = {
+			set_country_flag = swz_middle_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			set_country_flag = swz_explocolo_modifier_flag
+			hidden_effect = {
+				swap_free_idea_group = yes
+			}
+			clr_country_flag = swz_explocolo_modifier_flag
+			custom_tooltip = swz_explocolo_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_3_2_left_empty = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_1_flag }
+		NOT = { has_country_flag = swz_middle_1_flag }
+		NOT = { has_country_flag = swz_right_1_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_2_left_empty = {
+		icon = mission_grand_bengali_shipyards
+		required_missions = { }
+		position = 3
+
+		trigger = {
+			OR = {
+				mission_completed = swz_left_1
+				mission_completed = swz_right_1
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			custom_tooltip = swz_navtrad_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_2_left = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_1_flag
+		NOT = { has_country_flag = swz_middle_1_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_2_left = {
+		icon = mission_grand_bengali_shipyards
+		required_missions = { swz_left_1 }
+		position = 3
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_2_left }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			set_country_flag = swz_middle_2_left_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_navtrad_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_2_right = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_right_1_flag
+		NOT = { has_country_flag = swz_middle_1_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_2_right = {
+		icon = mission_grand_bengali_shipyards
+		required_missions = { swz_right_1 }
+		position = 3
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_2_right }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			set_country_flag = swz_middle_2_right_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_navtrad_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_3_3_left_1_empty = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_2_middle_flag }
+		NOT = { has_country_flag = swz_left_2_right_flag }
+		NOT = { has_country_flag = swz_middle_2_left_flag }
+		NOT = { has_country_flag = swz_middle_2_right_flag }
+		NOT = { has_country_flag = swz_right_2_left_flag }
+		NOT = { has_country_flag = swz_right_2_middle_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_3_left_1_empty = {
+		icon = mission_arabian_sea_trade
+		required_missions = { }
+		position = 4
+
+		trigger = {
+			OR = {
+				mission_completed = swz_left_2_middle_empty
+				mission_completed = swz_right_2_left_empty
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			custom_tooltip = swz_navmora_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_3_left_1 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_2_middle_flag
+		NOT = { has_country_flag = swz_middle_2_left_flag }
+		NOT = { has_country_flag = swz_middle_2_right_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_3_left_1 = {
+		icon = mission_arabian_sea_trade
+		required_missions = { swz_left_2_middle }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_3_left_1 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_middle_3_left_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_navmora_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_3_left_2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_2_right_flag
+		NOT = { has_country_flag = swz_middle_2_left_flag }
+		NOT = { has_country_flag = swz_middle_2_right_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_3_left_2 = {
+		icon = mission_arabian_sea_trade
+		required_missions = { swz_left_2_right }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_3_left_2 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_middle_3_left_2_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_navmora_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_3_3_right_1 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_right_2_left_flag
+		NOT = { has_country_flag = swz_middle_2_left_flag }
+		NOT = { has_country_flag = swz_middle_2_right_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_3_right_1 = {
+		icon = mission_arabian_sea_trade
+		required_missions = { swz_right_2_left }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_3_right_1 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_middle_3_right_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_navmora_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_3_right_2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_right_2_middle_flag
+		NOT = { has_country_flag = swz_middle_2_left_flag }
+		NOT = { has_country_flag = swz_middle_2_right_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_3_right_2 = {
+		icon = mission_arabian_sea_trade
+		required_missions = { swz_right_2_middle }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_3_right_2 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_middle_3_right_2_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_navmora_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_3_4_left_11_empty = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_left_11_empty = {
+		icon = mission_african_trade_post
+		required_missions = { }
+		position = 5
+
+		trigger = {
+			OR = {
+				mission_completed = swz_left_3_middle_1_empty
+				mission_completed = swz_right_3_left_1_empty
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_4_left_11 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_middle_1_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_left_11 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_left_3_middle_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_left_11 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_4_left_12 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_middle_2_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_left_12 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_left_3_middle_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_left_12 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_3_4_left_21 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_right_1_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_left_21 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_left_3_right_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_left_21 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_4_left_2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_right_2_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_left_22 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_left_3_right_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_right_4_left_22 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+
+
+sealand_swz_missions_3_4_right_11 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_right_3_left_1_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_right_11 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_right_3_left_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_right_11 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_4_right_12 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_right_3_left_2_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_right_12 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_right_3_left_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_right_12 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_3_4_right_21 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_right_3_middle_1_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_right_21 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_right_3_middle_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_right_21 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_3_4_right_22 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_right_3_middle_2_flag
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_middle_4_right_22 = {
+		icon = mission_african_trade_post
+		required_missions = { swz_right_3_middle_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_right_22 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_coast_modifier_tt
+		}
+	}
+}
+###
+sealand_swz_missions_4_1_empty = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_start_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_1_empty = {
+		icon = mission_conquer_benin
+		required_missions = { }
+		position = 2
+
+		trigger = {
+			mission_completed = swz_start
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_right_1_mission_tt
+				NOT = { mission_completed = swz_left_1 }
+				NOT = { mission_completed = swz_middle_1 }
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 1
+			}
+		}
+		effect = {
+			custom_tooltip = swz_wtaxattr_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_1 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_start_flag 
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_1 = {
+		icon = mission_conquer_benin
+		required_missions = { swz_start }
+		position = 2
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_right_1_mission_tt
+				NOT = { mission_completed = swz_left_1 }
+				NOT = { mission_completed = swz_middle_1 }
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 1
+			}
+		}
+		effect = {
+			set_country_flag = swz_right_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_wtaxattr_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_4_2_left_empty = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_1_flag }
+		NOT = { has_country_flag = swz_middle_1_flag }
+		NOT = { has_country_flag = swz_right_1_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_2_left_empty = {
+		icon = mission_invade_kanem
+		required_missions = { }
+		position = 3
+
+		trigger = {
+			OR = {
+				mission_completed = swz_left_1
+				mission_completed = swz_middle_1
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			custom_tooltip = swz_profdril_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_2_left = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_1_flag
+		NOT = { has_country_flag = swz_right_1_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_2_left = {
+		icon = mission_invade_kanem
+		required_missions = { swz_left_1 }
+		position = 3
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_2_left }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			set_country_flag = swz_right_2_left_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_profdril_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_2_middle = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_middle_1_flag
+		NOT = { has_country_flag = swz_right_1_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_2_middle = {
+		icon = mission_invade_kanem
+		required_missions = { swz_middle_1 }
+		position = 3
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_2_middle }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 2
+			}
+		}
+		effect = {
+			set_country_flag = swz_right_2_middle_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_profdril_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_4_3_left_1_empty = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_2_middle_flag }
+		NOT = { has_country_flag = swz_left_2_right_flag }
+		NOT = { has_country_flag = swz_middle_2_left_flag }
+		NOT = { has_country_flag = swz_middle_2_right_flag }
+		NOT = { has_country_flag = swz_right_2_left_flag }
+		NOT = { has_country_flag = swz_right_2_middle_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_3_left_1_empty = {
+		icon = mission_control_unrest
+		required_missions = { }
+		position = 4
+
+		trigger = {
+			OR = {
+				mission_completed = swz_left_2_middle_empty
+				mission_completed = swz_middle_2_left_empty
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			custom_tooltip = swz_armmora_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_3_left_1 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_2_middle_flag
+		NOT = { has_country_flag = swz_right_2_left_flag }
+		NOT = { has_country_flag = swz_right_2_middle_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_3_left_1 = {
+		icon = mission_control_unrest
+		required_missions = { swz_left_2_middle }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_3_left_1 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_right_3_left_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_armmora_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_3_left_2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_2_right_flag
+		NOT = { has_country_flag = swz_right_2_left_flag }
+		NOT = { has_country_flag = swz_right_2_middle_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_3_left_2 = {
+		icon = mission_control_unrest
+		required_missions = { swz_left_2_right }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_3_left_2 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_right_3_left_2_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_armmora_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_4_3_middle_1 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_middle_2_left_flag
+		NOT = { has_country_flag = swz_right_2_left_flag }
+		NOT = { has_country_flag = swz_right_2_middle_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_3_middle_1 = {
+		icon = mission_control_unrest
+		required_missions = { swz_middle_2_left }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_3_middle_1 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_right_3_middle_1_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_armmora_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_3_middle_2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_middle_2_right_flag
+		NOT = { has_country_flag = swz_right_2_left_flag }
+		NOT = { has_country_flag = swz_right_2_middle_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_3_middle_2 = {
+		icon = mission_control_unrest
+		required_missions = { swz_middle_2_right }
+		position = 4
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_3_middle_2 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			set_country_flag = swz_right_3_middle_2_flag
+			hidden_effect = {
+				swap_non_generic_missions = yes
+			}
+			custom_tooltip = swz_armmora_modifier_tt
+		}
+	}
+}
+#
+sealand_swz_missions_4_4_left_11_empty = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { has_country_flag = swz_left_3_middle_1_flag }
+		NOT = { has_country_flag = swz_left_3_middle_2_flag }
+		NOT = { has_country_flag = swz_left_3_right_1_flag }
+		NOT = { has_country_flag = swz_left_3_right_2_flag }
+		NOT = { has_country_flag = swz_middle_3_left_1_flag }
+		NOT = { has_country_flag = swz_middle_3_left_2_flag }
+		NOT = { has_country_flag = swz_middle_3_right_1_flag }
+		NOT = { has_country_flag = swz_middle_3_right_2_flag }
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_left_11_empty = {
+		icon = mission_spoils_of_war
+		required_missions = { }
+		position = 5
+
+		trigger = {
+			OR = {
+				mission_completed = swz_left_3_middle_1_empty
+				mission_completed = swz_middle_3_left_1_empty
+			}
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_4_left_11 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_middle_1_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_left_11 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_left_3_middle_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_left_11 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_4_left_12 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_middle_2_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_left_12 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_left_3_middle_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_left_12 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_4_4_left_21 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_right_1_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_left_21 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_left_3_right_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_left_21 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_4_left_22 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_left_3_right_2_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_left_22 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_left_3_right_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_middle_4_left_22 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+
+
+sealand_swz_missions_4_4_middle_11 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_middle_3_left_1_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_middle_11 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_middle_3_left_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_middle_11 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_4_middle_12 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_middle_3_left_2_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_middle_12 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_middle_3_left_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_middle_12 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+
+sealand_swz_missions_4_4_middle_21 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_middle_3_right_1_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_middle_21 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_middle_3_right_1 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_middle_21 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+sealand_swz_missions_4_4_middle_22 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		has_country_flag = swz_middle_3_right_2_flag
+		NOT = { has_country_flag = swz_right_3_left_1_flag }
+		NOT = { has_country_flag = swz_right_3_left_2_flag }
+		NOT = { has_country_flag = swz_right_3_middle_1_flag }
+		NOT = { has_country_flag = swz_right_3_middle_2_flag }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_right_4_middle_22 = {
+		icon = mission_kon_conquer_ksj
+		required_missions = { swz_middle_3_right_2 }
+		position = 5
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = { mission_completed = swz_left_4_middle_22 }
+			calc_true_if = {
+				custom_trigger_tooltip = {
+					tooltip = has_full_idea_groups
+				}
+				hidden_trigger = {
+					full_idea_group = innovativeness_ideas
+					full_idea_group = religious_ideas
+					full_idea_group = economic_ideas
+					full_idea_group = expansion_ideas
+					full_idea_group = administrative_ideas
+					full_idea_group = humanist_ideas
+					full_idea_group = spy_ideas
+					full_idea_group = diplomatic_ideas
+					full_idea_group = trade_ideas
+					full_idea_group = exploration_ideas
+					full_idea_group = maritime_ideas
+					full_idea_group = influence_ideas
+					full_idea_group = aristocracy_ideas
+					full_idea_group = plutocracy_ideas
+					full_idea_group = horde_gov_ideas
+					full_idea_group = theocracy_gov_ideas
+					full_idea_group = indigenous_ideas
+					full_idea_group = offensive_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = quantity_ideas
+					full_idea_group = naval_ideas
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			custom_tooltip = swz_disc_modifier_tt
+		}
+	}
+}
+
+############################
+sealand_swz_missions_left = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_follow_the_sunset = {
+		icon = mission_che_the_cave_country
+		required_missions = { }
+		position = 1
+
+		provinces_to_highlight = {
+			OR = {
+				area = transvaal_area
+				area = highveld_area
+				area = dragenberg_area
+				province_id = 4782
+			}
+			is_empty = no
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			transvaal_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			highveld_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			dragenberg_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			4782 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			change_government_reform_progress = 20
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = 600
+				target = ZIM
+			}
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = 600
+				target = RZW
+			}
+			west_limpopo_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			dragenberg_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	swz_exploit_zimbabwe_downfall = {
+		icon = mission_mnd_maj_subjugate_makassar
+		required_missions = { swz_follow_the_sunset }
+		position = 3
+
+		provinces_to_highlight = {
+			OR = {
+				area = butua_area
+				area = zimbabwe_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			butua_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zimbabwe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			change_government_reform_progress = 30
+			add_country_modifier = {
+				name = swz_exploit_zimbabwe_downfall_modifier 
+				duration = -1
+			}
+			makgadikgadi_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+			katanga_plateau_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+			okavango_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	swz_tame_the_steppes = {
+		icon = mission_mal_subjugate_zaf
+		required_missions = { swz_exploit_zimbabwe_downfall }
+		position = 5
+
+		provinces_to_highlight = {
+			OR = {
+				area = makgadikgadi_area
+				area = katanga_plateau_area
+				area = okavango_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			makgadikgadi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			katanga_plateau_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			okavango_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = swz_tame_the_steppes_flag
+			custom_tooltip = swz_tame_the_steppes_tooltip
+			#add_temporary_colonist = {
+			#	duration = 18250
+			#}
+		}
+	}
+	swz_invest_in_gold = {
+		icon = mission_zambezi_gold
+		required_missions = { swz_tame_the_steppes }
+		position = 6
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4783
+				province_id = 1184
+				province_id = 1185
+				province_id = 1188
+				province_id = 4987
+				
+			}
+			OR = {
+				NOT = { base_production = 10 }
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			4783 = {
+				owned_by = ROOT
+				base_production = 10
+			}
+			1184 = {
+				owned_by = ROOT
+				base_production = 10
+			}
+			1185 = {
+				owned_by = ROOT
+				base_production = 10
+			}
+			1188 = {
+				owned_by = ROOT
+				base_production = 10
+			}
+			4987 = {
+				owned_by = ROOT
+				base_production = 10
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = swz_invest_in_gold_modifier
+				duration = 10950
+			}
+			4783 = {
+				change_trade_goods = gold
+			}
+			unlock_cult = jewish_cult
+			custom_tooltip = swz_jewish_cult_tt
+		}
+	}
+	swz_discover_europeans = {
+		icon = peace_in_europe
+		required_missions = { swz_invest_in_gold }
+		position = 7
+		
+		provinces_to_highlight = {
+			continent = europe
+			has_discovered = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_discover_europeans_tt
+				europe = {
+					has_discovered = ROOT
+				}
+			}
+			calc_true_if = {
+				amount = 3
+				custom_trigger_tooltip = {
+					tooltip = swz_discover_europeans_ttt
+					all_known_country = {
+						capital_scope = { continent = europe }
+						alliance_with = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			unlock_cult = christianity_cult
+			custom_tooltip = swz_christianity_cult_tt
+		}
+	}
+	swz_colonize_new_africa = {
+		icon = mission_pow_the_laughing_king
+		required_missions = { swz_discover_europeans }
+		position = 8
+
+		provinces_to_highlight = {
+			OR = {
+				continent = south_america
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				continent = south_america
+				is_city = yes
+			}
+		}
+		effect = {
+			unlock_cult = south_central_american_cult
+			custom_tooltip = swz_south_central_american_cult_tt
+		}
+	}
+}
+sealand_swz_missions_left_middle = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_control_zambezi_charter = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { swz_tame_the_steppes }
+		position = 6
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4106
+				province_id = 4040
+				province_id = 1191
+				province_id = 1184
+				AND = {
+					NOT = { is_strongest_trade_power = ROOT }
+					province_id = 1191
+				}
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {	
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			treasury = 2700
+			1191 = {
+				is_strongest_trade_power = ROOT
+			}
+			4106 = {
+				owned_by = ROOT 
+			}
+			4040 = {
+				owned_by = ROOT 
+			}
+			1191 = {
+				owned_by = ROOT 
+			}
+			1184 = {
+				owned_by = ROOT 
+			}
+		}
+		effect = {
+			add_treasury = -2700
+			add_country_modifier = {
+				name = swz_control_zambezi_charter_modifier
+				duration = -1
+			}
+			4106 = {
+				add_province_modifier = {
+					name = swz_control_zambezi_charter_province_modifier
+					duration = -1
+				}
+			}
+			4040 = {
+				add_province_modifier = {
+					name = swz_control_zambezi_charter_province_modifier
+					duration = -1
+				}
+			}
+			1191 = {
+				add_province_modifier = {
+					name = swz_control_zambezi_charter_province_modifier
+					duration = -1
+				}
+			}
+			1184 = {
+				add_province_modifier = {
+					name = swz_control_zambezi_charter_province_modifier
+					duration = -1
+				}
+			}
+			trade_company_zambezi = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+sealand_swz_missions_middle = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_become_an_empire = {
+		icon = mission_empire
+		required_missions = { swz_control_zambezi_charter swz_secure_swahili_region }
+		position = 7
+
+		provinces_to_highlight = {
+			OR = {
+				area = mombasa_area
+				area = central_swahili_coast_area
+				area = mozambique_area
+				area = quelimane_area
+				#area = sakalava_area 
+				#area = madagascar_highlands_area
+				#area = betsimasaraka_area
+				#area = southern_madagascar
+				trade_company_region = trade_company_zambezi
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_empty = no
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			mombasa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_swahili_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mozambique_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			quelimane_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			#sakalava_area = {
+			#	type = all
+			#	country_or_non_sovereign_subject_holds = ROOT
+			#}
+			#madagascar_highlands_area = {
+			#	type = all
+			#	country_or_non_sovereign_subject_holds = ROOT
+			#}
+			#betsimasaraka_area = {
+			#	type = all
+			#	country_or_non_sovereign_subject_holds = ROOT
+			#}
+			#southern_madagascar = {
+			#	type = all
+			#	country_or_non_sovereign_subject_holds = ROOT
+			#}
+			trade_company_zambezi = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			add_prestige = 100
+			add_adm_power = 200
+			add_dip_power = 200
+			add_mil_power = 200
+			country_event = { id = swazi_election_government.2 }
+			set_government_rank = 3
+		}
+	}
+}
+sealand_swz_missions_right_middle = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_secure_swahili_region = {
+		icon = mission_unite_home_region
+		required_missions = { swz_aggressive_swahili_trading }
+		position = 6
+
+		provinces_to_highlight = {
+			OR = {
+				area = uticulo_makuana_area
+				area = ruvuma_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			uticulo_makuana_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ruvuma_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = swz_secure_swahili_region_modifier
+				duration = -1
+			}
+			1183 = { add_siberian_construction = 10 }
+			east_africa_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+sealand_swz_missions_right = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = SWZ
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	swz_journey_to_coast = {
+		icon = claim_the_borderlands
+		required_missions = { }
+		position = 1
+
+		provinces_to_highlight = {
+			area = limpopo_area
+			NOT = { owned_by = ROOT }
+			is_empty = no
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			limpopo_area = {
+				OR = {
+					owned_by = ROOT
+					is_empty = yes
+				}
+				type = all
+			}
+		}
+		effect = {
+			change_government_reform_progress = 15
+			4783 = {
+				add_base_tax = 1
+				add_base_production = 2
+				add_base_manpower = 1
+			}
+			quelimane_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			east_limpopo_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			limpopo_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			xhosa_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+					is_city = yes
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	swz_expand_coastline = {
+		icon = end_genoese_competition
+		required_missions = { swz_journey_to_coast }
+		position = 3
+
+		provinces_to_highlight = {
+			OR = {
+				area = quelimane_area
+				area = east_limpopo_area
+			}
+			is_empty = no
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			quelimane_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			east_limpopo_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+		}
+		effect = {
+			change_government_reform_progress = 35
+			mozambique_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+			central_swahili_coast_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	swz_aggressive_swahili_trading = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { swz_expand_coastline }
+		position = 5
+
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4049
+				province_id = 1195
+				province_id = 788
+				area = central_swahili_coast_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			4049 = { country_or_non_sovereign_subject_holds = ROOT }
+			1195 = { country_or_non_sovereign_subject_holds = ROOT }
+			788 = { country_or_non_sovereign_subject_holds = ROOT }
+			central_swahili_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = swz_aggressive_swahili_trading_modifier 
+				duration = 9125
+			}
+			unlock_cult = islam_cult
+			custom_tooltip = swz_islam_cult_tt
+			uticulo_makuana_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+			ruvuma_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+			sakalava_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	swz_across_the_coast = {
+		icon = mission_retake_ceuta
+		required_missions = { swz_aggressive_swahili_trading }
+		position = 6
+
+		provinces_to_highlight = {
+			OR = {
+				area = sakalava_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			sakalava_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			4020 = {
+				add_siberian_construction = 10
+			}
+			madagascar_highlands_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+			betsimasaraka_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+			southern_madagascar = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	swz_control_madagascar = {
+		icon = mission_early_game_buildings
+		required_missions = { swz_across_the_coast }
+		position = 7
+
+		provinces_to_highlight = {
+			OR = {
+				area = madagascar_highlands_area
+				area = betsimasaraka_area
+				area = southern_madagascar
+				province_id = 1193
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			1193 = { owned_by = ROOT }
+			madagascar_highlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			betsimasaraka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			southern_madagascar = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = swz_control_madagascar_modifier
+				duration = 7300
+			}
+			unlock_cult = dharmic_cult
+			custom_tooltip = swz_dharmic_cult_tt
+			1193 = {
+				add_unit_construction = {
+					type = heavy_ship
+					amount = 10
+					speed = 0.33
+					cost = 0
+				}
+			}
+		}
+	}
+	swz_past_edge_of_the_world = {
+		icon = mission_look_west
+		required_missions = { swz_control_madagascar }
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				region = north_china_region
+				region = south_china_region
+			}
+			has_discovered = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = swz_past_edge_of_the_world_tt
+				north_china_region = {
+					has_discovered = ROOT
+				}
+				south_china_region = {
+					has_discovered = ROOT
+				}
+			}
+		}
+		effect = {
+			unlock_cult = buddhism_cult
+			custom_tooltip = swz_buddhism_cult_tt
+			set_country_flag = por_bandeirantes_flag
+			custom_tooltip = por_bandeirantes_tooltip
+		}
+	}
+}

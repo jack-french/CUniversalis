@@ -1,0 +1,1028 @@
+h_wuu_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_wuu_hangzhou_trade = { #Hangzhou Trade
+		icon = mission_trade_with_cathay
+		required_missions = { china_wuu_hanghzou_bay }
+		position = 4
+        provinces_to_highlight = {
+			province_id = 684 #Hangzhou
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_core_province = 684
+			684 = {
+				trade_share = {
+					country = ROOT
+					share = 40
+				}
+			}
+			trade_income_percentage = 0.35
+		}
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Dharma"
+					684 = {
+						NOT = { province_has_center_of_trade_of_level = 2 }
+					}
+				}
+				684 = {
+					add_center_of_trade_level = 1
+				}
+				else = {
+					add_treasury = 200
+				}
+			}
+			add_country_modifier = {
+				name = "china_wuu_monopolize_hangzhou_trade"
+				duration = 7300
+			}
+		}
+	}
+}
+
+h_wuu_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+	
+	h_wuu_starter = { #Rise of Wu
+		icon = mission_manchu_warrior
+		position = 1
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "h_warlord_startmod"
+				duration = 3650
+			}
+			country_event = { id = foffychina.5 } #Ruler Event
+			if = {
+				limit = {
+					5637 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5637 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = {
+					5559 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5559 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = {
+					5500 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5500 = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	china_wuu_conquer_min = { #Conquer Min
+		icon = mission_conquer_50_development
+		required_missions = { h_wuu_starter }
+        provinces_to_highlight = {
+        	OR = {
+				province_id = 5559 #Yingtan
+				province_id = 5500 #Minhow
+				province_id = 5637 #Ningde
+        	}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_or_non_sovereign_subject_of = 5559
+			owns_or_non_sovereign_subject_of = 5500
+			owns_or_non_sovereign_subject_of = 5637
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_wuu_min_conquered"
+				duration = 7300
+			}
+			every_province = {
+				limit = {
+					NOT = { is_core = root }
+					NOT = { is_permanent_claim = root }
+					culture = wu
+				}
+				add_permanent_claim = root
+			}
+		}
+	}
+
+	china_wuu_hanghzou_bay = { #Hangzhou Bay
+		icon = mission_market_place_with_asian_traders
+		required_missions = { china_wuu_conquer_min }
+        provinces_to_highlight = {
+			OR = {
+				province_id = 684 #Hangzhou
+				province_id = 5563 #Shanghai
+				province_id = 5564 #Huzhou
+				province_id = 5556 #Ningbo
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_or_non_sovereign_subject_of = 684
+			owns_or_non_sovereign_subject_of = 5563
+			owns_or_non_sovereign_subject_of = 5564
+			owns_or_non_sovereign_subject_of = 5556
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_wuu_hanghzou_bay_held"
+				duration = 7300
+			}
+			if = {
+				limit = {
+					5542 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5542 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			add_dip_power = 50
+		}
+	}
+
+	china_wuu_yangtze_delta = { #Yangtze Delta
+		icon = mission_early_game_buildings
+		required_missions = { china_wuu_hanghzou_bay }
+        provinces_to_highlight = {
+			OR = {
+				province_id = 1822 #Suzhou
+				province_id = 5542 #Nantong
+			}
+			OR = {
+				NOT = {	owned_by = ROOT }
+				NOT = {	is_core = ROOT }
+			}
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_core_province = 1822
+			owns_core_province = 5542
+		}
+		effect = {
+			huai-an_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			1822 = {
+				rename_capital = "Gusu"
+				change_province_name = "Gusu"
+				add_base_manpower = 1
+				add_base_tax = 1
+				add_base_production = 1
+			}
+		}
+	}
+}
+
+h_wuu_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_wuu_control_jinhua = { #Control Jinhua
+		icon = mission_asian_city
+		required_missions = { china_wuu_conquer_min }
+		position = 3
+        provinces_to_highlight = {
+			province_id = 5560 #Jinhua
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_or_non_sovereign_subject_of = 5560
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = NNG
+					NNG = {
+						is_subject = no
+					}
+				}
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					months = 300
+					target = NNG
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						683 = {
+							NOT = {
+								is_permanent_claim = ROOT
+								is_core = ROOT
+							}
+						}
+					}
+					683 = {
+						add_permanent_claim = ROOT
+					}
+				}
+				if = {
+					limit = {
+						5555 = {
+							NOT = {
+								is_permanent_claim = ROOT
+								is_core = ROOT
+							}
+						}
+					}
+					5555 = {
+						add_permanent_claim = ROOT
+					}
+				}
+				if = {
+					limit = {
+						5652 = {
+							NOT = {
+								is_permanent_claim = ROOT
+								is_core = ROOT
+							}
+						}
+					}
+					5652 = {
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	china_wuu_vassalize_ning = { #Subjugate Ning
+		icon = mission_kowtow
+		position = 4
+		required_missions = { china_wuu_control_jinhua }
+        provinces_to_highlight = {
+			OR = {
+				owner = {
+					tag = NNG
+					NOT = { is_subject_of = ROOT }
+				}
+				AND = {
+					province_id = 683 #Nanchang
+					province_id = 5652 #Xinijan
+					province_id = 5555 #Pangasinan
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			} 
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			if = {
+				limit = {
+					exists = NNG
+				}
+				NNG = { is_subject_of = ROOT }
+			}
+			else = {
+				owns_or_non_sovereign_subject_of = 683
+				owns_or_non_sovereign_subject_of = 5652
+				owns_or_non_sovereign_subject_of = 5555
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = NNG
+					NNG = { is_subject_of = root }
+				}
+				add_historical_friend = NNG
+				NNG = { 
+					add_liberty_desire = -25 
+					add_historical_friend = ROOT
+				}
+			}
+			if = {
+				limit = {
+					1829 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				1829 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			add_country_modifier = {
+				name = "china_wuu_ning_vassalized"
+				duration = 5475
+			}
+		}
+	}
+
+}
+
+h_wuu_tier2_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_wuu_battle_fleet = { #Wu Battle Fleet
+		icon = mission_invade_island
+		required_missions = { china_wuu_hangzhou_trade }
+		position = 5
+        provinces_to_highlight = {
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			num_of_heavy_ship = 25
+		}
+		effect = {
+			738 = {
+				if = {
+					limit = {
+						OR = {
+							is_empty = yes
+							AND = {
+								controlled_by = ROOT
+								is_colony = yes
+							}
+						}
+					}
+					add_siberian_construction = 100
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_base_production = 1
+					add_base_manpower = 2
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2154 = {
+				if = {
+					limit = {
+						OR = {
+							is_empty = yes
+							AND = {
+								is_colony = yes
+								controlled_by = ROOT
+							}
+						}
+					}
+					add_siberian_construction = 100
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_base_production = 1
+					add_base_manpower = 2
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2155 = {
+				if = {
+					limit = {
+						OR = {
+							is_empty = yes
+							AND = {
+								is_colony = yes
+								controlled_by = ROOT
+							}
+						}
+					}
+					add_siberian_construction = 100
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_base_production = 1
+					add_base_manpower = 2
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			add_ruler_modifier = {
+				name = "china_wuu_sea_dragon_king"
+				duration = -1
+			}
+		}
+	}
+}
+
+h_wuu_tier2_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_wuu_huaian_push = { #Push to Huai-an
+		icon = mission_chinese_general_riding
+		required_missions = { china_wuu_yangtze_delta }
+		position = 5
+        provinces_to_highlight = {
+			OR = {
+				area = huai-an_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {	
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			huai-an_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_wuu_pushed_north"
+				duration = 3650
+			}
+			if = {
+				limit = {
+					685 = {
+						OR = {
+							has_building = marketplace
+							has_building = trade_depot
+							has_building = stock_exchange
+						}
+					}
+				}
+				add_treasury = 50
+			}
+			else = {
+				685 = {
+					add_building = marketplace
+				}
+			}		
+		}
+	}
+}
+
+h_wuu_tier2_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_wuu_xiamen_commandery = { #Xiamen Commandery
+		icon = mission_asian_cannon
+		position = 5
+		required_missions = { china_wuu_vassalize_ning }
+        provinces_to_highlight = {
+			province_id = 1829 #Xiamen
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_or_non_sovereign_subject_of = 1829
+		}
+		effect = {
+			ganzhou_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					5515 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5515 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			add_dip_power = 25
+			add_adm_power = 25
+			add_mil_power = 25
+		}
+	}
+
+	china_wuu_secure_southern_border = { #Secure South
+		icon = mission_great_wall
+		required_missions = { china_wuu_xiamen_commandery }
+        provinces_to_highlight = {
+			OR = {
+				area = ganzhou_area
+				province_id = 5515
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {	
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			ganzhou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_or_non_sovereign_subject_of = 5515
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_wuu_pushed_south"
+				duration = 3650
+			}
+			if = {
+				limit = {
+					5636 = {
+						fort_level = 2
+					}
+				}
+				add_treasury = 100
+			}
+			else = {
+				5636 = {
+					add_building = fort_15th
+				}
+			}	
+		}
+	}
+}
+
+h_wuu_tier2_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+		
+	china_wuu_kilns_of_jingdezhen = { #Kilns of Jingdezhen
+		icon = porcelain_from_meissen
+		position = 5
+		required_missions = { china_wuu_vassalize_ning }
+        provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 683 #Nanchang
+					OR = {
+						local_autonomy = 50
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						unrest = 1
+						devastation = 1
+					}
+				}
+			}
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			production_leader = {
+				trade_goods = chinaware
+			}
+			683 = {
+				NOT = { unrest = 1 }
+				NOT = { devastation = 1 }
+				owned_by = ROOT
+				is_core = ROOT
+				NOT = { local_autonomy = 50 }
+			}
+		}
+		effect = {
+			683 = {
+				add_province_modifier = {
+					name = jingdezhen_kilns
+					duration = -1
+				}
+				add_base_production = 4
+			}
+		}
+	}
+}
+
+h_wuu_tier3_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	h_wuu_admiralty = { #Armada of Wu
+		icon = mission_establish_high_seas_navy
+		required_missions = { china_wuu_battle_fleet }
+		position = 6
+        provinces_to_highlight = {
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			num_of_heavy_ship = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = "h_wu_armada"
+				duration = -1
+			}
+		}
+	}
+}
+
+h_wuu_tier3_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = WUU
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_wuu_kingdom_of_wu = { #Kingdom of Wuyue
+		icon = mission_empire
+		required_missions = { china_wuu_huaian_push china_wuu_secure_southern_border }
+		position = 7
+        provinces_to_highlight = {
+			OR = {
+				area = huai-an_area
+				area = jiangsu_area
+				area = zhejiang_area
+				area = hangzhou_area
+				area = ganzhou_area
+				culture = chimin
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			monthly_income = 200
+			legitimacy = 90
+			huai-an_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jiangsu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zhejiang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hangzhou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ganzhou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = china_wuu_own_min_culture_tt
+				NOT = {
+					any_province = {
+						culture = chimin
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			}
+			has_institution = global_trade
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_wuu_wuyue_kingdom"
+				duration = -1
+			}
+			country_event = { id = foffy_china.2 } #Wang Shouren event
+		}
+	}
+
+	china_wuu_tianyi_ge = { #Renovate Tianyi Ge
+		icon = mission_court_education
+		required_missions = { china_wuu_kingdom_of_wu }
+        provinces_to_highlight = {
+        	province_id = 5556
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			5556 = {
+				owned_by = ROOT
+				development = 30
+				has_building = university
+				NOT = { num_of_buildings_in_province = 6 }
+			}
+			has_adm_advisor_3 = yes
+		}
+		effect = {
+			5556 = {
+				add_province_modifier = {
+					name = china_wuu_tianyi_ge_library
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+#h_wuu_tier3_4 = {
+#	slot = 4
+#	generic = no
+#	ai = yes
+#	potential = {
+#		tag = WUU
+#		OR = {
+#			has_reform = h_reform_warlord_3
+#			has_reform = h_reform_warlord_4
+#		}
+#	}
+#	has_country_shield = yes
+#
+#	china_wuu_yuenu = { #Yuenu
+#		icon = mission_establish_high_seas_navy
+#		required_missions = { china_wuu_kingdom_of_wu }
+#		position = 8
+#       provinces_to_highlight = {	
+#       }
+#		trigger = {
+#			if = {
+#				limit = {
+#					was_player = yes
+#				}
+#				ai = no
+#			}
+#		}
+#		effect = {
+#		}
+#	}
+#}

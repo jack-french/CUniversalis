@@ -1,0 +1,1039 @@
+h_yue_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_invade_heinan = { #Invade Heinan
+		icon = mission_sea_battles
+		position = 3
+		required_missions = { china_yue_conquer_yanshan }
+        provinces_to_highlight = {
+			OR = {
+				owner = {
+					tag = LIC
+					NOT = { is_subject_of = ROOT }
+				}
+				AND = {
+					area = hainan_area
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			} 
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			if = {
+				limit = {
+					exists = LIC
+				}
+				LIC = { is_subject_of = ROOT }
+			}
+			else = {
+				hainan_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_yue_secured_heinan"
+				duration = 5475
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { owns_core_province = 5528 }
+						5528 = {
+							OR = {
+								has_building = shipyard
+								has_building = grand_shipyard
+							}
+						}
+					}
+				}
+				add_treasury = 50
+			}
+			else = {
+				5528 = {
+					add_building = shipyard
+				}
+			}
+			if = {	
+				limit = {
+					exists = LIC
+					LIC = { is_subject_of = root }
+				}
+				add_historical_friend = LIC
+				LIC = { 
+					add_liberty_desire = -25 
+					add_historical_friend = ROOT
+				}
+			}
+		}
+	}
+
+	china_yue_construct_trade_fleet = { #Construct Trade Fleet
+		icon = mission_galleys_in_port
+		position = 5
+		required_missions = { china_yue_invade_heinan }
+        provinces_to_highlight = {
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			num_of_light_ship = 25
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_yue_trade_fleet"
+				duration = 5475
+			}
+			if = {
+				limit = {
+					666 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				666 = {
+					add_unit_construction = {
+						type = heavy_ship
+						amount = 3
+						speed = 1
+						cost = 0
+					}
+				}
+			}
+			else = {
+				add_treasury = 100
+			}
+		}
+	}
+}
+
+h_yue_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+	
+	h_yue_starter = { #Rise of Yue
+		icon = mission_manchu_warrior
+		position = 1
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "h_warlord_startmod"
+				duration = 3650
+			}
+			yanshan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			country_event = { id = foffychina.6 } #Ruler Event
+		}
+	}
+
+	china_yue_conquer_yanshan = { #Conquer Yanshan
+		icon = mission_assemble_an_army
+		required_missions = { h_yue_starter }
+        provinces_to_highlight = {
+			OR = {
+				area = yanshan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			yanshan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_yue_yanshan_conquered"
+				duration = 7300
+			}
+			every_province = {
+				limit = {
+					NOT = { is_core = root }
+					NOT = { is_permanent_claim = root }
+					culture = cantonese
+				}
+				add_permanent_claim = root
+			}
+			if = {
+				limit = {
+					exists = LIC
+					LIC = {
+						is_subject = no
+					}
+				}
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					months = 300
+					target = LIC
+				}
+			}
+		}
+	}
+
+	china_yue_conquer_canton = { #Conquer Canton
+		icon = mission_trade_with_cathay
+		required_missions = { china_yue_conquer_yanshan }
+        provinces_to_highlight = {
+			OR = {
+				area = guangzhou_area
+			}
+			NOT = { owned_by = ROOT }
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			calc_true_if = {
+				#desc = build_manufactories_mission_tooltip
+				all_owned_province = {
+					OR = {
+						area = guangzhou_area
+					}
+				}
+				amount = 3
+			}
+		}
+		effect = {
+			if = {
+				limit ={
+					668 = {
+						owned_by = ROOT
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Dharma"
+						668 = {
+							NOT = { province_has_center_of_trade_of_level = 2 }
+						}
+					}
+					668 = {
+						add_center_of_trade_level = 1
+					}
+					else = {
+						add_treasury = 200
+					}
+				}
+				668 = {
+					add_base_manpower = 2
+					add_base_tax = -2
+				}
+			}
+			else_if = {
+				limit ={
+					665 = {
+						owned_by = ROOT
+					}
+				}
+				665 = {
+					add_base_manpower = 2
+					add_base_tax = -2
+				}
+			}
+			else_if = {
+				limit ={
+					5531 = {
+						owned_by = ROOT
+					}
+				}
+				5531 = {
+					add_base_manpower = 2
+					add_base_tax = -2
+				}
+			}
+			if = {
+				limit = {
+					5562 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5562 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = {
+					5530 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5530 = {
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = {
+					5635 = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+				}
+				5635 = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	china_yue_destroy_huai = { #Destroy Huai
+		icon = mission_chinese_general_riding
+		required_missions = { china_yue_conquer_canton }
+        provinces_to_highlight = {
+			OR = {
+				province_id = 5635 #Heyuan
+				province_id = 5562 #Shaoguan
+				province_id = 5530 #Huizhou
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_or_non_sovereign_subject_of = 5635
+			owns_or_non_sovereign_subject_of = 5562
+			owns_or_non_sovereign_subject_of = 5530
+		}
+		effect = {
+			5635 = {
+				if = {
+					limit = { 
+						NOT = { fort_level = 2 }
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_building = fort_15th
+				}
+			}
+			jiangxi_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			changsha_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_mil_power = 50
+		}
+	}
+
+}
+
+h_yue_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_western_frontier = { #Toward the West
+		icon = mission_asian_city
+		position = 3
+		required_missions = { china_yue_conquer_yanshan }
+        provinces_to_highlight = {
+			province_id = 5516 #Qinzhou
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			owns_core_province = 5516
+		}
+		effect = {
+			red_river_delta_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			5516 = {
+				if = {
+					limit = { 
+						NOT = { fort_level = 2 }
+					}
+					add_building = fort_15th
+				}
+			}
+		}
+	}
+
+	china_yue_red_river_delta = { #Red River Delta
+		icon = mission_conquer_50_development
+		required_missions = { china_yue_western_frontier }
+        provinces_to_highlight = {
+			OR = {
+				area = red_river_delta_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_yue_controlling_red_river_delta"
+				duration = 7300
+			}
+			every_province = {
+				limit = {
+					NOT = { is_core = root }
+					NOT = { is_permanent_claim = root }
+					culture = vietnamese
+				}
+				add_permanent_claim = root
+			}
+		}
+	}
+
+}
+
+h_yue_tier2_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_prepare_battle_fleet = { #Prepare Battle Fleet
+		icon = mission_invade_island
+		position = 6
+		required_missions = { china_yue_construct_trade_fleet }
+        provinces_to_highlight = {
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			num_of_heavy_ship = 25
+		}
+		effect = {
+			738 = {
+				if = {
+					limit = {
+						OR = {
+							is_empty = yes
+							AND = {
+								controlled_by = ROOT
+								is_colony = yes
+							}
+						}
+					}
+					add_siberian_construction = 100
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_base_production = 1
+					add_base_manpower = 2
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2154 = {
+				if = {
+					limit = {
+						OR = {
+							is_empty = yes
+							AND = {
+								is_colony = yes
+								controlled_by = ROOT
+							}
+						}
+					}
+					add_siberian_construction = 100
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_base_production = 1
+					add_base_manpower = 2
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2155 = {
+				if = {
+					limit = {
+						OR = {
+							is_empty = yes
+							AND = {
+								is_colony = yes
+								controlled_by = ROOT
+							}
+						}
+					}
+					add_siberian_construction = 100
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					add_base_production = 1
+					add_base_manpower = 2
+				}
+				else_if = {
+					limit = {
+						is_city = yes
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+h_yue_tier2_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_develop_guangzhou = { #Devevlop Guangzhou
+		icon = mission_establish_mint_towns
+		position = 5
+		required_missions = { china_yue_destroy_huai }
+        provinces_to_highlight = {
+			OR = {
+				area = guangzhou_area
+			}
+			OR = {
+				NOT = { owned_by = root }
+				NOT = { development = 20 }
+				NOT = { num_of_buildings_in_province = 2 }
+			} 
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			guangzhou_area = {
+				type = all
+				owned_by = ROOT
+				development = 20
+				num_of_buildings_in_province = 2
+			}
+		}
+		effect = {
+			667 = {
+				rename_capital = "Panyu"
+				change_province_name = "Panyu"
+				add_base_manpower = 1
+				add_base_tax = 1
+				add_base_production = 1
+			}
+			add_country_modifier = {
+				name = "china_guangzhou_developed"
+				duration = 3650
+			}
+		}
+	}
+
+	china_yue_nanyue_legacy = { #Nanyue Legacy
+		icon = mission_unite_home_region
+		required_missions = { china_yue_develop_guangzhou china_yue_seize_vietnam china_yue_construct_trade_fleet }
+        provinces_to_highlight = {
+			OR = {
+				area = guangdong_area
+				area = guangxi_area
+				area = guangzhou_area
+				area = yanshan_area
+				area = jiangxi_area
+				area = changsha_area
+				area = red_river_delta_area
+				area = vietnam_area
+				area = hainan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			guangzhou_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yanshan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			jiangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			changsha_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			red_river_delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vietnam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hainan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			legitimacy = 90
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_prestige = 25
+			add_country_modifier = {
+				name = "china_yue_nanyue_legacy_restored"
+				duration = -1
+			}
+		}
+	}
+}
+
+h_yue_tier2_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_seize_vietnam = { #Seize Vietnam
+		icon = french_indochina
+		position = 5
+		required_missions = { china_yue_red_river_delta }
+        provinces_to_highlight = {
+			culture = vietnamese
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = china_yue_seize_vietnam_tooltip
+				NOT = {
+					any_province = {
+						culture = vietnamese
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			}
+		}
+		effect = {
+			add_accepted_culture = vietnamese
+			every_owned_province = {
+				limit = {
+					culture = vietnamese
+				}
+				add_province_modifier = {
+					name = "china_yue_vietnam_control"
+					duration = 5475
+				}
+			}
+		}
+	}
+
+	china_yue_mahayana_faith = { #Mahayana Faith
+		icon = mission_hands_praying
+		required_missions = { china_yue_seize_vietnam }
+        provinces_to_highlight = {
+			culture = vietnamese
+			NOT = { religion = ROOT }
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_2
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = china_yue_convert_vietnam_tooltip
+					NOT = {
+						any_province = {
+							culture = vietnamese
+							NOT = { religion = ROOT }
+						}
+					}
+				}
+				has_harmonized_with = mahayana
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_harmonized_with = mahayana
+				}
+				add_country_modifier = {
+					name = "china_yue_vietnam_harmonized"
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "china_yue_vietnam_converted"
+					duration = 9125
+				}
+			}
+			add_prestige = 15
+		}
+	}
+
+}
+
+h_yue_tier3_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_chinese_armada = { #Chinese Armada
+		icon = mission_junk_boat
+		position = 7
+		required_missions = { china_yue_prepare_battle_fleet }
+        provinces_to_highlight = {
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			num_of_heavy_ship = 50
+			naval_forcelimit = 150
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_yue_chinese_armada"
+				duration = -1
+			}
+			add_dip_power = 25
+			add_adm_power = 25
+			add_mil_power = 25
+		}
+	}
+}
+
+h_yue_tier3_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_metallurgy = { #Yue Metallurgy
+		icon = mission_asian_cannon
+		position = 7
+		required_missions = { china_yue_nanyue_legacy }
+        provinces_to_highlight = {
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			army_size_percentage = 1
+			army_size = 200
+			trading_bonus = {
+				trade_goods = iron
+				value = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "china_yue_metalworking"
+				duration = -1
+			}
+			add_army_tradition = 15
+		}
+	}
+}
+
+h_yue_tier3_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUE
+		OR = {
+			has_reform = h_reform_warlord_1
+			has_reform = h_reform_warlord_2
+			has_reform = h_reform_warlord_3
+			has_reform = h_reform_warlord_4
+			has_reform = celestial_empire
+		}
+	}
+	has_country_shield = yes
+
+	china_yue_zhao_mo_tomb = { #Tomb of Zhao Mo
+		icon = mission_temple_patronage
+		position = 7
+		required_missions = { china_yue_nanyue_legacy }
+        provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 5635
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { development = 30 }
+						NOT = { base_manpower = 15 }
+					}
+				}
+			}
+        }
+		trigger = {
+			OR = {
+				has_reform = h_reform_warlord_3
+				has_reform = h_reform_warlord_4
+				has_reform = celestial_empire
+			}
+			if = {
+				limit = {
+					was_player = yes
+				}
+				ai = no
+			}
+			5635 = {
+				owned_by = ROOT
+				is_core = ROOT
+				development = 30
+				base_manpower = 15
+			}
+			army_tradition = 90
+		}
+		effect = {
+			5635 = {
+				add_province_modifier = {
+					name = "china_yue_tomb_of_zhao_mo"
+					duration = -1
+				}
+			}
+			add_prestige = 10
+		}
+	}
+}

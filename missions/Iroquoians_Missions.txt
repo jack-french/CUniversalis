@@ -1,0 +1,925 @@
+# Sealand. Reworked a bit.
+
+atw_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ATW
+			tag = SHA
+			tag = IRO
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	atw_center_of_trade_1 = {
+		icon = mission_native_dev_capital
+		required_missions = { }
+		provinces_to_highlight = {
+			province_id = 911
+			NOT = { development = 10 }
+		}
+		trigger = {
+			owns_core_province = 911
+			911 = { development = 10 }
+		}
+		effect = {
+			911 = { center_of_trade = 1 }
+			add_mercantilism = 10
+			add_treasury = 500
+		}
+	}
+	atw_center_of_trade_2 = {
+		icon = mission_iroquois_haudenosaunee
+		required_missions = { atw_center_of_trade_1 }
+		provinces_to_highlight = {
+			province_id = 2526
+			NOT = { development = 10 }
+		}
+		trigger = {
+			owns_core_province = 2526
+			2526 = { development = 10 }
+		}
+		effect = {
+			2526 = { center_of_trade = 1 }
+			add_mercantilism = 10
+			add_treasury = 500
+		}
+	}
+	
+	atw_form_shawnee = {
+		icon = mission_che_principal_peole
+		required_missions = { atw_center_of_trade_2 }
+		provinces_to_highlight = {
+			region = great_lakes_region
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = ATW
+			mil_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 15
+				region = great_lakes_region
+				is_city = yes
+			}
+		}
+		effect = {
+			change_tag = SHA
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = atw_form_shawnee
+			}
+		}
+	}
+	atw_war_with_foreigners = {
+		icon = mission_impaled_soldies
+		required_missions = { atw_form_shawnee }
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			NOT = {
+				current_age = age_of_discovery
+			}
+			any_country = {
+				OR = {
+					capital_scope = {
+						NOT = { continent = north_america }
+					}
+					is_colonial_nation = yes
+				}
+				war_with = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 125
+			add_country_modifier = {
+				name = "iroquois_door_closed"
+				duration = 7300
+			}
+		}
+	}
+}
+
+atw_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ATW
+			tag = SHA
+			tag = IRO
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	iroquois_the_three_sisters = {
+		icon = mission_iroquois_the_three_sisters
+		required_missions = { }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { unrest = 2 }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			stability = 3
+			NOT = { average_unrest = 2 }
+			NOT = { corruption = 1 }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "iroquois_blessing_of_the_sisters"
+				duration = 7300
+			}
+			northeast_america_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_unrest = -1
+			}
+		}
+	}
+	iroquois_the_great_peacemaker = {
+		icon = mission_iroquois_the_great_peacemaker
+		required_missions = { iroquois_the_three_sisters }
+		provinces_to_highlight = {
+			owned_by = ROOT
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				all_owned_province = {
+					has_tax_building_trigger = yes
+				}
+				amount = 5
+			}
+			all_owned_province = {
+				NOT = { local_autonomy = 1 }
+			}
+		}
+		effect = {
+			add_dip_power = 50
+			if = {
+				limit = { 
+					NOT = { is_year = 1500 }
+				}
+				define_advisor = {
+					type = theologian
+					name = "The Great Peacemaker"
+					discount = yes
+					culture = iroquois
+					religion = totemism
+					skill = 3
+				}
+			}
+			else = {
+				define_advisor = {
+					type = commandant
+					name = "Hiawatha"
+					discount = yes
+					culture = iroquois
+					religion = totemism
+					skill = 2
+				}
+			}
+		}
+	}
+	iroquois_food_surplus = {
+		icon = mission_iroquois_food_surplus
+		required_missions = { atw_center_of_trade_2 iroquois_the_great_peacemaker }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			trade_goods = grain
+			NOT = { has_building = workshop }
+			NOT = { has_building = native_storehouse }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			calc_true_if = {
+				all_owned_province = {
+					has_trade_building_trigger = yes
+				}
+				amount = 3
+			}
+			#trade_goods_produced_amount = {
+			#	trade_goods = grain
+			#	amount = 5
+			#}
+		}
+		effect = {
+			add_mercantilism = 10
+			add_country_modifier = {
+				name = atw_extra_merchant_modifier
+				duration = -1
+			}
+		}
+	}
+	
+	iroquois_the_five_nations = {
+		icon = mission_iroquois_the_five_nations
+		required_missions = { atw_form_shawnee }
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			grown_by_development = 500
+			prestige = 50
+			power_projection = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = "iroquois_one_nation"
+				duration = 9125
+			}
+		}
+	}
+}
+
+atw_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ATW
+			tag = SHA
+			tag = IRO
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	vin_discover_inukshuk = {
+		icon = discover_inukshuk_pic
+		required_missions = { }
+
+		provinces_to_highlight = {
+			OR = {
+				region = hudson_bay_region
+				region = canada_region
+				province_id = 1003
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = ATW
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			owns_core_province = 1003
+			num_of_owned_provinces_with = {
+				value = 33
+				OR = {
+					region = hudson_bay_region
+					region = canada_region
+				}
+			}
+			has_institution = new_world_i
+		}
+		effect = {
+			1003 = {
+				center_of_trade = 2
+				change_trade_goods = wine
+			}
+			set_country_flag = establish_vinland_flag
+			custom_tooltip = establish_vinland_tooltip
+			change_tag = VIN
+			if = {
+				limit = {
+					NOT = { government = republic }
+				}
+				change_government = republic
+			}
+			hidden_effect = { add_republican_tradition = 100 }
+			add_government_reform = vinland_government
+			change_technology_group = western
+			change_unit_type = western
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						primary_culture = ROOT
+					}
+					change_culture = scanian
+				}
+			}
+			change_primary_culture = scanian
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = vin_discover_inukshuk
+			}
+		}
+	}
+	vin_leif_legacy = {
+		icon = mission_rb_conquer_the_highlands
+		required_missions = { vin_discover_inukshuk }
+
+		provinces_to_highlight = {
+			province_id = 981
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			owns_or_non_sovereign_subject_of = 981
+			total_development = 100
+		}
+		effect = {
+			981 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+				center_of_trade = 1
+			}
+		}
+	}
+	vin_pray_for_old_gods = {
+		icon = mission_hands_praying
+		required_missions = { vin_leif_legacy }
+
+		provinces_to_highlight = {
+			OR = {
+				region = hudson_bay_region
+				region = canada_region
+				region = northeast_america_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = VIN
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 35
+				OR = {
+					region = hudson_bay_region 
+					region = canada_region 
+					region = northeast_america_region 
+				}
+				is_city = yes
+			}
+		}
+		effect = {
+			custom_tooltip = pray_for_old_gods_1_tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						religion = catholic
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = catholic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = catholic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = catholic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = catholic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = catholic_rebels
+							size = 3
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						religion = protestant
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = protestant_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = protestant_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = protestant_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = protestant_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = protestant_rebels
+							size = 3
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						religion = reformed
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = reformed_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = reformed_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = reformed_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = reformed_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = reformed_rebels
+							size = 3
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						religion = anglican
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = anglican_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = anglican_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = anglican_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = anglican_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = anglican_rebels
+							size = 3
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						religion = hussite
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = hussite_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = hussite_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = hussite_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = hussite_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = hussite_rebels
+							size = 3
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						religion = orthodox
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = orthodox_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = orthodox_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = orthodox_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = orthodox_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = orthodox_rebels
+							size = 3
+						}
+					}
+				}
+				else = {
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = heretic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = heretic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = heretic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = heretic_rebels
+							size = 3
+						}
+					}
+					random_owned_province = {
+						limit = {
+							continent = north_america
+							is_core = ROOT
+						}
+						spawn_rebels = {
+							type = heretic_rebels
+							size = 3
+						}
+					}
+				}
+			}
+			change_religion = norse_pagan_reformed
+			custom_tooltip = pray_for_old_gods_2_tooltip
+			hidden_effect = {
+				every_province = {
+					limit = {
+						is_core = ROOT
+						continent = north_america
+					}
+					change_religion = norse_pagan_reformed
+				}
+			}
+			add_stability = -1
+		}
+	}
+	atw_form_iroquois = {
+		icon = mission_che_principal_peole
+		required_missions = { iroquois_food_surplus }
+		provinces_to_highlight = {
+			area = iroquoisia_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			tag = ATW
+			mil_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			iroquoisia_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = IRO
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			hidden_effect = {
+				complete_mission = atw_form_iroquois
+			}
+		}
+	}
+	show_military_strength = {
+		icon = mission_native_build_army_mission
+		required_missions = { atw_form_iroquois }
+		
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						was_player = yes
+						is_colonial_nation = yes
+					}
+				}
+				ai = no
+			}
+			army_size_percentage = 1
+			army_size = 48
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = morale_boost
+				duration = 7300
+			}
+		}
+	}
+}
