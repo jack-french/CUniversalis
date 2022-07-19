@@ -1,0 +1,6 @@
+# Africans
+#CHW = "countries/Bachwezi.txt" # Removed because PDX made their own KIT
+AFR = "countries/Toto.txt"
+
+# Sassanid:
+SAS = "countries/SasanidEmpire.txt" # Not fully direct copy-paste.
