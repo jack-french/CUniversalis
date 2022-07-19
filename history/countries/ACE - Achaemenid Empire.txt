@@ -1,0 +1,7 @@
+# Sealand
+government = monarchy
+add_government_reform = sasanian_government
+primary_culture = persian
+religion = zoroastrian
+technology_group = muslim
+capital = 419 # Ctesiphon

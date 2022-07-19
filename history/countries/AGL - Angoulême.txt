@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = cosmopolitan_french
+religion = catholic
+technology_group = western
+capital = 4387	# Angoumois
+
+1444.6.28 = {
+	monarch = {
+		name = "Jean"
+		monarch_name = "Jean I"
+		dynasty = "de Valois"
+		birth_date = 1399.6.28
+		death_date = 1467.4.30
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+}

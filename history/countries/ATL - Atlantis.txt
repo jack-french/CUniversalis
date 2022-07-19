@@ -1,0 +1,8 @@
+# Sealand
+government = republic
+add_government_reform = atlantis_government
+government_rank = 2
+primary_culture = atlantean
+religion = animism # hellenic_pagan
+technology_group = western
+capital = 2807

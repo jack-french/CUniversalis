@@ -1,0 +1,47 @@
+government = monarchy
+add_government_reform = h_reform_warlord_1
+government_rank = 1
+technology_group = chinese
+religion = confucianism
+primary_culture = xibei
+capital = 698 # Fengyuan
+historical_rival = CXI
+historical_rival = CYI
+historical_rival = WUU
+historical_rival = YUE
+historical_rival = QIC
+add_country_modifier = {
+	name = "mjl_privateer_efficiency_debuff"
+	duration = -1
+}
+
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = -0.502
+}
+
+1444.1.31 = {
+	monarch = {
+		name = "Li"
+		dynasty = "Shun"
+		birth_date = 1421.1.1 #Age - 23
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = immortal_personality
+	add_ruler_personality = inspiring_leader_personality
+	queen = {
+		country_of_origin = CSG
+		name = "Gao Guying"
+		dynasty = "Shun"
+		birth_date = 1421.1.1
+		death_date = 1468.2.13
+		female = yes
+		adm = 2
+		dip = 3
+		mil = 5
+	}
+}

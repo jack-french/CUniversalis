@@ -1,0 +1,18 @@
+# Sealand
+government = tribal
+add_government_reform = tribal_despotism
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+religion = sunni
+primary_culture = bilala
+add_accepted_culture = kanuri
+capital = 5051
+historical_rival = YAO
+historical_rival = KBO
+religious_school = maliki_school
+add_country_modifier = {
+	name = "mjl_privateer_efficiency_debuff"
+	duration = -1
+}

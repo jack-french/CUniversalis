@@ -1,0 +1,11 @@
+# Sealand
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = english
+add_accepted_culture = cosmopolitan_french
+add_accepted_culture = normand
+add_accepted_culture = gascon
+add_accepted_culture = occitain
+religion = catholic
+technology_group = western
+capital = 178 # Anjou

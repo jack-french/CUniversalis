@@ -1,0 +1,10 @@
+# Sealand
+government = monarchy
+add_government_reform = mamluk_government
+primary_culture = al_misr_arabic
+add_accepted_culture = al_suryah_arabic
+religion = sunni
+technology_group = muslim
+historical_rival = TUR
+historical_rival = TIM
+capital = 361 # Cairo

@@ -1,0 +1,9 @@
+# Sealand
+government = monarchy
+add_government_reform = iqta
+technology_group = muslim
+religion = sunni
+primary_culture = sicilian
+add_accepted_culture = tunisian
+capital = 125	# Palermo
+religious_school = maliki_school
