@@ -1,0 +1,106 @@
+# [range_from, range_to[
+
+defender_of_faith_1 = {
+	level = 1
+    range_from = 35
+    modifier = {
+		missionaries = 1
+		missionary_maintenance_cost = -0.1
+		land_morale = 0.05
+		naval_morale = 0.05
+		papal_influence = 1
+		church_power_modifier = 0.1
+		monthly_fervor_increase = 1
+    }
+	same_faith_modifier = {
+		# Applies also on the DoF
+		missionary_maintenance_cost = -0.1
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+defender_of_faith_2 = {
+	level = 2
+    range_from = 15
+    range_to = 35
+    modifier = {
+		missionaries = 1
+		missionary_maintenance_cost = -0.15
+		land_morale = 0.05
+		prestige = 0.5
+		war_exhaustion = -0.03
+		papal_influence = 1
+		church_power_modifier = 0.1
+		monthly_fervor_increase = 1
+    }
+	same_faith_modifier = {
+		# Applies also on the DoF
+		missionary_maintenance_cost = -0.1
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+defender_of_faith_3 = {
+	level = 3
+    range_from = 5
+    range_to = 15
+    modifier = {
+		missionaries = 1
+		missionary_maintenance_cost = -0.2
+		land_morale = 0.05
+		naval_morale = 0.05
+		prestige = 1
+		war_exhaustion = -0.03
+		papal_influence = 1
+		church_power_modifier = 0.1
+		monthly_fervor_increase = 1
+    }
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+defender_of_faith_4 = {
+	level = 4
+    range_from = 3
+    range_to = 5
+    modifier = {
+		missionaries = 1
+		missionary_maintenance_cost = -0.2
+		land_morale = 0.05
+		naval_morale = 0.05
+		prestige = 1
+		war_exhaustion = -0.03
+		papal_influence = 1
+		church_power_modifier = 0.1
+		monthly_fervor_increase = 1
+		manpower_in_true_faith_provinces = 0.1
+    }
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+defender_of_faith_5 = {
+	level = 5
+    range_to = 3
+    modifier = {
+		missionaries = 2
+		missionary_maintenance_cost = -0.2
+		land_morale = 0.05
+		naval_morale = 0.05
+		prestige = 1
+		war_exhaustion = -0.03
+		manpower_in_true_faith_provinces = 0.2
+		papal_influence = 1
+		church_power_modifier = 0.1
+		monthly_fervor_increase = 1
+    }
+	ai_will_do = {
+		factor = 0
+	}
+}
