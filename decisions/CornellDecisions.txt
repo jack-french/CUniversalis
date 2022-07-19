@@ -340,24 +340,6 @@ country_decisions = {
 			set_ruler_flag = mjl_ruler_educated_flag
 		}
 	}
-	#ARUMBA LINES
-	dev_sum_clicks_decision = {
-		major = yes
-		potential = {
-			always = yes
-		}
-		ai_will_do = {
-			factor = 0
-		}
-		allow = {
-			custom_trigger_tooltip = {
-				tooltip = dev_sum_clicks_decision_tooltip
-				always = no
-			}
-		}
-		effect = {
-		}
-	}
 	# PR decision to check if critical events have fired
 	PR_critical_events = {
 		major = yes
