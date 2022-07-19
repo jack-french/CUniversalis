@@ -1,0 +1,1886 @@
+gc_tunis_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		OR = {
+			tag = TUN
+			tag = ETS
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gc_tun_art_religion = {
+		icon = mission_patronize_art_and_religion
+		required_missions = { }
+		
+		trigger = {
+			at_war_with_religious_enemy = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "spa_rb_morale"
+				duration = 7300
+			}
+			add_prestige = 20
+			if = {
+				limit = {
+					religion_group = muslim
+					piety = 1
+				}
+				add_piety = 1
+			}
+			else_if = {
+				limit = {
+					religion_group = muslim
+					NOT = { piety = 1 }
+				}
+				add_piety = -1
+			}
+		}
+	}
+	sea_westward_expansion = {
+		icon = mission_new_world_power
+		required_missions = { gc_tun_fleet }
+		
+		trigger = {
+			army_size_percentage = 1
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = tunis_siege_modifier
+				duration = 7300
+			}
+			northern_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			marrekesh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tafilalt_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	gc_tun_tribes = {
+		icon = mission_pacify_the_berbers
+		required_missions = { }
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4567
+				province_id = 2449
+				province_id = 2448
+				area = north_saharan_area
+				area = ouled_nail_area
+				area = tripolitania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tun_tribes_tooltip
+				fezzan_area = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						is_empty = yes
+					}
+				}
+			}
+			north_saharan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tun_berbers_pacified"
+				duration = 7300
+			}
+		}
+	}
+	gc_tun_sahara = {
+		icon = mission_traverse_the_sahara
+		required_missions = { gc_tun_tribes }
+		
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 341
+					NOT = { is_strongest_trade_power = ROOT }
+				}
+				AND = {
+					province_id = 354
+					OR = {
+						NOT = {	owned_by = ROOT }
+						NOT = { has_building = marketplace }
+					}
+				}
+				AND = {
+					province_id = 2448
+					NOT = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			354 = {
+				has_building = marketplace
+				owned_by = ROOT
+			}
+			owns_core_province = 2448
+			341 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					2474 = {
+						is_empty = yes
+					}
+				}
+				2474 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			if = {
+				limit = {
+					2475 = {
+						is_empty = yes
+					}
+				}
+				2475 = {
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			azbin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT	
+				add_permanent_claim = ROOT
+			}
+			east_azbin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT
+				add_permanent_claim = ROOT				
+			}
+			katsina_area = {
+				discover_country = ROOT
+			}
+		}
+	}
+	gc_tun_air = {
+		icon = mission_conquer_air
+		required_missions = { gc_tun_sahara }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = azbin_area
+				area = east_azbin_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			azbin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_azbin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "conquest_of_air"
+				duration = 7300
+			}
+			katsina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kanem_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT
+				add_permanent_claim = ROOT
+			}
+			bornu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				discover_country = ROOT
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	gc_tun_kanem = {
+		icon = mission_conquer_kanem_bornu
+		required_missions = { gc_tun_air }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = katsina_area
+				area = kanem_area
+				area = bornu_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		
+		trigger = {
+			katsina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kanem_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bornu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tun_conquest_of_kanem"
+				duration = 7300
+			}
+		}
+	}
+}
+
+sealand_tunis_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		OR = {
+			tag = TUN
+			tag = ETS
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	mjl_tun_dev_copper = {
+		icon = mission_jawal_silver_mine
+		required_missions = {  }
+		position = 1
+		
+		provinces_to_highlight = {
+			province_id = 2454
+		}
+		
+		trigger = {	
+			2454 = {
+				owned_by = ROOT
+				is_core = ROOT
+				development = 15
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "mjl_tun_income_boost"
+				duration = -1
+			}
+		}
+	}
+
+	gc_tun_genoa = {
+		icon = mission_raid_on_genoa
+		required_missions = { gc_tun_fleet }
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 101
+		}
+		
+		trigger = {
+			101 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					AND = {
+						controlled_by = ROOT
+						NOT = { owned_by = ROOT }
+						devastation = 25
+					}
+				}
+			}
+		}
+		effect = {
+			add_treasury = 500
+			add_yearly_sailors = 5
+			add_mil_power = 75
+		}
+	}
+	sea_western_mediterranean_islands = {
+		icon = mission_combat_barbary_piracy
+		required_missions = { gc_tun_med_islands }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = corsica_area
+				area = baleares_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			corsica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			baleares_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ets_mediterranean_pirates_modifier
+				duration = -1
+			}
+		}
+	}
+	gc_tun_valencia = {
+		icon = mission_raid_on_valencia
+		required_missions = { sea_western_mediterranean_islands }
+		
+		provinces_to_highlight = {
+			province_id = 220
+		}
+		
+		trigger = {
+			220 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					AND = {
+						controlled_by = ROOT
+						NOT = { owned_by = ROOT }
+						devastation = 25
+					}
+				}
+			}
+		}
+		effect = {
+			add_treasury = 500
+			add_yearly_sailors = 5
+			add_mil_power = 75
+		}
+	}
+}
+sealand_tunis_emirate_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		tag = ETS
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	sea_control_genova = {
+		icon = secure_the_republic
+		required_missions = { sea_consolidate_south_italy }
+		position = 5
+		
+		provinces_to_highlight = {
+			province_id = 101
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			101 = { owned_by = ROOT }
+		}
+		effect = {
+			add_mercantilism = 10
+			101 = {
+				add_unit_construction = {
+					type = light_ship
+					amount = 10
+					speed = 0.5
+					cost = 0
+				}
+			}
+			if = {
+				limit = {
+					101 = { NOT = { province_has_center_of_trade_of_level = 3 } }
+				}
+				101 = { add_center_of_trade_level = 3 }
+			}
+			101 = {
+				add_province_modifier = {
+					name = ets_trade_control_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+gc_tunis_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		OR = {
+			tag = TUN
+			tag = ETS
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	gc_tun_fleet = {
+		icon = mission_construct_a_corsair_fleet
+		required_missions = { }
+		
+		trigger = {
+			naval_forcelimit = 20
+			num_of_light_ship = 5
+		}
+		effect = {
+			sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			corsica_sardinia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			baleares_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			barbary_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			algiers_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hautes_plaines_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	gc_tun_med_islands = {
+		icon = mission_seize_the_isles
+		required_missions = { gc_tun_fleet }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+				area = corsica_sardinia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tun_med_conquest"
+				duration = 7300
+			}
+			baleares_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			corsica_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2983 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			121 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			4734 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			122 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1933 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	sea_emirate_of_two_sicilies = {
+		icon = emirate_of_two_sicilies_pic
+		required_missions = { gc_tun_med_islands }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = calabria_area
+				province_id = 2983
+				province_id = 121
+				province_id = 4734
+				province_id = 122
+				province_id = 1933
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			NOT = { tag = FAT }
+			NOT = { tag = BYS }
+			calabria_area = {
+				type = all
+				owned_by = ROOT
+			}
+			2983 = {
+				owned_by = ROOT
+			}
+			121 = {
+				owned_by = ROOT
+			}
+			4734 = {
+				owned_by = ROOT
+			}
+			122 = {
+				owned_by = ROOT
+			}
+			1933 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = ETS
+			add_prestige = 10
+			hidden_effect = { complete_mission = sea_emirate_of_two_sicilies }
+			swap_non_generic_missions = yes
+			set_country_flag = formed_tuscany_flag
+			set_country_flag = formed_two_sicilies_flag
+			set_country_flag = formed_tunisia_flag 
+			if = {
+				limit = { 
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			naples_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			apulia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			lazio_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			central_italy_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			163 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			320 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			321 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+sealand_tunis_emirate_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		tag = ETS
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	sea_dominate_western_mediterranean_trade = {
+		icon = end_genoese_competition
+		required_missions = { sea_western_mediterranean_islands sea_emirate_of_two_sicilies }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 201
+				province_id = 213
+				province_id = 2988
+				province_id = 220
+				province_id = 338
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			201 = {
+				owned_by = ROOT
+			}
+			213 = {
+				owned_by = ROOT
+			}
+			2988 = {
+				owned_by = ROOT
+			}
+			220 = {
+				owned_by = ROOT
+			}
+			338 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			hidden_effect = {
+				every_province = {
+					limit = {
+						sea_zone = {
+							area = western_mediterrenean_area
+						}
+					}
+					add_claim = ROOT
+				}
+			}
+			custom_tooltip = sea_dominate_western_mediterranean_trade_tt
+		}
+	}
+	sea_control_firenze = {
+		icon = conquer_tuscany
+		required_missions = { sea_consolidate_south_italy }
+		
+		provinces_to_highlight = {
+			province_id = 116
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			116 = { owned_by = ROOT }
+		}
+		effect = {
+			change_innovativeness = 20
+			add_mercantilism = 10
+			if = {
+				limit = {
+					116  = { NOT = { province_has_center_of_trade_of_level = 3 } }
+				}
+				116 = { add_center_of_trade_level = 3 }
+			}
+			add_country_modifier = {
+				name = ets_medici_bank_modifier
+				duration = -1
+			}
+			116 = {
+				add_province_modifier = {
+					name = ets_trade_control_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+	sea_unite_italy = {
+		icon = complete_the_risorgimento
+		required_missions = { sea_control_genova sea_control_firenze sea_control_venezia }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = venetia_area
+				area = lombardy_area
+				area = piedmont_area
+				area = tuscany_area
+				area = liguria_area
+				area = emilia_romagna_area
+				area = po_valley_area
+				area = carinthia_area
+				area = torino_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					area = venetia_area
+					area = lombardy_area
+					area = piedmont_area
+					area = tuscany_area
+					area = liguria_area
+					area = emilia_romagna_area
+					area = po_valley_area
+					area = carinthia_area
+					area = torino_area
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+			add_prestige = 100
+			change_government_reform_progress = 350
+			if = {
+				limit = {
+					101 = { has_province_modifier = ets_trade_control_modifier }
+				}
+				remove_province_modifier = ets_trade_control_modifier
+			}
+			101 = {
+				add_province_modifier = {
+					name = ets_trade_control_2_modifier
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					116 = { has_province_modifier = ets_trade_control_modifier }
+				}
+				remove_province_modifier = ets_trade_control_modifier
+			}
+			116 = {
+				add_province_modifier = {
+					name = ets_trade_control_2_modifier
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					112 = { has_province_modifier = ets_trade_control_modifier }
+				}
+				remove_province_modifier = ets_trade_control_modifier
+			}
+			112 = {
+				add_province_modifier = {
+					name = ets_trade_control_2_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+}
+sealand_tunis_fatimid_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		tag = FAT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	sea_recover_andalusia = {
+		icon = mission_reclaim_andalucia
+		required_missions = { gc_tun_morocco }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = upper_andalucia_area
+				area = lower_andalucia_area
+				area = toledo_area
+				area = valencia_area
+				area = extremadura_area
+				area = alentejo_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			upper_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			toledo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			valencia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			extremadura_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			alentejo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 1
+			add_country_modifier = {
+				name = fatimid_government_janissaries_boost_3
+				duration = -1
+			}
+			iberia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
+
+gc_tunis_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		OR = {
+			tag = TUN
+			tag = ETS
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gc_tun_barbary_coast = {
+		icon = mission_control_the_barbary_coast
+		required_missions = { }
+		position = 1
+		
+		provinces_to_highlight = {
+			OR = {
+				area = barbary_coast_area
+				area = algiers_area
+				area = hautes_plaines_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_yearly_sailors = 3
+			add_country_modifier = {
+				name = "tun_barbary_pirates"
+				duration = 7300
+			}
+		}
+	}
+	gc_tun_privateer = {
+		icon = mission_sponsor_piracy
+		required_missions = { gc_tun_fleet gc_tun_barbary_coast gc_tun_ottomans }
+		
+		provinces_to_highlight = {	
+			OR = {
+				province_id = 1298
+				AND = {
+					province_id = 338
+					NOT = {
+						owned_by = ROOT
+						OR = {
+							has_building = shipyard
+							has_building = grand_shipyard
+						}
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+			1298 = {
+				privateer_power = {
+					country = ROOT
+					share = 15
+				}
+			}
+			338 = { 
+				owned_by = ROOT 
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+		}
+		effect = {
+			# Barbarossa event, make Algiers a pirate march
+			country_event = {
+				id = flavor_tun.1
+			}
+			northern_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_morocco_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			marrekesh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	gc_tun_morocco = {
+		icon = mission_moroccan_ports
+		required_missions = { gc_tun_privateer }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = northern_morocco_area
+				area = western_morocco_area
+				area = marrekesh_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marrekesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tun_morocco"
+				duration = 7300
+			}
+			upper_andalucia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			lower_andalucia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			toledo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			valencia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			extremadura_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			alentejo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
+sealand_tunis_emirate_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		tag = ETS
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sea_consolidate_south_italy = {
+		icon = king_of_naples
+		required_missions = { sea_emirate_of_two_sicilies }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = naples_area
+				area = apulia_area
+				area = lazio_area
+				area = central_italy_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lazio_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			central_italy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 100
+			define_advisor = {
+				type = army_organiser
+				skill = 3
+				discount = yes
+			}
+			italy_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	sea_control_venezia = {
+		icon = expand_the_doges_palace
+		required_missions = { sea_consolidate_south_italy }
+		
+		provinces_to_highlight = {
+			province_id = 112
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			112 = { owned_by = ROOT }
+		}
+		effect = {
+			add_years_of_income = 1
+			add_mercantilism = 10
+			if = {
+				limit = {
+					112 = { NOT = { province_has_center_of_trade_of_level = 3 } }
+				}
+				112 = { add_center_of_trade_level = 3 }
+			}
+			112 = {
+				add_province_modifier = {
+					name = ets_trade_control_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+}
+sealand_tunis_fatimid_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		tag = FAT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	sea_restore_borders = {
+		icon = mission_unite_home_region
+		required_missions = { gc_tun_morocco sea_unite_egypt }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				region = egypt_region
+				area = tripolitania_area
+				area = djerba_area
+				area = tunisia_area
+				area = north_saharan_area
+				area = ouled_nail_area
+				area = kabylia_area
+				area = hautes_plaines_area
+				area = barbary_coast_area
+				area = algiers_area
+				area = northern_morocco_area
+				area = western_morocco_area
+				area = marrekesh_area
+				area = tafilalt_area
+				area = sus_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			egypt_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_saharan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ouled_nail_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			algiers_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_morocco_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			marrekesh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tafilalt_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sus_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 100
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = "unified_islam"
+				duration = -1
+			}
+			add_country_modifier = {
+				name = fatimid_government_janissaries_boost_1
+				duration = -1
+			}
+		}
+	}
+}
+
+gc_tunis_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		OR = {
+			tag = TUN
+			tag = ETS
+			tag = FAT
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gc_tun_ottomans = {
+		icon = mission_ottoman_diplomacy
+		required_missions = {  }
+		position = 1
+		
+		provinces_to_highlight = {
+			owned_by = TUR
+			is_capital = yes
+		}
+		
+		trigger = {	
+			if = {
+				limit = {
+					TUR = { exists = yes }
+				}
+				OR = {
+					alliance_with = TUR
+					is_rival = TUR
+					NOT = { exists = TUR }
+				}
+			}
+			else_if = {
+				limit = {
+					TUR = { exists = no }
+					OSM = { exists = yes }
+				}
+				OR = {
+					alliance_with = OSM
+					is_rival = OSM
+					NOT = { exists = OSM }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = thriving_arms_industry
+				duration = 10950
+			}
+			358 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			cyrenaica_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	gc_tun_alexandria = {
+		icon = mission_conquer_alexandria
+		required_missions = { gc_tun_ottomans }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = cyrenaica_area
+				province_id = 358
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			358 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cyrenaica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Dharma"
+					358 = {
+						NOT = {
+							province_has_center_of_trade_of_level = 3
+						}
+					}
+				}
+				358 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			else = {
+				358 = {
+					add_province_modifier = {
+						name = "tun_restoration_of_alexandra"
+						duration = -1
+					}
+				}
+			}
+			delta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bahari_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	sea_fatimid_caliphate = {
+		icon = mission_al_andalus
+		required_missions = { gc_tun_alexandria }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = delta_area
+				area = bahari_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			NOT = { tag = ETS }
+			NOT = { tag = BYS }
+			delta_area = {
+				type = all
+				owned_by = ROOT
+			}
+			bahari_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = FAT
+			add_prestige = 10
+			if = {
+				limit = {
+					NOT = {
+						has_reform = fatimid_government
+					}
+					is_revolutionary = no
+				}
+				add_government_reform = fatimid_government
+			}
+			hidden_effect = { complete_mission = sea_fatimid_caliphate }
+			swap_non_generic_missions = yes
+			set_country_flag = formed_egypt_flag
+			set_country_flag = formed_mamluks
+			set_country_flag = formed_tunisia_flag 
+			if = {
+				limit = { 
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			egypt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+sealand_tunis_emirate_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		tag = ETS
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gc_tun_east_med_islands = {
+		icon = mission_dominate_the_mediterranean
+		required_missions = { sea_emirate_of_two_sicilies }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 163
+				province_id = 320
+				province_id = 321
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			163 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			320 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			321 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "tun_med_conquest_east"
+				duration = -1
+			}
+			112 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	gc_tun_venice = {
+		icon = mission_raid_on_venice
+		required_missions = { gc_tun_east_med_islands }
+		
+		provinces_to_highlight = {
+			province_id = 112
+			NOT = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					AND = {
+						controlled_by = ROOT
+						NOT = { owned_by = ROOT }
+						devastation = 25
+					}
+				}
+			}
+		}
+		
+		trigger = {
+			112 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					AND = {
+						controlled_by = ROOT
+						NOT = { owned_by = ROOT }
+						devastation = 25
+					}
+				}
+			}			
+		}
+		effect = {
+			add_treasury = 500
+			add_yearly_sailors = 5
+			add_mil_power = 75
+		}
+	}
+}
+sealand_tunis_fatimid_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Golden Century"
+	}
+	potential = {
+		has_dlc = "Golden Century"
+		tag = FAT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	sea_unite_egypt = {
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { sea_fatimid_caliphate }
+		position = 4
+		
+		provinces_to_highlight = {
+			region = egypt_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			egypt_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			country_event = {
+				id = flavor_gra.3
+			}
+			tabuk_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			trans_jordan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			syria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	sea_levantine_under_our_grip = {
+		icon = mission_levantine_restoration
+		required_missions = { sea_unite_egypt }
+		
+		provinces_to_highlight = {
+			OR = {
+				area = tabuk_area
+				area = palestine_area
+				area = trans_jordan_area
+				area = syria_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			tabuk_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			382 = { owned_by = ROOT }
+		}
+		effect = {
+			382 = {
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+				add_province_modifier = {
+					name = "adu_summer_capital"
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = fatimid_government_janissaries_boost_2
+				duration = -1
+			}
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			mashriq_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			arabia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
