@@ -18,5 +18,9 @@ LEL = "countries/SeaLeleges.txt"
 KEM = "countries/SeaKemet.txt" # Taken from PDX RNW Kemet
 ATL = "countries/SeaAtlantis.txt"
 GOE = "countries/SeaGeorgia.txt"
+IJP = "countries/SeaImperialJapan.txt"
+ANG = "countries/SeaAngevinEmpire.txt"
+RHI = "countries/SeaRhineConfederation.txt"
+LAT = "countries/SeaLatinEmpire.txt"
 
 SEX = "countries/SeaPayPalStates.txt"
