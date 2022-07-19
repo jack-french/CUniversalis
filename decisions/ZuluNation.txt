@@ -1,0 +1,129 @@
+country_decisions = {
+	zulu_nation = {	#Not really a "formable". Instead you motivate the Zulu to appear much quicker
+		major = yes
+		potential = {
+			NOT = { has_country_flag = zulu_attracted_flag }
+			if = {
+				limit = {
+					has_dlc = "Origins"
+					has_mission = zim_militarize_the_nguni
+				}
+				has_country_flag = can_attract_zulu
+			}
+			else = {
+				culture_group = southern_african
+			}
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = ZUL }
+			NOT = { tag = HLR }
+			NOT = { tag = PAP }
+			NOT = { exists = ZUL }
+			NOT = { has_country_flag = formed_zulu_tag }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 789	# Mtetwa
+				province_id = 1181	# Natal
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { base_manpower = 8 }
+			}
+		}
+		allow = {
+			NOT = { exists = ZUL }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			789 = {
+				owned_by = ROOT
+				base_manpower = 8
+			}
+			1181 = {
+				owned_by = ROOT
+				base_manpower = 8
+			}
+			if = {	#For the case you want to have the Zulu on the map, the country should not be lost to them
+				limit = {
+					NOT = { num_of_cities = 3 }
+				}
+				num_of_cities = 3
+			}
+			adm_tech = 20
+		}
+		effect = {
+			if = {
+				limit = {
+					tag = SWZ
+				}
+				change_tag = ZUL
+				swap_free_idea_group = yes
+				define_ruler = {
+					name = "Shaka"
+					dynasty = "Zulu"
+					adm = 5
+					dip = 3
+					mil = 6
+					age = 23
+					claim = 100
+				}
+				define_ruler_to_general = {
+					fire = 4
+					shock = 5
+					manuever = 4
+					siege = 2
+				}
+				change_government = tribal
+				add_government_reform = shaka_regime
+				set_capital = 789
+				capital_scope = {
+					change_province_name = "Bulawayo"
+					rename_capital = "Bulawayo"
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 2
+					build_to_forcelimit = {
+						infantry = 0.9
+						cavalry = 0.1
+					}
+				}
+				add_treasury = 300
+				add_army_professionalism = 0.05
+				add_army_tradition = 20
+				limpopo_area = {
+					limit = {
+						NOT = { is_core = ZUL }
+						NOT = { is_permanent_claim = ZUL }
+					}
+					add_permanent_claim = ZUL
+				}
+			}
+			else = {
+				custom_tooltip = zulu_nation_ct
+				set_country_flag = zulu_attracted_flag
+				789 = {
+					add_province_modifier = {
+						name = zul_provocated_locals
+						duration = 9125
+					}
+				}
+				1181 = {
+					add_province_modifier = {
+						name = zul_provocated_locals
+						duration = 9125
+					}
+				}
+			}
+			custom_tooltip = warning_zulu_nation_tt
+			clr_country_flag = can_attract_zulu
+			set_country_flag = formed_zulu_tag
+		}
+		ai_will_do = {
+			factor = 0	#An AI should NEVER spawn the Zulu before 1810
+		}
+		ai_importance = 0 #
+	}
+	
+}
