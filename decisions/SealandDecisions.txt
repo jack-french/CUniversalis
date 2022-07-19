@@ -967,7 +967,6 @@ country_decisions = { # converting to Zoroastrian:
 	converted_to_zoroastrian = { # converting to Zoroastrian.
 		major = yes
 		potential = {
-			NOT = { has_country_flag = steps_becoming_sasanid_zoroastrian_flag }
 			OR = {
 				tag = TRS
 				tag = AFG
@@ -1021,12 +1020,10 @@ country_decisions = { # converting to Zoroastrian:
 		potential = {
 			OR = {
 				AND = {
-					has_country_flag = steps_becoming_sasanid_zoroastrian_flag
 					religion = zoroastrian
 				}
 				religion = zoroastrian
 			}
-			NOT = { has_country_flag = formed_sasanid_empire_flag }
 			OR = {
 				tag = TRS
 				tag = AFG
@@ -1180,54 +1177,6 @@ country_decisions = { # converting to Zoroastrian:
 				}
 				add_permanent_claim = ROOT
 			}
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	form_achaemenid_empire = {
-		major = yes
-		potential = {
-			has_country_flag = steps_becoming_achaemenid_empire_flag
-			NOT = { has_country_flag = formed_achaemenid_empire_flag }
-		}
-		provinces_to_highlight = {
-			OR = {
-				region = khorasan_region
-				region = persia_region
-				region = mashriq_region
-				region = anatolia_region
-				region = egypt_region
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		allow = {
-			religion = zoroastrian
-			khorasan_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			persia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			mashriq_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			anatolia_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			egypt_region = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			set_country_flag = formed_achaemenid_empire_flag
-			change_tag = ACE
-			add_prestige = 100
 		}
 		ai_will_do = {
 			factor = 1
