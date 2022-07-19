@@ -1,0 +1,152 @@
+# Sasanid Empire
+country_decisions = {
+	
+	revive_sasanian_empire = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = formed_sasanid_empire_flag }
+			culture_group = iranian
+			NOT = { exists = SAS }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 433
+				province_id = 428
+				province_id = 429
+				province_id = 2218
+				province_id = 432
+				province_id = 2221
+				province_id = 446
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			religion = zoroastrian
+			NOT = { exists = PER }
+			owns_core_province = 433
+			owns_core_province = 428
+			owns_core_province = 429
+			owns_core_province = 2218
+			owns_core_province = 432
+			owns_core_province = 2221
+			owns_core_province = 446
+		}
+		effect = {
+			set_country_flag = formed_sasanid_empire_flag
+			change_tag = SAS
+			if = {
+				limit = {
+					NOT = { government = monarchy }
+				}
+				change_government = monarchy
+			}
+			add_government_reform = sasanian_government
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			define_ruler = {
+				name = "Yazdegerd IV"
+				dynasty = "Sasan"
+				adm = 6
+				dip = 6
+				mil = 6
+				claim = 100
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			swap_non_generic_missions = yes
+			if = {
+				limit = { 
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+	   		mashhad_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		herat_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		sistan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		birjand_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		kerman_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		mogostan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		persian_gulf_coast = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		farsistan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		isfahan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+	   		azerbaijan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
