@@ -1004,3 +1004,422 @@ country_decisions = {
 		}
 	}
 }
+# Imperial Japan
+country_decisions = {
+	embrace_the_rising_sun = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = embrace_the_rising_sun_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = IJP }
+			OR = {
+				tag = ASK
+				tag = JAP
+				tag = UES
+				tag = SMZ
+				tag = TKD
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				# Sea
+				area = luzon_area
+				area = southern_luzon_area
+				area = mindanao_area
+				area = west_mindanao_area
+				area = visayas_area
+				area = palawan_area
+				region = malaya_region
+				region = indonesia_region
+				# Land
+				area = guangdong_area
+				area = fujian_area
+				area = zhejiang_area
+				area = ganzhou_area
+				area = hainan_area
+				region = north_china_region
+				region = south_china_region
+				# Sea & Land
+				region = japan_region
+				region = korea_region
+				area = taiwan_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			NOT = { exists = IJP }
+			OR = {
+				tag = ASK
+				tag = JAP
+				tag = UES
+				tag = SMZ
+				tag = TKD
+			}
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_tribal = no
+			japan_region = {
+				type = all
+				owned_by = ROOT
+			}
+			korea_region = {
+				type = all
+				owned_by = ROOT
+			}
+			taiwan_area= {
+				type = all
+				owned_by = ROOT
+			}
+			OR = {
+				AND = {
+					luzon_area = {
+						type = all
+						owned_by = ROOT
+					}
+					southern_luzon_area = {
+						type = all
+						owned_by = ROOT
+					}
+					mindanao_area = {
+						type = all
+						owned_by = ROOT
+					}
+					west_mindanao_area = {
+						type = all
+						owned_by = ROOT
+					}
+					visayas_area = {
+						type = all
+						owned_by = ROOT
+					}
+					palawan_area = {
+						type = all
+						owned_by = ROOT
+					}
+					num_of_owned_provinces_with = {
+						value = 40
+						OR = {
+							region = malaya_region
+							region = indonesia_region
+						}
+					}
+				}
+				AND = {
+					guangdong_area = {
+						type = all
+						owned_by = ROOT
+					}
+					fujian_area = {
+						type = all
+						owned_by = ROOT
+					}
+					zhejiang_area = {
+						type = all
+						owned_by = ROOT
+					}
+					ganzhou_area = {
+						type = all
+						owned_by = ROOT
+					}
+					hainan_area = {
+						type = all
+						owned_by = ROOT
+					}
+					num_of_owned_provinces_with = {
+						value = 60
+						OR = {
+							region = north_china_region
+							region = south_china_region
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			change_tag = IJP
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { religion = shinto }
+				}
+				change_religion = shinto
+			}
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			if = {
+				limit = {
+					NOT = {
+						government = monarchy
+					}
+				}
+				change_government = monarchy
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			add_government_reform = imperial_japan_monarchy
+			set_country_flag = embrace_the_rising_sun_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 1000
+	}
+}
+country_decisions = {
+	# Enable:
+	swi_recruit_merc_inf_enable = {
+		major = yes
+		potential = {
+			tag = SWI
+			NOT = { has_country_flag = swi_recruit_merc_inf_enabled }
+		}
+		allow = {
+			mil_power = 300
+		}
+		effect = {
+			set_country_flag = swi_recruit_merc_inf_enabled
+			add_mil_power = -300
+			custom_tooltip = swi_recruit_merc_inf_enabled_modifier_tt
+			custom_tooltip = swi_recruit_merc_inf_enable_tt
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	# Disable:
+	swi_recruit_merc_inf_disable = {
+		major = yes
+		potential = {
+			tag = SWI
+			has_country_flag = swi_recruit_merc_inf_enabled
+		}
+		allow = {
+			NOT = { sea_swiss_mercenaries_1 = 1 }
+			NOT = { sea_swiss_mercenaries_2 = 1 }
+			NOT = { sea_swiss_mercenaries_3 = 1 }
+		}
+		effect = {
+			clr_country_flag = swi_recruit_merc_inf_enabled
+			custom_tooltip = swi_recruit_merc_inf_enabled_modifier_ttt
+			custom_tooltip = swi_recruit_merc_inf_disable_tt
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	# Units:
+	swi_recruit_merc_inf = {
+		major = yes
+		potential = {
+			has_country_flag = swi_recruit_merc_inf_enabled
+			tag = SWI
+		}
+		allow = {
+			treasury = 30
+			any_owned_province = {
+				has_siege = no
+				controlled_by = ROOT
+			}
+			manpower = 1
+			# Tech 1-11
+			if = {
+				limit = {
+					NOT = { mil_tech = 12 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 1
+						NOT = { land_forcelimit = 40 }
+					}
+					NOT = { sea_swiss_mercenaries_1 = 10 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 40
+					}
+					NOT = { sea_swiss_mercenaries_1 = 20 }
+				}
+			}
+			# Tech 12-25
+			if = {
+				limit = {
+					mil_tech = 12
+					NOT = { mil_tech = 26 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 1
+						NOT = { land_forcelimit = 24 }
+					}
+					NOT = { sea_swiss_mercenaries_2 = 10 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 24
+						NOT = { land_forcelimit = 48 }
+					}
+					NOT = { sea_swiss_mercenaries_2 = 20 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 48
+						NOT = { land_forcelimit = 96 }
+					}
+					NOT = { sea_swiss_mercenaries_2 = 30 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 96
+						NOT = { land_forcelimit = 192 }
+					}
+					NOT = { sea_swiss_mercenaries_2 = 40 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 192
+					}
+					NOT = { sea_swiss_mercenaries_2 = 60 }
+				}
+			}
+			# Tech 26-
+			if = {
+				limit = {
+					mil_tech = 26
+				}
+				if = {
+					limit = {
+						land_forcelimit = 1
+						NOT = { land_forcelimit = 24 }
+					}
+					NOT = { sea_swiss_mercenaries_3 = 10 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 24
+						NOT = { land_forcelimit = 48 }
+					}
+					NOT = { sea_swiss_mercenaries_3 = 20 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 48
+						NOT = { land_forcelimit = 96 }
+					}
+					NOT = { sea_swiss_mercenaries_3 = 30 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 96
+						NOT = { land_forcelimit = 192 }
+					}
+					NOT = { sea_swiss_mercenaries_3 = 40 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 192
+						NOT = { land_forcelimit = 384 }
+					}
+					NOT = { sea_swiss_mercenaries_3 = 80 }
+				}
+				if = {
+					limit = {
+						land_forcelimit = 384
+					}
+					NOT = { sea_swiss_mercenaries_3 = 120 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							has_siege = yes
+							NOT = { controlled_by = ROOT }
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_siege = no
+						controlled_by = ROOT
+					}
+					add_treasury = -30
+					add_manpower = -1
+					if = {
+						limit = {
+							NOT = { mil_tech = 12 }
+						}
+						sea_swiss_mercenaries_1 = ROOT
+					}
+					if = {
+						limit = {
+							mil_tech = 12
+							NOT = { mil_tech = 26 }
+						}
+						sea_swiss_mercenaries_2 = ROOT
+					}
+					if = {
+						limit = {
+							mil_tech = 26
+						}
+						sea_swiss_mercenaries_2 = ROOT
+					}
+				}
+			}
+			else = {
+				add_treasury = -30
+				add_manpower = -1
+					if = {
+						limit = {
+							NOT = { mil_tech = 12 }
+						}
+						capital_scope = {
+							sea_swiss_mercenaries_1 = ROOT
+						}
+					}
+					if = {
+						limit = {
+							mil_tech = 12
+							NOT = { mil_tech = 26 }
+						}
+						capital_scope = {
+							sea_swiss_mercenaries_2 = ROOT
+						}
+					}
+					if = {
+						limit = {
+							mil_tech = 26
+						}
+						capital_scope = {
+							sea_swiss_mercenaries_3 = ROOT
+						}
+					}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
