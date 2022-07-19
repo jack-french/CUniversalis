@@ -1,0 +1,17 @@
+spriteTypes = {
+	spriteType = {
+		name = "Danny_eventPicture"
+		texturefile = "gfx/event_pictures/Danny_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Harambe_eventPicture"
+		texturefile = "gfx/event_pictures/Harambe_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Loaf_eventPicture"
+		texturefile = "gfx/event_pictures/Loaf_eventPicture.dds"
+		allwaystransparent = yes
+	}
+}

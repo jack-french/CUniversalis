@@ -1,0 +1,1419 @@
+spriteTypes = {
+###################################################################
+######                     Embrace Monke                     ######
+
+# Yes, I, Sealand, made it.
+
+	spriteType = {
+		name = "GFX_icon_institution_embracemonke"
+		texturefile = "gfx//interface//institutions//embracemonke.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}	
+
+#########
+
+	spriteType = {
+		name = "GFX_institution_tab_embracemonke"
+		texturefile = "gfx/interface/institutions//institution_tab_embracemonke.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	
+######                     Embrace Monke                     ######
+###################################################################
+##############
+#### MISSIONS
+
+	spriteType = {
+		name = "become_new_yemen_pic"
+		texturefile = "gfx//interface//missions//become_new_yemen_pic.dds"
+	}
+	
+	spriteType = {
+		name = "become_new_persia_pic"
+		texturefile = "gfx//interface//missions//become_new_persia_pic.dds"
+	}
+
+	spriteType = {
+		name = "back_to_our_roots_pic"
+		texturefile = "gfx//interface//missions//back_to_our_roots_pic.dds"
+	}
+
+	spriteType = {
+		name = "reclaim_danelaw_pic"
+		texturefile = "gfx//interface//missions//reclaim_danelaw_pic.dds"
+	}
+
+	spriteType = {
+		name = "reclaim_jorvik_pic"
+		texturefile = "gfx//interface//missions//reclaim_jorvik_pic.dds"
+	}
+
+	spriteType = {
+		name = "emirate_of_two_sicilies_pic"
+		texturefile = "gfx//interface//missions//emirate_of_two_sicilies_pic.dds"
+	}
+
+	spriteType = {
+		name = "discover_inukshuk_pic"
+		texturefile = "gfx//interface//missions//discover_inukshuk_pic.dds"
+	}
+
+	spriteType = {
+		name = "discover_cahokia_pic"
+		texturefile = "gfx//interface//missions//discover_cahokia_pic.dds"
+	}
+	
+	# ME animed mission logo
+	frameAnimatedSpriteType = {
+		name = "me_mission_shiny_crown"
+		texturefile = "gfx//interface//missions//mission_shiny_crown.dds"
+		noOfFrames = 35
+		loadType = "INGAME"
+		transparencecheck = yes
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 1
+	}
+
+##############
+#### GOVERNMENT REFORMS
+
+	spriteType = {
+		name = "government_reform_sea_swazi_reform_into"
+		texturefile = "gfx//interface//government_reform_icons//sea_swazi_reform_into.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_barbary_states"
+		texturefile = "gfx//interface//government_reform_icons//sea_barbary_states.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_sasan_dynasty"
+		texturefile = "gfx//interface//government_reform_icons//sea_sasan_dynasty.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_leleges_reform"
+		texturefile = "gfx//interface//government_reform_icons//sea_leleges_reform.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_vinland_reform"
+		texturefile = "gfx//interface//government_reform_icons//sea_vinland_reform.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_kemet_reform"
+		texturefile = "gfx//interface//government_reform_icons//sea_kemet_reform.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_atlantis_reform"
+		texturefile = "gfx//interface//government_reform_icons//sea_atlantis_reform.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_germany_monachy"
+		texturefile = "gfx//interface//government_reform_icons//sea_germany_monachy.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_teutonic_reform"
+		texturefile = "gfx//interface//government_reform_icons//sea_teutonic_reform.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_imperial_japan_monarchy"
+		texturefile = "gfx//interface//government_reform_icons//sea_imperial_japan_monarchy.dds"
+	}
+	
+	spriteType = {
+		name = "government_reform_sea_byzantine_government"
+		texturefile = "gfx//interface//government_reform_icons//sea_byzantine_government.dds"
+ 	}
+
+##############
+#### FACTIONS
+
+	## PORTUGAL
+	spriteType = {
+		name = "GFX_faction_bg_sea_por_explo"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_por_explo"	
+		texturefile = "gfx//interface//traders_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_sea_por_trade"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_por_trade"	
+		texturefile = "gfx//interface//guilds_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_sea_por_conti"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_por_conti"	
+		texturefile = "gfx//interface//aristocrats_icon.tga"
+	}
+	##
+	
+	## COLONIAL
+	spriteType = {
+		name = "GFX_faction_bg_sea_colonial_adm_1"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_colonial_adm_1"	
+		texturefile = "gfx//interface//traders_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_sea_colonial_adm_2"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_colonial_adm_2"	
+		texturefile = "gfx//interface//traders_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_sea_colonial_dip_1"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_colonial_dip_1"	
+		texturefile = "gfx//interface//guilds_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_sea_colonial_dip_2"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_colonial_dip_2"	
+		texturefile = "gfx//interface//guilds_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_sea_colonial_mil_1"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_colonial_mil_1"	
+		texturefile = "gfx//interface//aristocrats_icon.tga"
+	}
+	spriteType = {
+		name = "GFX_faction_bg_sea_colonial_mil_2"	
+		texturefile = "gfx//interface//faction_blue_frame.tga"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_faction_sea_colonial_mil_2"	
+		texturefile = "gfx//interface//aristocrats_icon.tga"
+	}
+	
+##############
+#### AGES
+
+	spriteType = {
+		name = "GFX_age_i_autonomy"
+		texturefile = "gfx/interface/ages/age_i_autonomy.dds"
+	}
+	spriteType = {
+		name = "GFX_age_i_pp_insults"
+		texturefile = "gfx/interface/ages/age_i_pp_insults.dds"
+	}
+	spriteType = {
+		name = "GFX_age_i_cheap_ships"
+		texturefile = "gfx/interface/ages/age_i_cheap_ships.dds"
+	}
+	spriteType = {
+		name = "GFX_age_ii_provincial_trade_power"
+		texturefile = "gfx/interface/ages/age_ii_provincial_trade_power.dds"
+	}
+	spriteType = {
+		name = "GFX_age_ii_tax_everything_but_the_church_and_the_nobles"
+		texturefile = "gfx/interface/ages/age_ii_tax_everything_but_the_church_and_the_nobles.dds"
+	}
+	spriteType = {
+		name = "GFX_age_ii_cheaper_units"
+		texturefile = "gfx/interface/ages/age_ii_cheaper_units.dds"
+	}
+	spriteType = {
+		name = "GFX_age_iii_siege_ability"
+		texturefile = "gfx/interface/ages/age_iii_siege_ability.dds"
+	}
+	spriteType = {
+		name = "GFX_age_iv_extra_merchant"
+		texturefile = "gfx/interface/ages/age_iv_extra_merchant.dds"
+	}
+	spriteType = {
+		name = "GFX_age_iv_african_reinforce"
+		texturefile = "gfx/interface/ages/age_iv_african_reinforce.dds"
+	}
+	spriteType = {
+		name = "GFX_age_ii_increased_banner_mercs"
+		texturefile = "gfx/interface/ages/age_ii_increased_banner_mercs.dds"
+	}
+	spriteType = {
+		name = "GFX_age_iii_warscore_cost"
+		texturefile = "gfx/interface/ages/age_iii_warscore_cost.dds"
+	}
+
+##############
+#### ADVISORS
+
+	# ADM:
+	spriteType = {
+		name = "GFX_advisor_advisor_adm_tech_cost"
+		texturefile = "gfx//interface//advisors//advisor_adm_tech_cost.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_adm_tech_cost_female"
+		texturefile = "gfx//interface//advisors//advisor_adm_tech_cost_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_centralize_autonomy"
+		texturefile = "gfx//interface//advisors//advisor_centralize_autonomy.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_centralize_autonomy_female"
+		texturefile = "gfx//interface//advisors//advisor_centralize_autonomy_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_war_exhaust"
+		texturefile = "gfx//interface//advisors//advisor_war_exhaust.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_war_exhaust_female"
+		texturefile = "gfx//interface//advisors//advisor_war_exhaust_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_splendor_blendor"
+		texturefile = "gfx//interface//advisors//advisor_splendor_blendor.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_splendor_blendor_female"
+		texturefile = "gfx//interface//advisors//advisor_splendor_blendor_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_legitimate_government"
+		texturefile = "gfx//interface//advisors//advisor_legitimate_government.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_legitimate_government_female"
+		texturefile = "gfx//interface//advisors//advisor_legitimate_government_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_horde_government"
+		texturefile = "gfx//interface//advisors//advisor_horde_government.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_horde_government_female"
+		texturefile = "gfx//interface//advisors//advisor_horde_government_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_republic_government"
+		texturefile = "gfx//interface//advisors//advisor_republic_government.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_republic_government_female"
+		texturefile = "gfx//interface//advisors//advisor_republic_government_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_devoted_government"
+		texturefile = "gfx//interface//advisors//advisor_devoted_government.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_devoted_government_female"
+		texturefile = "gfx//interface//advisors//advisor_devoted_government_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_increase_absolutism"
+		texturefile = "gfx//interface//advisors//advisor_increase_absolutism.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_increase_absolutism_female"
+		texturefile = "gfx//interface//advisors//advisor_increase_absolutism_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_reform_growth"
+		texturefile = "gfx//interface//advisors//advisor_reform_growth.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_reform_growth_female"
+		texturefile = "gfx//interface//advisors//advisor_reform_growth_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_idealistic_views"
+		texturefile = "gfx//interface//advisors//advisor_idealistic_views.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_idealistic_views_female"
+		texturefile = "gfx//interface//advisors//advisor_idealistic_views_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	# DIP:
+	spriteType = {
+		name = "GFX_advisor_advisor_dip_tech_cost"
+		texturefile = "gfx//interface//advisors//advisor_dip_tech_cost.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_dip_tech_cost_female"
+		texturefile = "gfx//interface//advisors//advisor_dip_tech_cost_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_defence_spymaster"
+		texturefile = "gfx//interface//advisors//advisor_defence_spymaster.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_defence_spymaster_female"
+		texturefile = "gfx//interface//advisors//advisor_defence_spymaster_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_corrupt_decay"
+		texturefile = "gfx//interface//advisors//advisor_corrupt_decay.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_corrupt_decay_female"
+		texturefile = "gfx//interface//advisors//advisor_corrupt_decay_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_imperial_authority"
+		texturefile = "gfx//interface//advisors//advisor_imperial_authority.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_imperial_authority_female"
+		texturefile = "gfx//interface//advisors//advisor_imperial_authority_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_mandate_growth"
+		texturefile = "gfx//interface//advisors//advisor_mandate_growth.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_mandate_growth_female"
+		texturefile = "gfx//interface//advisors//advisor_mandate_growth_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_culture_convert"
+		texturefile = "gfx//interface//advisors//advisor_culture_convert.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_culture_convert_female"
+		texturefile = "gfx//interface//advisors//advisor_culture_convert_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_colonial_increase"
+		texturefile = "gfx//interface//advisors//advisor_colonial_increase.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_colonial_increase_female"
+		texturefile = "gfx//interface//advisors//advisor_colonial_increase_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_reduced_agg_exp"
+		texturefile = "gfx//interface//advisors//advisor_reduced_agg_exp.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_reduced_agg_exp_female"
+		texturefile = "gfx//interface//advisors//advisor_reduced_agg_exp_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_engagement"
+		texturefile = "gfx//interface//advisors//advisor_naval_engagement.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_engagement_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_engagement_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_attrition"
+		texturefile = "gfx//interface//advisors//advisor_naval_attrition.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_attrition_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_attrition_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_durability"
+		texturefile = "gfx//interface//advisors//advisor_naval_durability.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_durability_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_durability_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_morale_recovery"
+		texturefile = "gfx//interface//advisors//advisor_naval_morale_recovery.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_morale_recovery_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_morale_recovery_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_sailors"
+		texturefile = "gfx//interface//advisors//advisor_naval_sailors.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_sailors_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_sailors_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_maintenance"
+		texturefile = "gfx//interface//advisors//advisor_naval_maintenance.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_maintenance_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_maintenance_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_forcelimit"
+		texturefile = "gfx//interface//advisors//advisor_naval_forcelimit.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_forcelimit_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_forcelimit_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_repair"
+		texturefile = "gfx//interface//advisors//advisor_naval_repair.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_repair_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_repair_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_heavy_combat"
+		texturefile = "gfx//interface//advisors//advisor_naval_heavy_combat.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_heavy_combat_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_heavy_combat_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_light_combat"
+		texturefile = "gfx//interface//advisors//advisor_naval_light_combat.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_light_combat_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_light_combat_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_galley_combat"
+		texturefile = "gfx//interface//advisors//advisor_naval_galley_combat.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_naval_galley_combat_female"
+		texturefile = "gfx//interface//advisors//advisor_naval_galley_combat_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	# MIL:
+	spriteType = {
+		name = "GFX_advisor_advisor_mil_tech_cost"
+		texturefile = "gfx//interface//advisors//advisor_mil_tech_cost.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_mil_tech_cost_female"
+		texturefile = "gfx//interface//advisors//advisor_mil_tech_cost_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_inf_combat"
+		texturefile = "gfx//interface//advisors//advisor_inf_combat.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_inf_combat_female"
+		texturefile = "gfx//interface//advisors//advisor_inf_combat_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_cav_combat"
+		texturefile = "gfx//interface//advisors//advisor_cav_combat.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_cav_combat_female"
+		texturefile = "gfx//interface//advisors//advisor_cav_combat_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_art_combat"
+		texturefile = "gfx//interface//advisors//advisor_art_combat.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_art_combat_female"
+		texturefile = "gfx//interface//advisors//advisor_art_combat_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_cav_to_inf_ratio"
+		texturefile = "gfx//interface//advisors//advisor_cav_to_inf_ratio.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_cav_to_inf_ratio_female"
+		texturefile = "gfx//interface//advisors//advisor_cav_to_inf_ratio_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_speedy_boys"
+		texturefile = "gfx//interface//advisors//advisor_speedy_boys.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_speedy_boys_female"
+		texturefile = "gfx//interface//advisors//advisor_speedy_boys_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_fire_damage"
+		texturefile = "gfx//interface//advisors//advisor_fire_damage.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_fire_damage_female"
+		texturefile = "gfx//interface//advisors//advisor_fire_damage_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_fire_damage_received"
+		texturefile = "gfx//interface//advisors//advisor_fire_damage_received.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_fire_damage_received_female"
+		texturefile = "gfx//interface//advisors//advisor_fire_damage_received_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_shock_damage"
+		texturefile = "gfx//interface//advisors//advisor_shock_damage.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_shock_damage_female"
+		texturefile = "gfx//interface//advisors//advisor_shock_damage_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_shock_damage_received"
+		texturefile = "gfx//interface//advisors//advisor_shock_damage_received.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_shock_damage_received_female"
+		texturefile = "gfx//interface//advisors//advisor_shock_damage_received_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_morale_recovery"
+		texturefile = "gfx//interface//advisors//advisor_morale_recovery.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_morale_recovery_female"
+		texturefile = "gfx//interface//advisors//advisor_morale_recovery_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_advisor_advisor_land_attrition"
+		texturefile = "gfx//interface//advisors//advisor_land_attrition.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_advisor_advisor_land_attrition_female"
+		texturefile = "gfx//interface//advisors//advisor_land_attrition_female.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+
+##############
+#### BUILDINGS
+	spriteType = {
+		name = "GFX_fort3"
+		texturefile = "gfx//interface//buildings//latin_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort3_easterngfx"
+		texturefile = "gfx//interface//buildings//eastern_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort3_asiangfx"
+		texturefile = "gfx//interface//buildings//chinese_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort3_africangfx"
+		texturefile = "gfx//interface//buildings//african_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort3_indiangfx"
+		texturefile = "gfx//interface//buildings//indian_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort3_muslimgfx"
+		texturefile = "gfx//interface//buildings//muslim_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort3_northamericagfx"
+		texturefile = "gfx//interface//buildings//northamerica_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort3_southamericagfx"
+		texturefile = "gfx//interface//buildings//southamerica_fort3.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7"
+		texturefile = "gfx//interface//buildings//latin_fort7.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7_easterngfx"
+		texturefile = "gfx//interface//buildings//eastern_fort7.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7_asiangfx"
+		texturefile = "gfx//interface//buildings//chinese_fort7.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7_africangfx"
+		texturefile = "gfx//interface//buildings//african_fort7.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7_indiangfx"
+		texturefile = "gfx//interface//buildings//indian_fort7.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7_muslimgfx"
+		texturefile = "gfx//interface//buildings//muslim_fort7.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7_northamericagfx"
+		texturefile = "gfx//interface//buildings//northamerica_fort7.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_fort7_southamericagfx"
+		texturefile = "gfx//interface//buildings//southamerica_fort7.tga"
+		loadType = "INGAME"
+	}
+
+##############
+#### PRIVILEGE
+
+	spriteType = {
+		name = "privilege_sea_castille_autonomous_duchies"
+		texturefile = "gfx/interface/privileges/privilege_sea_castille_autonomous_duchies.dds"
+	}
+
+##############
+#### RELIGION
+
+	spriteType = {
+		name = "GFX_sea_fervor_peace"
+		texturefile = "gfx//interface//sea_fervor_peace.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_hogomod_get_new_general_icon"
+		texturefile = "gfx//interface//hogomod_get_new_general_icon.dds"
+	}
+
+##############
+#### ICONS
+
+	# Small Icons fit for event options:
+	spriteType = {
+		name = "GFX_sea_adm_tech_cost_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_adm_tech_cost_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_ae_impact"
+		texturefile = "gfx/interface/sea_logos/sea_ae_impact.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_artillery_power"
+		texturefile = "gfx/interface/sea_logos/sea_artillery_power.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_cav_to_inf_ratio"
+		texturefile = "gfx/interface/sea_logos/sea_cav_to_inf_ratio.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_cavalry_flanking"
+		texturefile = "gfx/interface/sea_logos/sea_cavalry_flanking.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_cavalry_power"
+		texturefile = "gfx/interface/sea_logos/sea_cavalry_power.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_colonist_placement_chance"
+		texturefile = "gfx/interface/sea_logos/sea_colonist_placement_chance.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_culture_conversion_cost"
+		texturefile = "gfx/interface/sea_logos/sea_culture_conversion_cost.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_defensiveness"
+		texturefile = "gfx/interface/sea_logos/sea_defensiveness.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_devotion"
+		texturefile = "gfx/interface/sea_logos/sea_devotion.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_dip_tech_cost_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_dip_tech_cost_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_diplomatic_reputation"
+		texturefile = "gfx/interface/sea_logos/sea_diplomatic_reputation.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_discipline"
+		texturefile = "gfx/interface/sea_logos/sea_discipline.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_fire_damage"
+		texturefile = "gfx/interface/sea_logos/sea_fire_damage.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_fire_damage_received"
+		texturefile = "gfx/interface/sea_logos/sea_fire_damage_received.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_galley_power"
+		texturefile = "gfx/interface/sea_logos/sea_galley_power.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_autonomy"
+		texturefile = "gfx/interface/sea_logos/sea_global_autonomy.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_manpower_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_global_manpower_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_missionary_strength"
+		texturefile = "gfx/interface/sea_logos/sea_global_missionary_strength.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_naval_engagement_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_global_naval_engagement_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_sailors_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_global_sailors_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_ship_repair"
+		texturefile = "gfx/interface/sea_logos/sea_global_ship_repair.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_spy_defence"
+		texturefile = "gfx/interface/sea_logos/sea_global_spy_defence.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_tariffs"
+		texturefile = "gfx/interface/sea_logos/sea_global_tariffs.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_tax_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_global_tax_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_global_unrest"
+		texturefile = "gfx/interface/sea_logos/sea_global_unrest.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_heavy_ship_power"
+		texturefile = "gfx/interface/sea_logos/sea_heavy_ship_power.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_horde_unity"
+		texturefile = "gfx/interface/sea_logos/sea_horde_unity.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_idea_cost"
+		texturefile = "gfx/interface/sea_logos/sea_idea_cost.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_imperial_authority"
+		texturefile = "gfx/interface/sea_logos/sea_imperial_authority.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_imperial_mandate"
+		texturefile = "gfx/interface/sea_logos/sea_imperial_mandate.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_improve_relation_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_improve_relation_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_infantry_power"
+		texturefile = "gfx/interface/sea_logos/sea_infantry_power.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_inflation_reduction"
+		texturefile = "gfx/interface/sea_logos/sea_inflation_reduction.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_land_attrition"
+		texturefile = "gfx/interface/sea_logos/sea_land_attrition.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_land_forcelimit_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_land_forcelimit_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_land_maintenance_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_land_maintenance_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_land_morale"
+		texturefile = "gfx/interface/sea_logos/sea_land_morale.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_legitimacy"
+		texturefile = "gfx/interface/sea_logos/sea_legitimacy.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_light_ship_power"
+		texturefile = "gfx/interface/sea_logos/sea_light_ship_power.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_mil_tech_cost_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_mil_tech_cost_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_monthly_splendor"
+		texturefile = "gfx/interface/sea_logos/sea_monthly_splendor.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_movement_speed"
+		texturefile = "gfx/interface/sea_logos/sea_movement_speed.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_naval_attrition"
+		texturefile = "gfx/interface/sea_logos/sea_naval_attrition.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_naval_forcelimit_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_naval_forcelimit_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_naval_maintenance_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_naval_maintenance_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_naval_morale"
+		texturefile = "gfx/interface/sea_logos/sea_naval_morale.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_prestige"
+		texturefile = "gfx/interface/sea_logos/sea_prestige.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_production_efficiency"
+		texturefile = "gfx/interface/sea_logos/sea_production_efficiency.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_range"
+		texturefile = "gfx/interface/sea_logos/sea_range.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_recover_army_morale_speed"
+		texturefile = "gfx/interface/sea_logos/sea_recover_army_morale_speed.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_recover_navy_morale_speed"
+		texturefile = "gfx/interface/sea_logos/sea_recover_navy_morale_speed.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_reform_progress_growth"
+		texturefile = "gfx/interface/sea_logos/sea_reform_progress_growth.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_reinforce_speed"
+		texturefile = "gfx/interface/sea_logos/sea_reinforce_speed.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_republican_tradition"
+		texturefile = "gfx/interface/sea_logos/sea_republican_tradition.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_ship_durability"
+		texturefile = "gfx/interface/sea_logos/sea_ship_durability.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_shock_damage"
+		texturefile = "gfx/interface/sea_logos/sea_shock_damage.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_shock_damage_received"
+		texturefile = "gfx/interface/sea_logos/sea_shock_damage_received.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_spy_offence"
+		texturefile = "gfx/interface/sea_logos/sea_spy_offence.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_stability_cost_modifier"
+		texturefile = "gfx/interface/sea_logos/sea_stability_cost_modifier.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_trade_efficiency"
+		texturefile = "gfx/interface/sea_logos/sea_trade_efficiency.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_war_exhaustion"
+		texturefile = "gfx/interface/sea_logos/sea_war_exhaustion.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_yearly_absolutism"
+		texturefile = "gfx/interface/sea_logos/sea_yearly_absolutism.dds"
+		loadTpye = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_sea_yearly_corruption"
+		texturefile = "gfx/interface/sea_logos/sea_yearly_corruption.dds"
+		loadTpye = "INGAME"
+	}
+}
