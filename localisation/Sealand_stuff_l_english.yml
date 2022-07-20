@@ -1,11 +1,7 @@
 ﻿l_english:
 
-
-
-
-    #eventforgreatmen
-        h_inspirational_leader_event_cooldown:0 "We will utilize this another time."
-        h_critical_event_cooldown_tooltip:0 "Nothing will happen :D"
+ #eventforgreatmen
+        h_critical_event_delay:0 "We will utilize this another time."
  # Each nation specific:
     # Hormuz:
       # Missions:
