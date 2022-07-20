@@ -1,4 +1,6 @@
 ﻿l_english:
+	PR_manpower_edict:0 "Enact Nation-wide Manpower Edict"
+	PR_manpower_edict_removal:0 "Remove Nation-wide Manpower Edict"
         h_critical_event_delay:0 "We will utilize this another time."
 	h_critical_event_cooldown_tooltip:0 " We will utilize this another time."
 	PR_critical_events_title:0 "Critical Events Available"
