@@ -1,4 +1,6 @@
 ﻿l_english:
+        PR_commandant_cooldown_tooltip:0 "We will utilize this another time"
+        PR_grand_captain_cooldown_tooltip:0 "We will utilize this another time"
  # Each nation specific:
     # Hormuz:
       # Missions:
