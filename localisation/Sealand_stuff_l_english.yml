@@ -2,7 +2,11 @@
         h_critical_event_delay:0 "We will utilize this another time."
 	h_critical_event_cooldown_tooltip:0 " We will utilize this another time."
 	PR_critical_events_title:0 "Critical Events Available"
-	sm_hire_general_title:0 "Recruit Semi-Decent General"	
+	sm_hire_general_title:0 "Recruit Semi-Decent General"
+	PR_radical_reform_decision:0 "Radical Reform"
+	PR_military_reform_decision:0 "Military Reform"
+	PR_commandant_decision:0 "Discipline-Commandant Boon"
+	PR_grand_captain_decision:0 "Morale-Grand Captain Boon"
  # Each nation specific:
      # Mamluks:
       # Missions:
