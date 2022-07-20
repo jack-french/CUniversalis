@@ -132,7 +132,8 @@ country_decisions = {
 			factor = 1
 		}
 	}
-		dev_sum_clicks_decision = {
+	
+	dev_sum_clicks_decision = {
 		major = yes
 		potential = {
 			always = yes
