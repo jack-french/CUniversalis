@@ -1,6 +1,8 @@
 ﻿l_english:
         h_critical_event_delay:0 "We will utilize this another time."
 	h_critical_event_cooldown_tooltip:0 " We will utilize this another time."
+	PR_critical_events_title:0 "Critical Events Available"
+	sm_hire_general_title:0 "Recruit Semi-Decent General"	
  # Each nation specific:
      # Mamluks:
       # Missions:
