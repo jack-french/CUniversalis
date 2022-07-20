@@ -55,7 +55,6 @@ country_decisions = {
 				NOT = { has_country_modifier = PR_manpower_edict_cooldown }
 				NOT = { has_country_flag = PR_manpower_edict_activated }
 			}
-			is_year = 1450
 		}
 		allow = {
 		}
