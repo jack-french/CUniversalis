@@ -1,4 +1,5 @@
 ﻿l_english:
+	dev_sum_clicks_decision:0 "Dev Click Sum"
 	PR_manpower_edict:0 "Enact Nation-wide Manpower Edict"
 	PR_manpower_edict_removal:0 "Remove Nation-wide Manpower Edict"
         h_critical_event_delay:0 "We will utilize this another time."
