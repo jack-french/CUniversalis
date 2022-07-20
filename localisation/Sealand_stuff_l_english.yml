@@ -3,7 +3,7 @@
  	dev_sum_clicks_decision_desc:0 "To see a summary of your manual development growth via development clicks, hover over the 'requirements' for this decision."
  	dev_sum_clicks_decision_tooltip:0 "Manual Development:\n\n§W£adm£ Development Gained: §G[This.dev_adm_clicks.GetValue] \n§W£dip£ Development Gained: §G[This.dev_dip_clicks.GetValue] \n§W£mil£ Development Gained: §G[This.dev_mil_clicks.GetValue] \n\n§WTotal Development Gained: §Y[This.dev_sum_clicks.GetValue]"
 	dev_sum_clicks_decision_title:0 "Dev Click Sum"
-	PR_manpower_edict:0 "Enact Nation-wide Manpower Edict"
+ 	PR_manpower_edict:0 "Enact Nation-wide Manpower Edict"
 	PR_manpower_edict_removal:0 "Remove Nation-wide Manpower Edict"
      	h_critical_event_delay:0 "We will utilize this another time."
 	h_critical_event_cooldown_tooltip:0 " We will utilize this another time."
