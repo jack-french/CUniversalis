@@ -1041,10 +1041,7 @@ sea_mam_missions_4 = {
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = "modernized_society_views_modifier"
-				duration = -1
-			}
+			add_prestige = 100
 		}
 	}
 }
