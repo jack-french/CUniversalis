@@ -1,2 +1,0 @@
-# Sassanid:
-SAS = "countries/SasanidEmpire.txt" # Not fully direct copy-paste.
