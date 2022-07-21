@@ -1,4 +1,5 @@
 ﻿l_english:
+
 	PR_manpower_edict_title:0 "National Manpower Edict"
  	PR_manpower_edict_desc:0 "Activate a manpower edict modifier in all states without an activated edict. No edicts can be applied to states with this modifier. Can be removed in 1 year."
  	PR_manpower_edict_tooltip:0 "+§G25%§! Manpower and +§R200%§! State Maintenance in all states without an active edict"
@@ -19,6 +20,34 @@
 	PR_military_reform_decision:0 "Military Reform"
 	PR_commandant_decision:0 "Discipline-Commandant Boon"
 	PR_grand_captain_decision:0 "Morale-Grand Captain Boon"
+
+ # New country ideas:
+        # North Sea Empire:
+	  nse_government:0 "Anglo-Nordic Union"
+	  nse_government_title:0 "Anglo-Nordic Union"
+	  restore_north_sea_empire_title:0 "Restore the North Sea Empire"
+        NSE:0 "North Sea Empire"
+        NSE_ADJ:0 "Anglo-Scandinavian"
+        sea_NSE_ideas:0 "Anglo-Scandinavian Ideas"
+        sea_NSE_ideas_start:0 "Anglo-Scandinavian Traditions"
+        sea_NSE_ideas_bonus:0 "Anglo-Scandinavian Ambition"
+        nse_viking_redcoats:0 "Viking Redcoats"
+        nse_viking_redcoats_desc:0 "Viking Redcoats"
+        nse_everyone_must_serve:0 "Everyone Must Serve"
+        nse_everyone_must_serve_desc:0 "Everyone Must Serve"
+        nse_sharing_common_naval_traditions:0 "Sharing Common Naval Traditions"
+        nse_sharing_common_naval_traditions_desc:0 "Sharing Common Naval Traditions"
+        nse_proficient_army:0 "Proficient Army"
+        nse_proficient_army_desc:0 "Proficient Army"
+        nse_north_sea_rules_the_waves:0 "North Sea Rules the Waves"
+        nse_north_sea_rules_the_waves_desc:0 "North Sea Rules the Waves"
+        nse_industry_on_ships:0 "Industry on Ships"
+        nse_industry_on_ships_desc:0 "Industry on Ships"
+        nse_united_under_single_banner:0 "United Under Single Banner"
+        nse_united_under_single_banner_desc:0 "United Under Single Banner"
+
+
+
  # Each nation specific:
      # Mamluks:
       # Missions:
