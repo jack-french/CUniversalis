@@ -1,3 +1,4 @@
 ABA = "countries/SeaAbbasidCaliphate.txt"
 DRV = "countries/Dravidessa.txt"
 SAS = "countries/SasanidEmpire.txt"
+NSE = "countries/SeaNorthSeaEmpire.txt"
