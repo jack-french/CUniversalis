@@ -22,6 +22,7 @@ monarchy = {
 				ottoman_government
 				prussian_monarchy
 				austrian_dual_monarchy
+				nse_government
 				principality
 				tsardom
 				mamluk_government
