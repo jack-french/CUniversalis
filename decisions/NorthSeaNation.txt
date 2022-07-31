@@ -7,7 +7,7 @@ country_decisions = {
 			NOT = { has_country_flag = formed_nse_flag }
 			NOT = { exists = NSE }
 			OR = {
-				culture_group = nordic
+				culture_group = scandinavian
 				culture_group = british
 				}
 		}
