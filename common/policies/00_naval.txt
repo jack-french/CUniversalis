@@ -1,5 +1,5 @@
 naval_mil_1_pol = {
-	monarch_power = ADM
+	monarch_power = MIL
 
 	potential = {
 		has_idea_group = naval_ideas
@@ -11,14 +11,14 @@ naval_mil_1_pol = {
 		full_idea_group = offensive_ideas
 	}
 	
-	reinforce_cost_modifier = -0.20
+	leader_land_fire = 1
 	
 	ai_will_do = {
 		factor = 1
 	}
 }
 naval_mil_2_pol = {
-	monarch_power = DIP
+	monarch_power = MIL
 
 	potential = {
 		has_idea_group = naval_ideas
@@ -30,14 +30,14 @@ naval_mil_2_pol = {
 		full_idea_group = defensive_ideas
 	}
 	
-	defensiveness = 0.25
+	leader_land_manuever = 1
 	
 	ai_will_do = {
 		factor = 1
 	}
 }
 naval_mil_3_pol = {
-	monarch_power = MIL
+	monarch_power = DIP
 
 	potential = {
 		has_idea_group = naval_ideas
@@ -49,15 +49,14 @@ naval_mil_3_pol = {
 		full_idea_group = quantity_ideas
 	}
 	
-	infantry_cost = -0.15
-	artillery_cost = -0.1
+	ship_recruit_speed = -0.15
 	
 	ai_will_do = {
 		factor = 1
 	}
 }
 naval_mil_4_pol = {
-	monarch_power = MIL
+	monarch_power = DIP
 
 	potential = {
 		has_idea_group = naval_ideas
@@ -69,14 +68,14 @@ naval_mil_4_pol = {
 		full_idea_group = quality_ideas
 	}
 	
-	reinforce_speed = 0.2
+	galley_power = 0.1
 	
 	ai_will_do = {
 		factor = 1
 	}
 }
 naval_mil_5_pol = {
-	monarch_power = ADM
+	monarch_power = DIP
 
 	potential = {
 		has_idea_group = naval_ideas
@@ -88,14 +87,14 @@ naval_mil_5_pol = {
 		full_idea_group = aristocracy_ideas
 	}
 	
-	merchants = 1
+	navy_tradition = 0.5
 	
 	ai_will_do = {
 		factor = 1
 	}
 }
 naval_mil_6_pol = {
-	monarch_power = ADM
+	monarch_power = DIP
 
 	potential = {
 		has_idea_group = naval_ideas
@@ -107,7 +106,7 @@ naval_mil_6_pol = {
 		full_idea_group = theocracy_gov_ideas
 	}
 	
-	global_foreign_trade_power = 0.20
+	disengagement_chance = 0.15
 	
 	ai_will_do = {
 		factor = 1
@@ -126,7 +125,7 @@ naval_mil_7_pol = {
 		full_idea_group = plutocracy_ideas
 	}
 	
-	trade_efficiency = 0.15
+	light_ship_power = 0.20
 	
 	ai_will_do = {
 		factor = 1
@@ -145,7 +144,7 @@ naval_mil_8_pol = {
 		full_idea_group = horde_gov_ideas
 	}
 	
-	special_unit_forcelimit = 0.15
+	merchants = 1
 	
 	ai_will_do = {
 		factor = 1
