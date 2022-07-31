@@ -1,0 +1,125 @@
+country_decisions = {
+
+	sokoto_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_sokoto_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = SOK }
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			religion_group = muslim
+			OR = {
+				culture_group = maghrebi
+				culture_group = mande
+				culture_group = sahelian
+				culture_group = west_african
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1148 #Gobir
+				province_id = 1133 #Gao
+				province_id = 1149 #Katsina
+				province_id = 1155 #Kano
+				province_id = 2274 #Air
+				province_id = 1132 #Timbuktu
+				province_id = 1134 #Jenne
+				province_id = 1124 #Joma
+				province_id = 1120 #Bambuk
+				province_id = 1121 #Bure
+				province_id = 1157 #Borno
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			owns_core_province = 1148 #Gobir
+			owns_core_province = 1133 #Gao
+			owns_core_province = 1149 #Katsina
+			owns_core_province = 1155 #Kano
+			owns_core_province = 2274 #Air
+			owns_core_province = 1132 #Timbuktu
+			owns_core_province = 1134 #Jenne
+			owns_core_province = 1124 #Joma
+			owns_core_province = 1120 #Bambuk
+			owns_core_province = 1121 #Bure
+			owns_core_province = 1121 #Borno
+		}
+		effect = {
+			1148 = {
+				move_capital_effect = yes
+			}
+			niger_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = SOK
+			}
+			sahel_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = SOK
+			}
+			maghreb_region= {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = SOK
+			}
+			add_prestige = 25
+			add_piety = 1
+			change_tag = SOK
+			if = {
+				limit = {
+					NOT = { government = monarchy }
+					is_revolutionary = no
+				}
+				change_government_to_monarchy = yes
+			}
+			if = {
+				limit = { is_revolutionary = no }
+				add_government_reform = feudal_theocracy
+			}
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = fulani_jihad_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_sokoto_flag
+			if = {
+				limit = { has_dlc = "Origins" }
+				swap_non_generic_missions = yes
+			}
+		}
+		ai_importance = 400 #The countries that qualify will hate the holder of Sokoto.
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

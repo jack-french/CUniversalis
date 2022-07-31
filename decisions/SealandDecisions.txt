@@ -1,0 +1,78 @@
+# Turkification 
+country_decisions = {
+	turkify_mamluks_decision = { # For Mamluks
+		major = yes
+		potential = {
+			has_country_flag = enact_mam_turkification_decision
+			NOT = { has_country_flag = enacted_mam_turkification_decision }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			set_country_flag = enacted_mam_turkification_decision
+			if = {
+				limit = {
+					NOT = { primary_culture = turkish }
+				}
+				change_primary_culture = turkish
+			}
+			add_accepted_culture = al_misr_arabic
+			set_ruler_culture = turkish
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				set_heir_culture = turkish
+			}
+			if = {
+				limit = {
+					has_consort = yes
+				}
+				set_consort_culture = turkish
+			}
+			change_technology_group = ottoman
+			change_unit_type = ottoman
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	turkify_qq_decision = { # For QQ
+		major = yes
+		potential = {
+			has_country_flag = enact_qq_turkification_decision
+			NOT = { has_country_flag = enacted_qq_turkification_decision }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			set_country_flag = enacted_qq_turkification_decision
+			if = {
+				limit = {
+					NOT = { primary_culture = turkish }
+				}
+				change_primary_culture = turkish
+			}
+			set_ruler_culture = turkish
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				set_heir_culture = turkish
+			}
+			if = {
+				limit = {
+					has_consort = yes
+				}
+				set_consort_culture = turkish
+			}
+			change_technology_group = ottoman
+			change_unit_type = ottoman
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

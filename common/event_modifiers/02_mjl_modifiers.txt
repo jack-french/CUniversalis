@@ -1,0 +1,30 @@
+PR_commandant_cooldown = {
+	discipline = 0.001
+}
+
+PR_grand_captain_cooldown = {
+	land_morale = 0.001
+}
+
+PR_manpower_edict_province = {
+	local_manpower_modifier = 0.25
+	local_state_maintenance_modifier = 2.0
+}
+
+PR_manpower_edict_cooldown = {
+	global_manpower = 0.001
+}
+
+mesopotamian_mamluks_modifier = {
+	cavalry_power = 0.05
+	cav_to_inf_ratio = 0.1
+}
+prepare_for_europe_hugbox_modifier = {
+	manpower_recovery_speed = 0.3
+	reinforce_speed = 0.3
+}
+abbasid_governors_modifier = {
+	governing_capacity = 200
+	max_absolutism = 50
+	global_autonomy = -0.05
+}
