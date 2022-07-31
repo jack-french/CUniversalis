@@ -22,7 +22,7 @@ sasanian_government = {
 		diplomatic_upkeep = 2
 		governing_capacity = 250
 		missionaries = 3
-		global_missionary_strength = .05
+		global_missionary_strength = 0.05
 	}
 	conditional = {
 		allow = { has_dlc = "Res Publica" }
@@ -58,7 +58,7 @@ nse_government = {
 		leader_land_fire = 1
 		may_perform_slave_raid_on_same_religion = yes
 		missionaries = 3
-		global_missionary_strength = .05
+		global_missionary_strength = 0.05
 	}
 	conditional = {
 		allow = { has_dlc = "Res Publica" }

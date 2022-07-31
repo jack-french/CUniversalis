@@ -25,6 +25,12 @@ country_event = {
 			}
 			ORL = { set_country_flag = had_maid_of_orleans }
 		}
+		if = {
+			limit = {
+				exists = FRA
+			}
+			FRA = { set_country_flag = had_maid_of_orleans }
+		}
 		set_global_flag = maid_of_orleans
 	}
 }
@@ -115,7 +121,6 @@ country_event = {
 				duration = 3650
 			}
 		}
-		clr_global_flag = maid_of_orleans
 	}
 }
 
@@ -187,7 +192,7 @@ country_event = {
 			is_papal_controller = yes
 		}
 		modifier = {
-			factor = 0.1
+			factor = 0.5
 			has_country_flag = had_maid_of_orleans
 		}
 	}
@@ -201,7 +206,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_country_flag = had_maid_of_orleans
+				has_country_flag = maid_of_orleans
 			}
 			hidden_effect = {
 				country_event = { id = flavor_orl.11 days = 30 }
