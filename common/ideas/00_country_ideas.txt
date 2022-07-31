@@ -5046,7 +5046,7 @@ mossi_ideas = {
 fulani_jihad_ideas = {
 	start = {
         	global_regiment_cost = -0.05
-        	lobal_manpower_modifier = 0.15
+        	local_manpower_modifier = 0.15
 	}
 	
 	bonus = {
