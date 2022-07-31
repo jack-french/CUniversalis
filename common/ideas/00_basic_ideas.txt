@@ -639,7 +639,7 @@ defensive_ideas = {
 	}
 	improved_foraging = {
 		fire_damage_received = -0.075
-		discipline = .025
+		discipline = 0.025
 	}
 
 	ai_will_do = {
