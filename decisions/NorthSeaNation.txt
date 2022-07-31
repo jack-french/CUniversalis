@@ -7,7 +7,7 @@ country_decisions = {
 			NOT = { has_country_flag = formed_nse_flag }
 			NOT = { exists = NSE }
 			OR = {
-				culture_group = nordic
+				culture_group = scandinavian
 				culture_group = british
 				}
 		}
@@ -84,13 +84,6 @@ country_decisions = {
 				}
 				add_permanent_claim = ROOT
 			}
-	   		london_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT }
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
 	   		east_midlands_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT }
@@ -105,13 +98,6 @@ country_decisions = {
 				}
 				add_permanent_claim = ROOT
 			}
-	   		north_jutland_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT }
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
 	   		denmark_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT }
@@ -119,21 +105,7 @@ country_decisions = {
 				}
 				add_permanent_claim = ROOT
 			}
-	   		vestlandet_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT }
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
 	   		scandinavia_region = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT }
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-	   		britain_region = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT }
 					NOT = { is_core = ROOT	}
