@@ -1,0 +1,109 @@
+gc_drill_master = {
+	monarch_power = MIL
+	
+	# Bonus
+	drill_gain_modifier = 0.35
+	drill_decay_modifier = -0.25
+	skill_scaled_modifier = { meritocracy = 0.25 }
+
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 5000
+	}
+}
+
+gc_arty_officer = {
+	monarch_power = MIL
+	
+	# Bonus
+	artillery_power = 0.1
+	artillery_cost = -0.1
+
+	skill_scaled_modifier = { meritocracy = 0.25 }
+
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			owner = { NOT = { mil_tech = 13 } }
+		}
+	}
+	
+	ai_will_do = {
+		factor = 5000
+	}
+}
+
+gc_inquisitor = {
+	monarch_power = ADM
+	
+	# Bonus
+	culture_conversion_cost = -0.10
+
+	skill_scaled_modifier = { meritocracy = 0.25 }
+
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 5000
+	}
+}
+
+siege_specialist = {
+	monarch_power = MIL
+	
+	# Bonus
+	siege_ability = 0.1
+	artillery_bonus_vs_fort = 1
+	
+	skill_scaled_modifier = { meritocracy = 0.25 }
+
+	chance = {
+		factor = 1
+	}
+	ai_will_do = {
+		factor = 5000
+	}
+}
+
+infantry_leader = {
+	monarch_power = MIL
+	
+	# Bonus
+	shock_damage_received = -0.075
+	fire_damage_received = -0.075
+
+	skill_scaled_modifier = { meritocracy = 0.25 }
+
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 5000
+	}
+}
+
+cavalry_leader = {
+	monarch_power = MIL
+	
+	# Bonus
+	shock_damage = 0.1
+	fire_damage = 0.1
+
+
+	skill_scaled_modifier = { meritocracy = 0.25 }
+
+	chance = {
+		factor = 1
+	}
+	
+	ai_will_do = {
+		factor = 5000
+	}
+}
