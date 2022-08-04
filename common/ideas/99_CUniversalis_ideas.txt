@@ -55,14 +55,11 @@ SAS_ideas = {
 	free = yes
    	dream_of_an_empire = {
 		manpower_recovery_speed = 0.1
-		core_creation = -0.1
 	}
 	expand_urban_setlements = {
 	    	development_cost = -0.05
-		build_cost = -0.075
 	}
 	aswaran_knights = {
-		cavalry_power = 0.25
 		fire_damage_received = -0.1
 	}
 	revive_sasanid_learning = {
@@ -70,14 +67,12 @@ SAS_ideas = {
 	}
 	neo_iranian_administration = {
       		free_adm_policy = 1
-	  	possible_adm_policy = 1
 	}	
 	servants_of_zoroaster = {
-	  	manpower_in_true_faith_provinces = 0.10
 	  	missionaries = 1
 	}
 	new_age_army = {
-	 	land_forcelimit_modifier = 0.2
+	 	land_forcelimit_modifier = 0.1
 	}
 }
 
@@ -88,7 +83,6 @@ sea_ABA_ideas = { # Abbasid Chaliphate
 	}
 	
 	bonus = {
-		trade_steering = 0.15
 		global_trade_goods_size_modifier = 0.1
 	}
 	
@@ -103,14 +97,11 @@ sea_ABA_ideas = { # Abbasid Chaliphate
 	}
 	aba_reformed_army = {
 		land_morale = 0.15
-		reinforce_speed = 0.25
 	}
 	aba_return_of_barmakids = {
 		administrative_efficiency = 0.05
-		discipline = 0.05
 	}
 	aba_traders_of_middle_east = {
-		caravan_power = 0.2
 		trade_efficiency = 0.2
 	}
 	aba_islamic_science_continues = {
@@ -133,7 +124,6 @@ sea_NSE_ideas = { # North Sea Empire
 	}
 	
 	bonus = {
-		blockade_efficiency = 0.33
 		allowed_marine_fraction = 0.5
 	}
 	
@@ -143,8 +133,8 @@ sea_NSE_ideas = { # North Sea Empire
 	free = yes		#will be added at load.
 
 	nse_viking_redcoats = {
-		shock_damage = 0.1
-		fire_damage = 0.1
+		shock_damage = 0.05
+		fire_damage = 0.05
 	}
 	nse_everyone_must_serve = {
 		global_manpower_modifier = 0.2
@@ -152,11 +142,10 @@ sea_NSE_ideas = { # North Sea Empire
 	}
 	nse_sharing_common_naval_traditions = {
 		naval_morale = 0.15
-		heavy_ship_power = 0.15
 	}
 	nse_proficient_army = {
 		discipline = 0.05
-		infantry_power = 0.15
+		infantry_power = 0.125
 	}
 	nse_north_sea_rules_the_waves = {
 		global_naval_engagement_modifier = 0.1
