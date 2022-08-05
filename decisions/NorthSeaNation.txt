@@ -4,7 +4,6 @@ country_decisions = {
 	restore_north_sea_empire = {
 		major = yes
 		potential = {
-			NOT = { has_country_flag = formed_nse_flag }
 			NOT = { exists = NSE }
 			OR = {
 				culture_group = scandinavian
@@ -30,7 +29,6 @@ country_decisions = {
 			owns_core_province = 4367
 		}
 		effect = {
-			set_country_flag = formed_nse_flag
 			change_tag = NSE
 			change_religion = norse_pagan_reformed
        		add_country_modifier = {
