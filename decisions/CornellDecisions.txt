@@ -41,6 +41,18 @@ country_decisions = {
 				tooltip = PR_grand_captain_decision
 				NOT = { has_country_flag = grand_captain }
 			}
+			custom_trigger_tooltip = {
+				tooltip = PR_arty
+				NOT = { has_country_flag = cu_arty_officer_flag }
+			}
+			custom_trigger_tooltip = {
+				tooltip = PR_inf
+				NOT = { has_country_flag = cu_infantry_leader_flag }
+			}
+			custom_trigger_tooltip = {
+				tooltip = PR_cav
+				NOT = { has_country_flag = cu_cavalry_leader_flag }
+			}
 			always = no
 		}
 		effect = {
