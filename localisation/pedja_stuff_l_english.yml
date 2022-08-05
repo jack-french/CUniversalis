@@ -104,3 +104,79 @@
      eternal_fires_rekindled:0 "Eternal Fires Rekindled"
      sas_zoroastrianism_rekindled:0 "Zoroastrianism Rekindled"
      sas_taxes_for_temples:0 "Taxes for Temples"     
+
+	 #Advisor Events
+	PR_arty:0 "Artillery Officer"
+	PR_inf:0 "Infantry Leader"
+	PR_cav:0 "Cavalry Leader"
+ 	cu_advisor_events.1.t:0 "$GC_ARTY_OFFICER$"
+ 	cu_advisor_events.1.d:0 "An Artillery Officer par excellence, $GC_ARTY_OFFICER$ has turned our Artillery Crews into clockwork automatons that don't fail on the battlefield."
+ 	cu_advisor_events.1.a:0 "Perhaps another Time"
+ 	cu_advisor_events.1.b:0 "$GC_ARTY_OFFICER_CAP_POSS_PRONOUN$ efforts will be admired throughout the nation."
+	 cu_advisor_events.1.c:0 "$GC_ARTY_OFFICER_CAP_POSS_PRONOUN$ reputation will reach further than our borders."
+
+ 	cu_advisor_events.2.t:0 "$GC_DRILL_MASTER$"
+ 	cu_advisor_events.2.d:0 "A drillmaster par excellence, $GC_DRILL_MASTER$ has turned our army into clockwork automatons that don't flinch on the battlefield."
+ 	cu_advisor_events.2.a:0 "Perhaps another Time" 
+ 	cu_advisor_events.2.b:0 "$GC_DRILL_MASTER_CAP_POSS_PRONOUN$ efforts will be admired throughout the nation."
+	 cu_advisor_events.2.c:0 "$GC_DRILL_MASTER_CAP_POSS_PRONOUN$ reputation will reach further than our borders."
+
+ 	cu_advisor_events.3.t:0 "$SIEGE_SPECIALIST$"
+ 	cu_advisor_events.3.d:0 "A Siege Specialist par excellence, $SIEGE_SPECIALIST$ has turned our pioneers into a force to be reckoned with."
+ 	cu_advisor_events.3.a:0 "Perhaps another Time" 
+ 	cu_advisor_events.3.b:0 "$SIEGE_SPECIALIST_CAP_POSS_PRONOUN$ efforts will be admired throughout the nation."
+ 	cu_advisor_events.3.c:0 "$SIEGE_SPECIALIST_CAP_POSS_PRONOUN$ reputation will reach further than our borders."
+
+ 	cu_advisor_events.4.t:0 "$INFANTRY_LEADER$"
+ 	cu_advisor_events.4.d:0 "An Infantry Leader par excellence, $INFANTRY_LEADER$ has turned our Infantry into clockwork automatons that don't flinch on the battlefield."
+ 	cu_advisor_events.4.a:0 "Perhaps another Time" 
+ 	cu_advisor_events.4.b:0 "$INFANTRY_LEADER_CAP_POSS_PRONOUN$ efforts will be admired throughout the nation."
+ 	cu_advisor_events.4.c:0 "$INFANTRY_LEADER_CAP_POSS_PRONOUN$ reputation will reach further than our borders."
+
+ 	cu_advisor_events.5.t:0 "$CAVALRY_LEADER$"
+	 cu_advisor_events.5.d:0 "A Cavalry Leader par excellence, $CAVALRY_LEADER$ has turned our Cavalry into a tool of fear."
+ 	cu_advisor_events.5.a:0 "Perhaps another Time" 
+ 	cu_advisor_events.5.b:0 "$CAVALRY_LEADER_CAP_POSS_PRONOUN$ efforts will be admired throughout the nation."
+ 	cu_advisor_events.5.c:0 "$CAVALRY_LEADER_CAP_POSS_PRONOUN$ reputation will reach further than our borders."
+	
+ 	cu_drill_master:0 "Drill Master"
+	cu_drill_master_desc:0 "Drill drill drill"
+
+	cu_arty_officer:0 "Artillery Officer"
+	cu_arty_officer_desc:0 "Cannon goes boom"
+	
+	cu_inquisitor:0 "Minister of Culture"
+	cu_inquisitor_dec:0 "Uhhh"
+
+	siege_specialist:0 "Siege Specialist"
+	siege_specialist_desc:0 "Once more into the breach"
+ 
+ 	infantry_leader:0 "Infantry Leader"
+ 	infantry_leader_desc:0 "Rage my soldiers!"
+	cavalry_leader:0 "Cavalry Leader"
+	cavalry_leader_desc:0 "Chaaaaaaaaaaaaarge!"
+	#drillmaster
+	excellent_drill:0 "Excellent Drill"
+	drillmaster_events.1.t:0 "$DRILLMASTER$"
+ 	drillmaster_events.1.d:0 "One of our advisors, $DRILLMASTER$ has drilled our men to the pitch of military efficiency. Like a coiled spring we cannot maintain this high level for too long. Still, for a while our armies will stand where lesser men would run."
+
+
+ 	#Advisor Event modifiers
+ 	cu_arty_officer_delayed:0 "Arty Officer Delayed"
+	 cu_arty_officer_modifier:0 "Excellent Artillery Officers"
+
+ 	cu_drill_master_delayed:0 "Drill Master Delayed"
+ 	cu_drill_master_modifier:0 "Excellent Drill Master"
+
+ 	cu_siege_specialist_delayed:0 "Siege Specialist Delayed"
+	 cu_siege_specialist_modifier:0 "Excellent Siege Specialist"
+
+ 	cu_infantry_leader_delayed:0 "Infantry Leader Delayed"
+ 	cu_infantry_leader_modifier:0 "Excellent Infantry Leader"
+
+ 	cu_cavalry_leader_delayed:0 "Cavalry Leader Delayed"
+ 	cu_cavalry_leader_modifier:0 "Excellent Cavalry Leader"
+
+
+
+
