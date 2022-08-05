@@ -1,0 +1,447 @@
+namespace = cu_events
+
+country_event = { #Arty Officer
+    id = cu_advisor_events.1
+    title = cu_advisor_events.1.t
+    desc = cu_advisor_events.1.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		cu_arty_officer = 3
+		NOT = { has_country_modifier = cu_arty_officer_delayed }
+		#NOT = { has_country_flag = cu_arty_officer_flag }
+		NOT = { has_country_modifier = cu_arty_officer_cooldown }
+	}
+
+    mean_time_to_happen = {
+		months = 60
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { #Perhaps another time
+        name = cu_advisor_events.1.a 
+        ai_chance = {
+			factor = 100
+		}
+        add_country_modifier = {
+			name = "cu_arty_officer_delayed"
+			duration = 7300
+		}
+    }
+
+    option = { # His efforts will be admired throughout the nation
+        name = cu_advisor_events.1.b 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "cu_arty_officer_modifier"
+			duration = 2190
+		}
+		add_country_modifier = { 
+			name = cu_arty_officer_cooldown
+			duration = 36500
+			hidden = yes
+		}
+        set_country_flag = cu_arty_officer_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = cu_advisor_events.1.c
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "cu_arty_officer_modifier"
+			duration = 2190
+		}
+		add_country_modifier = { 
+			name = cu_arty_officer_cooldown
+			duration = 36500
+			hidden = yes
+		}
+        set_country_flag = cu_arty_officer_flag
+    }
+}
+
+country_event = { #Drill Master
+    id = cu_advisor_events.2
+    title = cu_advisor_events.2.t
+    desc = cu_advisor_events.2.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		cu_drill_master = 3
+		NOT = { has_country_modifier = cu_drill_master_delayed }
+		NOT = { has_country_flag = cu_drill_master_flag }
+	}
+
+    mean_time_to_happen = {
+		months = 60
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { #Perhaps another time
+        name = cu_advisor_events.2.a 
+        ai_chance = {
+			factor = 100
+		}
+        add_country_modifier = {
+			name = "cu_drill_master_delayed"
+			duration = 7300
+		}
+    }
+
+    option = { # His efforts will be admired throughout the nation
+        name = cu_advisor_events.2.b 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "cu_drill_master_modifier"
+			duration = 2190
+		}
+        set_country_flag = cu_drill_master_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = cu_advisor_events.2.c
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "cu_drill_master_modifier"
+			duration = 2190
+		}
+        set_country_flag = cu_drill_master_flag
+    }
+}
+
+country_event = { #siege_specialist
+    id = cu_advisor_events.3
+    title = cu_advisor_events.3.t
+    desc = cu_advisor_events.3.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		siege_specialist = 3
+		NOT = { has_country_modifier = cu_siege_specialist_delayed }
+		NOT = { has_country_flag = cu_siege_specialist_flag }
+		is_year = 1460
+	}
+
+    mean_time_to_happen = {
+		months = 60
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { #Perhaps another time
+        name = cu_advisor_events.3.a 
+        ai_chance = {
+			factor = 100
+		}
+        add_country_modifier = {
+			name = "cu_siege_specialist_delayed"
+			duration = 7300
+		}
+    }
+
+    option = { # His efforts will be admired throughout the nation
+        name = cu_advisor_events.3.b 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "cu_siege_specialist_modifier"
+			duration = 2190
+		}
+        set_country_flag = cu_siege_specialist_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = cu_advisor_events.3.c
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "cu_siege_specialist_modifier"
+			duration = 2190
+		}
+        set_country_flag = cu_siege_specialist_flag
+    }
+}
+
+country_event = { #infantry_leader
+    id = cu_advisor_events.4
+    title = cu_advisor_events.4.t
+    desc = cu_advisor_events.4.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		infantry_leader = 3
+		NOT = { has_country_modifier = cu_infantry_leader_delayed }
+		#NOT = { has_country_flag = cu_infantry_leader_flag }
+		NOT = { has_country_modifier = cu_infantry_leader_cooldown }
+		is_year = 1460
+	}
+
+    mean_time_to_happen = {
+		months = 60
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { #Perhaps another time
+        name = cu_advisor_events.4.a 
+        ai_chance = {
+			factor = 100
+		}
+        add_country_modifier = {
+			name = "cu_infantry_leader_delayed"
+			duration = 7300
+		}
+    }
+
+    option = { # His efforts will be admired throughout the nation
+        name = cu_advisor_events.4.b 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "cu_infantry_leader_modifier"
+			duration = 2190
+		}
+		add_country_modifier = { 
+			name = cu_infantry_leader_cooldown
+			duration = 36500
+			hidden = yes
+		}
+        set_country_flag = cu_infantry_leader_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = cu_advisor_events.4.c
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "cu_infantry_leader_modifier"
+			duration = 2190
+		}
+		add_country_modifier = { 
+			name = cu_infantry_leader_cooldown
+			duration = 36500
+			hidden = yes
+		}
+        set_country_flag = cu_infantry_leader_flag
+    }
+}
+
+country_event = { #cavalry_leader
+    id = cu_advisor_events.5
+    title = cu_advisor_events.5.t
+    desc = cu_advisor_events.5.d 
+    picture = ADVISOR_eventPicture
+
+    trigger = {
+		cavalry_leader = 3
+		NOT = { has_country_modifier = cu_cavalry_leader_delayed }
+		#NOT = { has_country_flag = cu_cavalry_leader_flag }
+		NOT = { has_country_modifier = cu_cavalry_leader_cooldown }
+		is_year = 1460
+	}
+
+    mean_time_to_happen = {
+		months = 60
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+
+    option = { #Perhaps another time
+        name = cu_advisor_events.5.a 
+        ai_chance = {
+			factor = 100
+		}
+        add_country_modifier = {
+			name = "cu_cavalry_leader_delayed"
+			duration = 7300
+		}
+    }
+
+    option = { # His efforts will be admired throughout the nation
+        name = cu_advisor_events.5.b 
+        add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+        add_country_modifier = {
+			name = "cu_cavalry_leader_modifier"
+			duration = 2190
+		}
+		add_country_modifier = { 
+			name = cu_cavalry_leader_cooldown
+			duration = 36500
+			hidden = yes
+		}
+        set_country_flag = cu_cavalry_leader_flag
+    }
+
+    option = { # His reputation will reach further than our borders
+        name = cu_advisor_events.5.c
+        add_meritocracy_effect = yes
+		add_prestige = 50
+        add_country_modifier = {
+			name = "cu_cavalry_leader_modifier"
+			duration = 2190
+		}
+		add_country_modifier = { 
+			name = cu_cavalry_leader_cooldown
+			duration = 36500
+			hidden = yes
+		}
+        set_country_flag = cu_cavalry_leader_flag
+    }
+}
+# genocide
+country_event = {
+	id = 4120
+	title = "EVTNAME4120"
+	desc = "EVTDESC4120"
+	picture = ADVISOR_eventPicture	
+	
+	trigger = {
+		cu_genocider = 3
+		NOT = { has_country_flag = cu_genocider }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		
+		
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 4
+		}
+		modifier = {
+			factor = 0.9
+			administrative_ideas = 6
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 4 }
+		}
+		modifier = {
+			factor = 1.1
+			NOT = { administrative_ideas = 2 }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA4120"	# His efforts will be admired throughout the nation
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				stability = 2
+			}
+		}
+		add_meritocracy_effect = yes
+		add_stability_or_adm_power = yes
+		add_country_modifier = {
+			name = "cu_genocider_boost"
+			duration = 2190
+		}		
+		set_country_flag = cu_genocider
+	}
+		
+	option = {
+		name = "EVTOPTB4120"	# His reputation will reach further than our borders
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { stability = 1 }
+			}
+		}
+		add_meritocracy_effect = yes
+		add_prestige = 50
+		add_country_modifier = {
+			name = "cu_genocider_boost"
+			duration = 2190
+		}
+		set_country_flag = cu_genocider
+	}
+}
