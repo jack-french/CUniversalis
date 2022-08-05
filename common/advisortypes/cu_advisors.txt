@@ -37,7 +37,7 @@ cu_arty_officer = {
 	}
 }
 
-cu_genocider = {
+cu_librarian = {
 	monarch_power = ADM
 	
 	# Bonus
