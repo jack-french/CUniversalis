@@ -2,8 +2,8 @@ cu_drill_master = {
 	monarch_power = MIL
 	
 	# Bonus
-	drill_gain_modifier = 0.35
 	drill_decay_modifier = -0.25
+	drill_gain_modifier = 0.35
 	skill_scaled_modifier = { meritocracy = 0.25 }
 
 	chance = {
@@ -75,8 +75,8 @@ infantry_leader = {
 	monarch_power = MIL
 	
 	# Bonus
-	shock_damage_received = -0.075
 	fire_damage_received = -0.075
+	shock_damage_received = -0.075
 
 	skill_scaled_modifier = { meritocracy = 0.25 }
 
@@ -93,8 +93,8 @@ cavalry_leader = {
 	monarch_power = MIL
 	
 	# Bonus
-	shock_damage = 0.1
 	fire_damage = 0.1
+	shock_damage = 0.1
 
 
 	skill_scaled_modifier = { meritocracy = 0.25 }

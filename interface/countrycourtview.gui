@@ -727,25 +727,25 @@ guiTypes = {
 		listboxType = {
 			name = "advisor_modifier_listbox"
 			backGround = ""
-			position = { x=82 y=28 }
+			position = { x=78 y=28 }
 			size = { x=100 y=100 }
 			Orientation = "UPPER_LEFT"
-			horizontal = 1
-			spacing = 2.5
+			horizontal = 0
+			spacing = 0.1
 			scrollbartype = "standardlistbox_slider"
 			borderSize = {x = 0 y = 0}
 		}
 		
 		instantTextBoxType = {
 			name = "advisor_cost"
-			position = { x=82 y=51 }
+			position = { x=202 y=28 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}	
 			text = ""	
 			maxWidth = 152
 			maxHeight = 30
-			format = left
+			format = right
 		}		
 
 		instantTextBoxType = {
@@ -900,24 +900,23 @@ guiTypes = {
 		name = "advisor_modifier_item"
 		backGround =""
 		position = { x=0 y=0 }	
-		size = { x=48 y=30 }
+		size = { x=48 y=24 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder = ""
-		Orientation = "UPPER_LEFT"
+		verticalBorder= ""
 
 		instantTextBoxType = {
 			name = "advisor_desc"
 			position = { x = 30 y = 5 }
+			format = left
 			textureFile = ""
 			font = "vic_18"
-			borderSize = {x = 4 y = 4}	
+			borderSize = {x = 0 y = 0}
 			text = ""	
-			maxWidth = 260
-			maxHeight = 25
-			format = left
-			truncate = yes
-			fixedsize = no
+			maxWidth = 240
+			maxHeight = 24	
+			Orientation = "UPPER_LEFT"		
 		}
 
 		iconType = 
