@@ -1,4 +1,4 @@
-gc_drill_master = {
+cu_drill_master = {
 	monarch_power = MIL
 	
 	# Bonus
@@ -15,7 +15,7 @@ gc_drill_master = {
 	}
 }
 
-gc_arty_officer = {
+cu_arty_officer = {
 	monarch_power = MIL
 	
 	# Bonus
@@ -37,7 +37,7 @@ gc_arty_officer = {
 	}
 }
 
-gc_inquisitor = {
+cu_genocider = {
 	monarch_power = ADM
 	
 	# Bonus
