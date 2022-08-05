@@ -1062,7 +1062,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 203 y =34 }
+			position = { x = 203 y =52 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1074,7 +1074,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "value"
-			position = { x = 193 y =34 }
+			position = { x = 193 y =52 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1086,7 +1086,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "desc"
-			position = { x = 68 y =49 }
+			position = { x = 68 y =65 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1099,7 +1099,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "home"
-			position = { x = 193 y =49 }
+			position = { x = 193 y =65 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1112,7 +1112,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "purchase"
-			position = { x = 68 y =34 }
+			position = { x = 68 y =52 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1124,7 +1124,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "purchase_cost"
-			position = { x = 113 y =34 }
+			position = { x = 113 y =52 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
