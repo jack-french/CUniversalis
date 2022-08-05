@@ -1046,7 +1046,7 @@ country_event = {
 	}
 
 	option = {
-		name = "h_critical_event_delay"
+		name = h_critical_event_delay
 		custom_tooltip = h_critical_event_cooldown_tooltip
 		add_country_modifier = {
 			name = h_grand_captain_event_cooldown
@@ -1138,7 +1138,7 @@ country_event = {
 	trigger = {
 		commandant = 3
 		NOT = { has_country_flag = commandant }
-		NOT = { has_country_modifier = h_inspirational_leader_event_cooldown }
+		NOT = { has_country_modifier = cu_commandant_delay }
 	}
 	
 	mean_time_to_happen = {
@@ -1200,10 +1200,10 @@ country_event = {
 	}
 
 	option = {
-		name = "h_critical_event_delay"
+		name = h_critical_event_delay
 		custom_tooltip = h_critical_event_cooldown_tooltip
 		add_country_modifier = {
-			name = h_inspirational_leader_event_cooldown
+			name = "cu_commandant_delay"
 			duration = 1825
 			hidden = yes
 		}
