@@ -34,15 +34,15 @@ spriteTypes = {
 		loadType = "INGAME"
 	}
 	spriteType = {
-		name = "GFX_advisor_cu_inquisitor"
-		texturefile = "gfx//interface//advisors//cu_inquisitor.dds"
+		name = "GFX_advisor_cu_librarian"
+		texturefile = "gfx//interface//advisors//cu_inquisitor_female.dds"
 		noOfFrames = 1
 
 		effectFile = "gfx/FX/buttonstate.lua"
 		loadType = "INGAME"
 	}
 	spriteType = {
-		name = "GFX_advisor_cu_inquisitor_female"
+		name = "GFX_advisor_cu_librarian_female"
 		texturefile = "gfx//interface//advisors//cu_inquisitor_female.dds"
 		noOfFrames = 1
 
