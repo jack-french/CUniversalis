@@ -151,7 +151,7 @@
 	siege_specialist:0 "Siege Specialist"
 	siege_specialist_desc:0 "Once more into the breach"
  	cu_librarian:0 "Librarian"
-	librarian_desc:0 "*Nerd voice* 'I need another book'"
+	cu_librarian_desc:0 "*Nerd voice* 'I need another book'"
  	infantry_leader:0 "Infantry Leader"
  	infantry_leader_desc:0 "Rage my soldiers!"
 	cavalry_leader:0 "Cavalry Leader"
