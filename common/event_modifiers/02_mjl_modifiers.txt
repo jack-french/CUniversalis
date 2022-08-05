@@ -1,10 +1,59 @@
-PR_commandant_cooldown = {
+cu_commandant_delay = {
 	discipline = 0.001
 }
 
-PR_grand_captain_cooldown = {
+h_grand_captain_event_cooldown = {
 	land_morale = 0.001
 }
+
+cu_arty_officer_delayed = {
+	artillery_power = 0.001
+}
+
+cu_arty_officer_modifier = {
+	artillery_power = 0.10
+	artillery_cost = -0.1
+}
+cu_arty_officer_cooldown = {
+}
+
+cu_drill_master_delayed = {
+}
+
+cu_drill_master_modifier = {
+    yearly_army_professionalism = 0.02
+    drill_decay_modifier = -0.25
+}
+
+cu_siege_specialist_delayed = {
+}
+
+cu_siege_specialist_modifier = {
+	siege_ability = 0.15
+}
+
+cu_infantry_leader_delayed = {
+}
+
+cu_infantry_leader_modifier = {
+	infantry_power = 0.10
+	infantry_cost = -0.1
+}
+
+cu_infantry_leader_cooldown = {
+}
+
+cu_cavalry_leader_delayed = {
+}
+
+cu_cavalry_leader_modifier = {
+	cavalry_power = 0.10
+	cavalry_cost = -0.1
+}
+
+cu_cavalry_leader_cooldown = {
+}
+
 
 PR_manpower_edict_province = {
 	local_manpower_modifier = 0.25
