@@ -867,7 +867,7 @@ defensive_ideas = {
 		reserves_organisation = 0.33
 	}
 	improved_manuever = {
-		fire_damage_received = 0.10
+		fire_damage_received = -0.10
 	}
 	regimental_system = {
 		defensiveness = 0.33
@@ -994,7 +994,7 @@ aristocracy_ideas = {
 		leader_cost = -0.15
 	}
 	noble_resilience = {
-		leader_naval_shock = 1
+		leader_land_shock = 1
 		nobles_loyalty_modifier = 0.1
 	}
 	
