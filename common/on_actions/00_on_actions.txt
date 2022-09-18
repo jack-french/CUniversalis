@@ -2021,52 +2021,91 @@ on_dismantle_revolution = {
 
 # province
 on_adm_development = {
-	#ARUMBA LINES
-    hidden_effect = {
+	if = {
+		limit = { owner = { has_country_flag = enable_supplemental_development_flag } }
+		random_list = {
+			20 = { add_base_tax = 1 }
+			80 = { }
+		}
+	}
+	if = {
+		limit = { 
+			owner = { has_country_modifier = lit_increased_dev_modifier }
+		}
+		add_base_tax = 1 
+	}
+
+	hidden_effect = {
 		owner = {
 			change_variable = {
 				which = dev_adm_clicks
 				value = 1
+			}
 		}
 			change_variable = {
 				which = dev_sum_clicks
 				value = 1
-	}
-		}
+			}
 	}
 }
 
 # province
 on_dip_development = {
-	#ARUMBA LINES
+	if = {
+		limit = { owner = { has_country_flag = enable_supplemental_development_flag } }
+		random_list = {
+			20 = { add_base_production = 1 }
+			80 = { }
+		}
+	}
+	if = {
+		limit = { 
+			owner = { has_country_modifier = lit_increased_dev_modifier }
+		}
+		add_base_production = 1 
+	}
+
 	hidden_effect = {
 		owner = {
 			change_variable = {
 				which = dev_dip_clicks
 				value = 1
+			}
 		}
 			change_variable = {
 				which = dev_sum_clicks
 				value = 1
-	}
-		}
+			}
 	}
 }
 
 # province
 on_mil_development = {
-	#ARUMBA LINES
-    hidden_effect = {
+	if = {
+		limit = { owner = { has_country_flag = enable_supplemental_development_flag } }
+		random_list = {
+			20 = { add_base_manpower = 1 }
+			80 = { }
+		}
+	}
+	if = {
+		limit = { 
+			owner = { has_country_modifier = lit_increased_dev_modifier }
+		}
+		add_base_manpower = 1 
+	}
+
+	hidden_effect = {
 		owner = {
 			change_variable = {
 				which = dev_mil_clicks
 				value = 1
+			}
 		}
 			change_variable = {
 				which = dev_sum_clicks
 				value = 1
-	}
-		}
+			}
 	}
 }
 
