@@ -30,3 +30,17 @@ empowered_subjects = {
 	idea_cost = -0.25
 	technology_cost = -0.10
 }
+
+free_war_tax_bug_fix = {
+	potential = {
+		has_wartaxes = yes
+	}
+	trigger = {
+		has_age_ability = ab_free_war_taxes
+		has_wartaxes = yes
+		is_in_war = {
+			duration = 0
+		}
+	}
+	country_military_power = 4
+}
