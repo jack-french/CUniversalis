@@ -1,0 +1,51 @@
+can_rent_condottieri_to = {
+    custom_trigger_tooltip = {
+        tooltip = can_rent_condottieri_to_tooltip
+        hidden_trigger = {
+            OR = {
+                NOT = { has_opinion_modifier = { who = FROM modifier = no_condottieri } }
+                AND = {
+                    FROM = { is_rival = ROOT }
+                    NOT = { has_country_flag = no_condottieri_to_rivals }
+                }
+            }
+            NOT = { is_subject_of = ROOT }
+            NOT = { has_war_with = ROOT }
+            NOT = { ROOT = { has_war_with = THIS } }
+            NOT = {
+                AND = {
+                    has_dlc = "Mare Nostrum"
+                    ROOT = {
+                        has_truce_with = THIS
+                        any_war = {
+                            is_subject_of = THIS
+                            has_war_goal = THIS
+                        }
+                    }
+                }
+            }
+            NOT = {
+                AND = {
+                    has_dlc = "Mare Nostrum"
+                    ROOT = {
+                        any_war = {
+                            OR = {
+                                is_subject_of = THIS
+                                has_war_goal = THIS
+                            }
+                            has_truce_with = THIS
+                        }
+                    }
+                }
+            }
+            NOT = { ROOT = { has_disaster = civil_war } }
+            NOT = { ROOT = { has_country_modifier = condottieri_hired } }
+            NOT = { ROOT = { has_country_modifier = in_debt } }
+            ROOT = { is_free_or_tributary_trigger = yes }
+            ROOT = { has_regency = no }
+            ROOT = { is_defender_of_faith = no }
+            ROOT = { is_at_war = yes }
+            ROOT = { has_national_focus = no }
+        }
+    }
+}
